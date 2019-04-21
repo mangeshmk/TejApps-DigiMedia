@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:0px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: 5%;
+		width:40%;
+		float:left;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		font-weight:bold;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-headerSUB a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#DDDBDB;
+	text-indent:18px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+		font-weight:bold;
+	}
+		
+		
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+.accordion .acc-header4 a {
+	width:99.5%;
+	text-align:left;
+	display: block;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-stretch:expanded
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#666;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header4 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header6 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	
+	body {
+	background-color: #FFF;
+	background-image: url();
+}
+	.accordion21 {		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:0px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+}
+    </style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><span class="accordion21"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></span></div>
+  
+  <div class="accordion">
+    	<ul>
+        	 <li class="acc-header5" id="alpha"> 
+	        <a href="DigiMediaIntro.html">Introduction to Digital Media</a>
+</li></ul></div><div class="accordion"><ul>
+	  
+<li class="acc-header4" id="disc"> <a href="#disc">Understanding Digital Media</a>
+<div class="acc-content" >
+  <p style="font-size: medium">Digital Media has disrupted everything that was media. It has also disrupted the way we think, live, and conduct our business. The evolution of media from cave paintings to newspapers, and even television was smooth and to some extent, gradual, allowing us to get used to what we call as media. We were able to adopt the new methods of communication, and adapt to the changing lifestyle quite comfortably. But with the development of the Internet and mobile phones, things began to change very fast, and changes became more disruptive than adaptive. From an evolutionary pattern, we suddenly went into a mutation pattern with a need to adapt to changes or perish in the fight for survival.<br>
+    <br>It is now no more a matter of choice, because if we choose to ignore this juggernaut of digital media, we will simply be crushed, unless we choose to live the life of an aesthetic in the Himalayas, which also we doubt would be complete free of the digital storm.<br>
+    <br>It is in this scenario that we must learn to live and conduct our lives and professions. To be able to do that, it is necessary to understand the digital media, its features, and then learn how to adopt them, and utilize them instead of becoming a slave to the digital media. The issue with digital media is not just technical, but also social, and even personal, because digital media has invaded into our lives even more than the television did just a few years ago.</div>
+</li>
+	  
+<li class="acc-header4" id="prin"> <a href="#prin">Principles and Key Concepts of Digital Media</a>
+  <div class="acc-content" >
+  The most important features of digital media are in the term 'Digital Media' itself. If you split it into two separate words, they become amply clear.<br>
+  <br>
+  'Digital'
+  means binary, or content that is binary in nature, made of two numbers presented in different sequences to make meaning to a computer. 'Media' means the medium through which the digital content can be presented in a manner that human beings can understand, use and interact with.<br>
+  the mean features and key terms of Digital Media are:<br>
+  <br>
+  <strong>Binary/Numerical<br>
+  </strong>All digital content is numerical in nature. One must understand here the difference between lower level and higher level programming language. If you see the language in which we write the computer programmes, you will realise that though we do follow a syntax (grammar), the 'language' is essentially English. However, for the computer's processor to understand this, the program that we write is 'compiled' into a lower level or machine language which is essentially a combination of zeros and ones. This new media or digital language is flexible, mouldable and can be converted from one format to another easily. This is not possible in the older forms of media. Imagine 'converting' a gramophone record into a CD! You can't just melt the record and make it into a CD, right?<strong><br>
+<br>
+  Modular<br>
+  </strong>Digital media content is programmable and also reusable. Once we write a module, it can be reused number of times over and over again. So if we write a program to copy a content and paste it, we can use the same module for any typr of content with little modifications. The main program being that the computer is made to understand that some content is copied and then pasted. This is what happens when you copy a text. You can ten paste it in a number of documents.<br>
+Programmers write their algorithms based on modules, which can be reused. To give a simple example, if I write a module on the 'eraser' tool in Photoshop, I write it in such a way that it can be used for all images. The 'layers' are another example of modular program, where each layer can be treated as an independent module, yet, together they can form an entirely different content.<br>
+<strong><br>
+  Automated<br>
+  </strong>Do try out using the different 'styles' in MS Word. If you have large amount of text, you can seperate it into several chapters and sub chapters with 'Headings' and 'Sub headings' using the 'Styes' menu that appears on the top of your MS Word screen. If you do that, the task of making the Table of Contents is done in a jiffy, in exactly 2 clicks. This is an automated task for which programmers have written a complicated algorithm and program. You also have tasks that MS Word performs for you like 'Grammar Check', 'Spell Check', etc. These are smaller, modules written into the larger framework of MS Word.<br>
+  <strong><br>
+  Transmedial<br>
+  </strong>New media is programmable, can be manipulated, and converted from one form to another. The numerical nature of digital media allows one to write algorithms, and program the content as needed. Which is why today we have transmedial content - creation of content that can be viewed / enjoyed on multiple platforms. It is also known a 'fluxity' where the content is in for of flux, and can be easily converted from one form to other.<br>
+As written earlier, because of binary nature of the digital content, you can transcode / convert one form of content into another form easily. For users, it is a simple matter of using the GUI or the Graphic User Interface - where the user just clicks a few buttons, changes the parameters and the software does the job. However, todays media universe is varied, both, in terms of the type and format of the content and the content delivery platforms. So you shoot a film in HD or a 4K resolution, transfer it on to your computer, pull out images of amazing clarity, take the sound and make it into an independent sound file, or send the video to YouTube, or your mobile phone, or even use it to show in the theatre on a large screen. This is possible only because the content is in form of binary data.<br>
+<strong><br>
+  Transparent<br>
+  </strong>How digital media be transparent? Actually a lot of it is. We see only the front-end of the software, the GUI, but there is a lot that we actually 'see through'. We don't actually 'see' the program that functions when we perform a task on the computer. So there is a program running in the background monitoring every key I press while I write this, or every click of the mouse. Did you know, there is a separate line of code written for 'key up', 'key press', 'key hold', or 'mouse click', 'mouse over', 'mouse down' 'mouse up', 'mouse movement'? All these programmes run in the background. You notice them only when they don't work. Imagine that you drive a vehicle. Till the vehicel starts every time, you hardly notice it. But the moment the vehicle doesn't start, you notice that there is a wire that is loose, or that your carbaurettor is jammed, or maybe your battery is discharged.<br>
+  <strong><br>
+  Hypertextual<br>
+  </strong>Hypertextuality is a quality that allows you to operate/access another media from within the media you are using. An excellent example would be the 'links' or hyperlinks on a web page. These links provide a link, or 'take you' to another page or a website which is in no way connected to the present website. The two website might be of entirely different organisations, hosted on different servers on the opposite sides of the globe.<br>
+  <strong><br>
+  Interactive<br>
+  </strong>What would be your online experience without interactivity? Today the field of Digital Marketing is growing at the rate of 30% p.a. only because of the interactive nature of digital media. Interactivity is a result of several developments in software, hardware, and telecommunications over the last 20 years. The interactivity is what is driving today's world.<br>
+  <strong><br>
+  Simulated and Virtual<br>
+  </strong>Though this is not essentially a feature only of digital media, just imagine what you would do if suddenly there are no mobile 'networks'? Digital media today works with networking and without it we all would be utterly lost, because we depend on the networks to access huge amount of digital content.<strong><br>
+<br>
+  Networked</strong><br>
+  Though this is not essentially a feature only of digital media, just imagine what you would do if suddenly there are no mobile 'networks'? Digital media today works with networking and without it we all would be utterly lost, because we depend on the networks to access huge amount of digital content. <br>
+  </div>
+</li>
+	  
+<li class="acc-header4" id="ivolve"><a href="InternetTimeline.html">Evolution of the Internet</a></li>
+
+<li class="acc-header4" id="tradigi"> <a href="#tradigi">Traditional vs.Digital Media</a>
+  <div class="acc-content" >
+  If you have already read the Principles and Key Concepts, the differences between Traditional and Digital Media should be already evident.Briefly, the differences are as follows:<br>
+  <br>
+  1. You can not change the format of one traditional media to another. For example, you cannot simply take a newspaper and convert it into a sound file, or a gramophone record. Or take an audio tape and record the content on to a gramophone. You cannot take a celluloid film and make a print document easily. At least not without the help of digital technology.<br>
+  <br>
+  2. 
+Because they cannot be converted, they are not transmedial. It will be a major task to convert and produce and exhibit content of one form to another.<br>
+<br>
+3. Traditional media are not always portable. You can of course carry a couple of books, or maybe even a dozen, but your mobile phone, or reader can carry thousands of books for you to enjoy.<br>
+<br>
+4. Traditional media are not hyoertextual. You cannot link and then access one content with another easily. Imagine reading a research paper, and trying to find the books from which a reference was taken, and then finding that the book is available only in another city! With digital media, you can easily link a book, or a file and the read it on the same device.<br>
+<br>
+These are some of the differences, and we are sure, the more you think, you will be able to find many more.<br>
+  </div>
+</li>
+	  
+<li class="acc-header4" id="whymet"> <a href="#">MET Institute of Mass Media</a>
+
+  75% practicals training. That is the mantra of MET Institute of Mass Media. At MET, we believe that you cannot sell, market, or manage media unless you know how to produce it. You cannot become a journalist,or a PR professional unless you do actual reporting, cover Press Conferences, conduct seminars and conferences yourself. <br>
+  <br>
+  So there the curriculum design is more of practical training, which trains you thoroughly to take on the industry, making you ready not just for a job, but for a rewarding career.<br>
+
+</li>	  
+	  
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.gif" width="100%" alt=""/></a></li>
+
+<li class="acc-header4" id="seo"><a href="SearchEngineOpt.html">Search Engine Optimization</a></li>
+<li class="acc-header" id="seo"><a href="SocialMedia.html">Social Media</a></li>
+<li class="acc-header" id="abdecode"><a href="ToolsandTrends.html">Tools and Trends</a>
+<li class="acc-header" id="webfeatures"><a href="WebsiteFeatures.html">Features of Websites</a></li>
+<li class="acc-header" id="modsix"><a href="ContentWriting.html">Content Writing</a></li>
+<li class="acc-header4" id="modsix"><a href="NewChallenges.html">New Challenges</a></li>
+<li class="acc-header4" id="modsix"><a href="CyberLaws">Cyber Laws</a></li>
+<li class="acc-header4" id="modsix"><a href="MobileMarketing.html">Mobile Marketing</a></li>
+
+
+  </ul>
+  </div>
+
+ 
+  </body>
+</html>

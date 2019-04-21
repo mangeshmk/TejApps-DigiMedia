@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="alpha"><a href="#alpha">Module V - Website Features </a></li>
+<li class="acc-header" id="abdecode"><a href="#abdecode">Introduction</a>
+  <div class="acc-content">
+<p>
+Apart from the standard features that a good website should have, there are a few things that a website designer should understand. An unattractive website will do more harm to your business or cause. Research shows that the casual visitor decides within half a second whether to stay on the site or not. Arguably the most important elements that you should think of are as follows: <br>
+<br>
+Key Elements Of An Effective Website</p>
+<p>1. Appearance<br>
+  2. Content<br>
+  3. Functionality<br>
+  4. Website Usability<br>
+  5. Search Engine Optimization</p>
+<p>The most effective website will reflect best practices across all of these elements.</p>
+</div>
+</li>
+
+<li class="acc-header" id="mod"> 
+<a href="#mod">Appearance</a>
+<div class="acc-content"><p> A site must be visually appealing, polished and professional. Remember, it's reflecting your company, your products and your services. Your website may be the first, and only, impression a potential customer receives of your company.</p>
+<p>An attractive site is far more likely to generate a positive impression and keep visitors on your site once they arrive. As businesses large and small continue to populate the web, your challenge is to attract and keep users' attention. Ideas like this are what PR professionals pay attention to keep their businesses successful.</p>
+  </div>
+</li>
+<li class="acc-header" id="autom"> 
+		        <a href="#autom">Guidelines</a>
+		        <div class="acc-content">
+		          <p>	              <strong>Good use of color:</strong> an appropriate color scheme will contain 2 or 3 primary	colors that blend well and create a proper mood or tone for	your business. Don't overdo the color, as it can distract	from the written content.</p>
+      <p><strong>Text that is easily read:</strong> The most easily read combination is black text on a white background, but many other color combinations are acceptable if the contrast is within an appropriate range. Use fonts that are easy to read and are found on most of today's computer systems. depending on your audience. Keep font size for paragraph text between 10 and 12 pts. </p>
+                  <p><strong>Meaningful graphics:</strong> Graphics are important, as they lend visual variety and appeal to an otherwise boring page of text. However, don't over-use them, and make sure that add meaning or context to your written content. Don’t overload any one page with more than 3 or 4 images.</p>
+                  <p><strong>Quality photography:</strong> A simple way to increase visual appeal is to use high quality photography. High quality product images are especially important for online retailers.</p>
+                  <p><strong>Simplicity:</strong> Keep it simple and allow for adequate white space. Uncluttered layouts allow viewers to focus on your message. Don't overload your site with overly complex design, animation, or other effects just to impress your viewers.<br>
+                    <br>
+                    <strong>Content<br>
+                    </strong>Along with style, your site must have substance. Remember that your audience is looking for information that will help them make a decision, so it should be informative and relevant. Use this opportunity to increase visitor confidence in your company's knowledge and competence.</p>
+                  <p><strong>Short and organized copy:</strong> Clearly label topics and break your text up into small paragraphs. Don't bore your visitors with visually overwhelming text. You've got less than 10 seconds to hook your visitors, so grab their attention by being clear, concise and compelling.<br>
+                    <br>
+                    <strong>Update your content regularly:</strong> No one likes to read the same thing over and over again. Dead or static content will not bring visitors back to your site!<br>
+                    <br>
+                    <strong>Speak to your visitors:</strong> Use the word you as much as possible. Minimize the use of I, we and us.<br>
+                    Consider a pro: Unless you’re an especially good writer, consider using a professional to write or edit your text content. A good writing resource is How to Write for the Web.<br>
+                    <br>
+                    <strong>But What About the Glitz?<br>
+                    </strong>Flashy graphics and animation are tempting, and can have a very positive impact on user experience. Just use them appropriately and keep some simple guidelines in mind:</p>
+                  <p><strong>Use multimedia to entertain and enlighten your prospects. </strong>An animated banner, snappy video or interactive content will add to your site's &quot;interest quotient&quot; and keep your visitors around longer. BUT -- don't force your visitors to endure something they're not interested in or don't have time for, and don't let the &quot;rich media&quot; overwhelm your other content.</p>
+                  <p><strong>Make it &quot;to go&quot;. </strong>Provide downloadable podcasts, presentations and forms for users who can't stay long, but want to take some of your information with them.</p>
+                  <p><strong>Don't neglect your HTML content </strong>for the sake of glitz. Search Engines don't have ears, and can't read Flash, JavaScript or even PDFs .</p>
+                  <p><strong>Functionality<br>
+                  </strong>Every component of your site should work quickly and correctly. Broken or poorly constructed components will only leave your visitors frustrated and disillusioned with your company. Across the spectrum, everything should work as expected, including hyperlinks, contact forms, site search, event registration, and so on.</p>
+                  <p><strong>Error-free copy: <br>
+                  </strong>Remember the exposure your website will get. Double-check your facts and figures, as you don't know who may be quoting you tomorrow. Nor do you want to be recognized or remembered for typos, incorrect grammar and punctuation, or misspellings. Spelling mistakes and bad grammar are as unforgivable on a website as they are in other company materials.</p>
+                  <p><strong>Usability<br>
+                  </strong>A critical, but often overlooked component of a successful website is its degree of usability. Your site must be easy to read, navigate, and understand. Some key usability elements include:</p>
+                  <p><strong>Simplicity: <br>
+                  </strong>The best way to keep visitors glued to your site is through valuable content, good organization and attractive design. Keep your site simple and well organized. </p>
+                  <p><strong>Fast-loading pages: <br>
+                  </strong>A page should load in 20 seconds or less via dial-up; at more than that, you'll lose more than half of your potential visitors.</p>
+                  <p><strong>Minimal scroll: <br>
+                  </strong>This is particularly important on the first page. Create links from the main page to read more about a particular topic. Even the Search Engines will reward you for this behavior.</p>
+                  <p><strong>Consistent layout: <br>
+                  </strong>Site layout is extremely important for usability. Use a consistent layout and repeat certain elements throughout the site.</p>
+                  <p><strong>Prominent, logical navigation: <br>
+                  </strong>Place your menu items at the top of your site, or above the fold on either side. Limit your menu items to 10 or fewer. Remember, your visitors are in a hurry -- don't make them hunt for information. </p>
+                  <p><strong>Descriptive link text: <br>
+                  </strong>Usability testing shows that long link text makes it much easier for visitors to find their way around a site. Long, descriptive link text is favored by Search Engines, too. Back links are important to give users a sense of direction and to keep them from feeling lost. Use a site map, and breadcrumbs, if necessary.</p>
+                  <p><strong>Cross-platform/browser compatibility: <br>
+                  </strong>Different browsers often have different rules for displaying content. At a minimum, you should test your site in the latest versions of Internet Explorer (currently, versions 8 and 9), as well as Firefox and Safari.</p>
+                  <p><strong>Screen Resolution: <br>
+                  </strong>Screen resolution for the typical computer monitor continues to increase. Today, the average web surfer uses a resolution of 1024 x 768 pixels. However, you need to make sure that what looks good at this setting will also work nicely for other resolutions.<br>
+                    <br>
+                    <strong>Search Engine Optimized (SEO)<br>
+                    </strong>There are hundreds of rules and guidelines for effective search engine optimization, and this isn't the place to cover them all. For starters, follow these simple rules:</p>
+                  <p><strong>Include plenty of written content in HTML format</strong>. Don't use Flash, JavaScript or image-only objects for your navigational items.</p>
+                  <p><strong>Use your important keywords frequently and appropriately </strong>in your copy.</p>
+                  <p><strong>Minimize the use of tables </strong>and <strong>use Cascading Style Sheets </strong>for layout and positioning; keep your <strong>HTML code clutter-free.</strong></p>
+                  <p><strong>Leverage your links</strong> -- make them descriptive and use your keywords in the link text<br>
+                  </p>
+      </div>
+	      </li>
+           	<li class="acc-header" id="tmed"> 
+		        <a href="#tmed">Other important qualities</a>
+		        <div class="acc-content">
+		          <p>	              <strong>1. RESPONSIVE DESIGN</strong><br>
+	              The concept of using responsive design is not new to 2016. Since the Google update known as “Mobilegeddon” back in April of 2015, everyone has been hustling to upgrade their websites so that they are easily viewable and usable regardless of the device it is being viewed on (mobile, tablet, desktop).</p>
+	          <p>This will continue to be a basic requirement of a great website in 2016. With new and improved mobile devices coming to the market on a regular basis, having a responsive website design is a must.</p>
+	              <p><strong>2. MINIMALISM</strong><br>
+                  Many businesses are taking web design back to the basics with minimalistic designs and layouts. Websites are featuring fewer pages, with simpler designs and more blank space.</p>
+	              <p>Some websites are also implementing what’s referred to as “Flat Design”. Flat web design uses two-dimensional/flat images which are aesthetically pleasing to look at, in combination with lots of open space, and bright colors. Flat design also meets the requirements of a responsive web design, which makes it a great trend to follow in 2016.</p>
+	              <p><strong>3. USER-FRIENDLY<br>
+                  </strong>Usability has always been of key importance in a successful website. Websites with an intuitive design, and with images and aspects that are pleasing to the eye are going to attract more customers than those without these features.</p>
+	              <p>A simple, intuitive, and functional navigation is another important feature to focus on for 2016. If customers can’t easily make their way around your site, they aren’t likely to stay long.</p>
+	              <p>The speed at which your pages load also have a strong impact on users in the coming year. Quickly loading pages and simple ways to get to specific information will be critical in setting your website apart from the competition.</p>
+	              <p><strong>4. PERSONALIZED USER EXPERIENCE<br>
+                  </strong>In 2016, personalized user experience web design may become the norm. Rather than everyone receiving the same experience when visiting a particular website, a personalized user experience design allows for the content and experience to be designed specifically for a particular user.</p>
+	              <p>According to a study, over 70% of online consumers get frustrated with websites when they are presented with promotional content that doesn’t resonate with their interests. The best part about websites that offer a personalized user experience, is that they are typically able to adapt to the user’s interests and needs without the user having to do much at all.</p>
+	              <p><strong>5. EXTRAORDINARY CONTENT<br>
+                  </strong>Content marketing is likely to expand in 2016, with more focus being placed on high quality content. Websites that provide users with useful information in a variety of formats, including video and images vs. text when possible, will have greater success than those that don’t meet the needs of today’s website viewers.</p>
+	              <p>Marketing automation will also continue to evolve, and many websites will incorporate customized landing pages, banner ads, and other promotions to supplement email campaigns. The traditional newsletter or simple email marketing campaign will likely not be enough to capture new customers in 2016.</p>
+	              <p><strong>6. BOLD COLORS<br>
+                  </strong>In the past, bright and bold colors on websites was sometimes perceived as childish or unprofessional, depending of course upon the industry of the business. However, websites with vibrant colors have become more popular and more acceptable in recent years.</p>
+	              <p>Vibrant and bold colors are becoming more popular in web design.</p>
+	              <p>When viewed in high definition, bold colors can have a powerful impact on the user. And, in the case of a flat design website, bright colors can make all the difference.</p>
+	              <p><strong>7. FULLSCREEN VIDEOS AS BACKGROUNDS<br>
+                  </strong>Websites with fullscreen background videos that play upon opening the URL are becoming more and more popular due to increased Internet speed and advanced browser technology. Plus, they are mesmerizing, and meant to attract and retain the attention of the user. </p>
+	              <p><strong>8. CARD-BASED DESIGN<br>
+                  </strong>You’ll see a lot more websites using card-based design. A benefit of this type of design is that the card design is ideal for users with mobile devices and varying screen sizes, because they can be easily adjusted to each screen. </p>
+	              <p>Card-based design also goes along with the theme of simplicity and minimalism we discussed above. By providing viewers with short and simple bursts of information that can easily be digested, cards provide an easy way to promote user action, which is usually to click through to a landing page or more in-depth information on a particular topic.</p>
+	              <p><strong>9. WALL-TO-WALL SITE STRIPS<br>
+                  </strong>Wall-to-wall site strips provide a better user experience by dividing website layouts into several rectangular sections. These full-width image strips can be different lengths, and serve to break the site into clear sections of content. Not only are they pleasing to look at, but they also function as a simple and functional design aspect that breaks up content into more digestible bites.</p>
+	              <p><strong>10. UNUSUAL/LACK OF NAVIGATION<br>
+                  </strong>Traditional navigation menus are located at the top or side of a website page. Recently, however, more and more websites have been experimenting with unique navigation menus, and in some cases there is no navigation “menu”, but rather a different way of directing or “navigating” the user towards the information they’re looking for.</p>
+	              <p>Another emerging and increasing popular web design trend is the <strong>use of ghost buttons</strong>. They are transparent buttons that blend in with the background, for a cleaner look. Again, this design trend goes well with the flat and minimalistic designs that seem to be gaining popularity. </p>
+              </div>
+		    </li>
+			
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, <br>
+  join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.jpg" alt="" width="100%"></a></li>
+              
+        
+              
+          <li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

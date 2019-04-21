@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	body {
+	background-color: #FFF;
+}
+	.style1 {font-weight: bold}
+    </style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="alpha"><a href="#alpha">Case Studies</a></li>
+<li class="acc-header" id="abdecode"><a href="#abdecode">Tesco - Shop on the Go</a>
+  <div class="acc-content">
+<p><strong>
+Shop on the Go</strong></p>
+<p><strong>How Tesco virtually created a new market on a country's lifestyle<br>
+  </strong><br>
+  <strong>  Executive Summary<br>
+  </strong>South Koreans have amongst the longest working hours in the world, with young, upwardly mobile executives often too busy to go shopping for grocery at a traditional store. The UK's giant retailer, Tesco, sought to turn this disadvantage to its benefit. It introduced &quot;virtual stores&quot;, which are essentially a display of products on walls of metro stations and bus stops. Commuters, especially the tech-savvy, ultra-busy lot, could scan the QR codes of the products on display with their smartphones, and place their orders even as they waited for their trains or buses. This case study looks at how Tesco &quot;virtually&quot; created a new market based on a country's lifestyle.<br>
+  <br>
+  In 2011, when domestic sales of the UK's retail giant Tesco slumped, it fell back on its second-largest market, Asia, which accounted for 30 per cent of its total profit. Tesco's success in Asia, and specifically in South Korea - currently its largest market outside the UK - is based on its ability to adapt to the local consumer.<br>
+  <br>
+  Tesco's expansion into Asia has been an important focus for the company since the late 1990s. Following its acquisition of Thailand's Lotus in May 1998, the company announced a 142-million investment in South Korea in March 1999 by partnering with Samsung to develop hypermarkets. Through its tie-up with Samsung, Tesco made a localisation effort to adapt its Homeplus stores to the local consumer.<br>
+  <br>
+  The latest example of this localisation was the launch in 2011 of its first virtual store, located in a Seoul subway station, an idea based on the observation that the typical Seoul commuter did not have the time to shop at her nearest brick-and-mortar Homeplus store.<br>
+  <br>
+  <strong>The Virtual Store</strong><br>
+  The virtual stores are set up in public spaces, most often in subways and bus stops with high foot traffic and frequented daily by tech-savvy commuters. This is how such stores work:<br>
+  <br>
+  - They then use their smartphones to scan the QR codes of the products they want to purchase. The posters in the virtual stores are designed to resemble the actual aisles and shelves of a regular Tesco store, making the experience very user-friendly.<br>
+  <br>
+  - The scanned products are stored in the customers' online shopping basket, who pay online once their order is completed. Homeplus reported that the majority of the orders are placed at 10 am and 4 pm, when people are commuting to and from work.<br>
+  <br>
+  - Customers schedule a time for home delivery. Same-day delivery is the norm, so that customers can get their products by the time they get back home from work.<br>
+  <br>
+  The virtual store has been a huge success with commuters and drove over 900,000 app downloads in less than one year, making the Homeplus app the most popular shopping app in South Korea. Online sales increased 130 per cent since the introduction of the virtual stores and registered app users increased by 76 per cent. In February 2012, Tesco Homeplus announced it was extending the virtual store concept to 20 new locations across the country. Today, there are 22 Homeplus virtual stores in South Korea, and the brand is the country's No. 1 online retailer.<br>
+  <br>
+  <strong>Understanding the Consumer</strong><br>
+  South Korea, a country of around 50 million people, is the fourth-largest economy in Asia and the 12th largest in the world. Compared to other Asian countries, South Koreans generally have higher levels of education, higher average household income, and better living standards. Over the past few decades, the country has built itself up with its largest resource - people - and has achieved rapid economic growth through exports of manufactured goods. It is now a major producer of automobiles, electronics, steel and high-technology products such as digital monitors, mobile phones, and semiconductors.<br>
+  <br>
+  Over the past decade, South Korea has advanced tremendously and has been shaped by constant innovation, technology and westernisation. In today's world, shopping habits and behaviour of South Korean consumers are impacted by several key factors.<br>
+  <br>
+  Extensive use of technology/connectivity: According to a report by McKinsey &amp; Co., South Korea is one of the most advanced countries in terms of broadband penetration, and has more than 10 million smartphone users. In other words, one in five South Koreans use a smartphone. Additionally, according to Nielsen, households in South Korea are making six per cent fewer shopping trips. When they do shop for products, an increasing number of South Koreans go online.<br>
+  <br>
+  Long working hours/busy lifestyle: Although the average annual hours worked per person in South Korea is declining, the country still comes out top among OECD countries with 2,193 hours. This is perhaps unsurprising, as the work ethic and lifestyle of South Koreans get shaped at a young age. According to the BBC, South Korean parents spend thousands of pounds a year on after-school tuition on an industrial scale. There are just under 100,000 hagwons or private academies in South Korea and around three-quarters of Korean children attend them.<br>
+  <br>
+  Travel time on public transportation: South Koreans spend a significant amount of time on public transportation, predominantly between home and work. What has helped is that public transportation is reliable and inexpensive, and is the fastest and most efficient way to get around.<br>
+  <br>
+  The introduction of Tesco's virtual stores in subways made use of time spent by commuters waiting for public transportation, allowing buyers to use the little time they have available for grocery shopping. Not only did this change the way buyers shopped, it also increased the potential market for Tesco. These buyers may not have otherwise had time to go grocery shopping between their personal and professional lives, opting to buy take-out instead.<br>
+  <br>
+  All of this implies that grocery customers in South Korea are more time-poor and less price-sensitive. They value convenience and technology to accommodate their busy lifestyle.<br>
+  <br>
+  <strong>Tesco's Value Proposition<br>
+  <br>
+  </strong>Buying on the move: Tesco's virtual stores in subways made use of time spent by commuters waiting for public transportation (Image Courtesy : Lildoremi.org)<br>
+  Globally, Tesco's customers are price-driven buyers who look for value and/or convenience. According to its corporate website, Tesco's customers care about the following areas: (1) price and value (2) multichannel and convenience, and (3) trust. Typically, therefore, the company's value proposition is to provide customers with the products that they want at a low price. Tesco executes this proposition through multiple channels, including hypermarkets, grocery stores, convenience stores and online. When Tesco first entered South Korea, it offered this value proposition for the local customer: to provide the variety of products that the South Korean customer wants at a low cost in a beautiful store environment.<br>
+  <br>
+  As the economy progressed and South Koreans invested more time and money into their careers and high-tech devices, Tesco adapted its value proposition to fit its on-the-go customers. By introducing the virtual store, Tesco Homeplus is able to execute its new localised value proposition: provide the variety of products that the customer wants in a convenient location and at a low cost.<br>
+  <br>
+  In South Korea, it can be argued that Tesco's customer values multichannel options (for example, online and mobile), and convenience much more than price. According to a March 2013 research from MasterCard, around 40 per cent of online shoppers in South Korea used their smartphones to make a purchase in the previous three months.<br>
+  <br>
+  <strong>Image-value-experience Triangle<br>
+  <br>
+  </strong>In addition to the virtual store's strong value proposition, Homeplus has also developed a strong image and experience that mutually reinforce this value proposition. The Homeplus virtual stores attract their customers through their quick, tech-savvy, and cool image. They sell to their customer by offering the value of extreme convenience that the customer requires. And they are able to keep their customers by offering them the satisfying experience of easy-to-use technology, on-time delivery and quality products.<br>
+  <br>
+  Given that the South Korean on-the-go customer places much greater value on convenience than on low prices, Tesco Homeplus may have been enticed to increase product prices through their virtual store channel. However, we believe that Homeplus decided not to increase prices in order to maintain its overall Homeplus value proposition, which hinges on providing desired products at low prices.<br>
+  <br>
+  <strong>  Key Learnings<br>
+  <br>
+  </strong><strong>This case study highlights important learnings that can be applied, generally, to other businesses:<br>
+  <br>
+  </strong><strong>Customer-based marketing</strong>: A &quot;real-world&quot; application of the new marketing paradigm, in which the process starts with the consumer and his or her needs, as opposed to with the product.<br>
+  <br>
+  <strong>Customer segmentation</strong>: When you enter a new market/geography, companies need to understand and analyse consumer behaviour trends, including shopping habits and purchasing behaviour, to identify who the valued customers are and how they behave.<br>
+  <br>
+  <strong>Adaptation of value proposition</strong>: If the needs, attitudes and lifestyle of the company's &quot;value customer&quot; are different in the new market/geography, the company needs to adapt its value proposition and value network across the entire supply chain.<br>
+  <br>
+  Power of technology in traditional industries: Technology has a disruptive power in traditional industries, such as retailing. In this case, the predominance of smartphones in Korea allowed Tesco to boost its revenues through an innovative approach.<br>
+  <br>
+  <strong>Innovative marketing</strong>: The way marketing can be used innovatively to target captured audiences (such as commuters waiting for the next train in a station).<br>
+  <br>
+  <strong>Brand Extension</strong>: One option that Tesco Homeplus may have considered in order to take advantage of is to create a new brand for the virtual stores that would have remained independent from the Homeplus brand and, therefore, limited the risk to the Homeplus brand by increasing prices.</p>
+</div>
+</li>
+
+<li class="acc-header" id="mod"> 
+<a href="#mod">Starbucks</a>
+<div class="acc-content">
+  <p> <strong>Brewing innovation</strong><br>
+    <br>
+    The world's largest coffee retailer, Starbucks, pulled itself out of the financial meltdown of 2008 by aligning its operations with customer demands through social media.<br>
+    <br>
+    <strong>EXECUTIVE SUMMARY:<br>
+    <br>
+    </strong>The world's largest coffee retailer, Starbucks, pulled itself out of the financial meltdown of 2008 by aligning its operations with customer demands through social media. This case study looks at what the company did right to achieve this turnaround.<br>
+    <br>
+    Founded in 1971 in Seattle, Starbucks is present in 50 states in the US and 43 countries. It is one of the most respected brands, winning awards such as &quot;Best Business&quot;, &quot;Most Admired Company&quot;, &quot;100 Best Corporate Citizens&quot; and so on. While its quality is unquestionable, its price has always been higher than those offered by the domestic coffee houses in various countries.<br>
+    <br>
+    This was one of the reasons why the company took a hit during the economic slowdown of 2008 as customers opted for cheaper options for their everyday coffee. Starbucks was forced to shut 600 shops that were not making profits. By March 30, 2008, its profit had fallen 28 per cent compared to the same period in 2007. In 2009, it closed another 300 stores and laid off 6,700 employees.</p>
+<p>On January 8, 2008, Howard D. Schultz returned as CEO of Starbucks after a gap of eight years, replacing Jim Donald. Schultz had nurtured the company since 1982 when it had only four outlets. He had served as CEO from 1987 to 2000 and had presided over the companys public offering in 1992.<br>
+    <br>
+    <strong>    Branding unlimited: Starbucks cups on sale at a store.<br>
+    </strong>Upon coming back, he found that apart from the worsening economic condition in the US, the company's rapid expansion had distracted it from making its cafes an inviting place with new products. In addition, Starbucks also faced competition from McDonald's, which had, in 2008, started setting up coffee bars that sold espresso.<br>
+    <br>
+    Schultz shot off a letter to the employees on the day he took office once again as CEO. He said, &quot;The company must shift its focus away from bureaucracy and back to customers.&quot; He made his objective very clear: &quot;Reigniting the emotional attachment with customers.</p>
+  <p>&quot;The previous leadership had blamed the economy and the higher cost of dairy products for the slump in business. They had also stated this as a reason to hike prices. However, Schultz took an entirely different view of the situation. He told the employees, &quot;The company shouldn't just blame the economy; Starbucks's heavy spending to accommodate its expansion has created a bureaucracy that masked its problems.&quot;</p>
+  <p>In a departure from conventional strategies like &quot;a redo of the store layout&quot;, Starbucks soon embarked on a technology-oriented strategy. An environment where employees could think freely about the organisation and contribute in terms of strategies and ideas was fostered. As a result, a community involvement concept was developed.</p>
+  <p>In March 2008, &quot;My Starbucks Idea&quot; was rolled out for customers to exchange ideas with each other and directly with the company. As part of this, customers were able to give opinions on everything such as products, services, layout, advertising, corporate social responsibility, in-store music and so on. More than 93,000 ideas were shared by about 1.3 million users on social media, and page views per month rose to 5.5 million.</p>
+  <p>After the 2007/08 crisis, Starbucks had to rebuild its customer relationships and show the world that it cared for quality and consistency. It also had to give a leg up to the altruistic component of the brand such as community building and care for the environment. Through the &quot;My Starbucks Idea&quot; customers had a direct link with the headquarters and of course Starbucks was listening. Soon Starbucks's ubiquity became an asset as customers from around the world had an opportunity to connect with each other, spawning like-minded communities like the 'free Wi-Fi group', 'soy group', 'comfy chair group' or 'frappuccino lovers'.</p>
+  <p>Starbucks implemented over 100 ideas. Through this initiative, the coffee retailer built a robust fan base. By giving customers a platform to voice their ideas and views on the brand and by responding to it, it was able to reignite the brand trust.</p>
+  <p>Starbucks soon realised that it had to project its 'cool' element via social media-based marketing. The organisation must never look desperate or too keen to increase its sales. So the company refrained from pushing too many products, causes or offers to its followers. The focus was more on building and engaging with the community.</p>
+  <p>One of the accidental tweets from Starbucks was just a smiley face that received a lot of admiration from the community. Tweets such as 'keep calm and make coffee' is in line with its idea of keeping a cool image and building a community. Starbucks's use of social media points to the fine balance it maintained between spontaneous and well-planned posts. The social media platforms have also helped the company swiftly mitigate and manage any information that causes harm to its global identity. In 2009, when rumours of Starbucks's profits being spent on Israel army surfaced, the company used the social media outlets effectively to refute it and restore its image of a peace-loving organisation.</p>
+  <p><strong>MOBILE APPS</strong></p>
+  <p>The company embraced mobile apps much before its competitors. Very early in the race, Starbucks had linked its social media strategy objectives with technology channels like mobile apps. It was carefully designed to appeal to the masses and specifically to the segment that made up its online community. Through its iPhone app features like store locator, nutrition-based information and rewards programme, it integrated and enhanced its social media community fabric. The head start in technology adoption has helped the company come up with trend-setting ideas.</p>
+  <p>One of them was the move to help its customers personalise the company's offerings. The initiative, 'MyStarbucksSignature' allowed consumers to develop their own signature drinks (hot or cold coffee), name the drink and share the new flavour with the community. In this way, Starbucks informs the consumer of the wide range of product offering they have at their stores across the world. It also shows the consumer how to order this cup and what it will look like. The only modification a consumer can do in his or her signature drink is in the ingredient mix and quantity. This way the supply network is only slightly disrupted at the retail and service end. Everything else related to ingredients and distribution remains completely untouched.</p>
+  <p>In 2008, the marketing teams had started a promotion to increase customer visits to stores during breakfast hours. It included a free pastry with a coffee bought before 10:30 a.m. The initiative created traction online and over one million people across the US queued up at Starbucks outlets.</p>
+  <p>Such social media promotions were much less expensive than the companys promotions at its stores or putting up billboards across cities. The awareness and response was also more than that from promotions through traditional channels like television advertisements.</p>
+  <p>Employees and baristas too were always an integral part of Starbucks online and social media community. It has a separate page for its employees, which is used to generate and debate ideas.</p>
+  <p>An example of employees contributing to its success is its Twitter page. The chain's voice on Twitter is 28-year-old Brad Nelson, a former barista. In 2008, when the company was looking for ideas to re-engage with its customers, Nelson suggested that he could begin a Twitter handle for the brand. Today, Starbucks has 775,000 followers.</p>
+  </div>
+</li>
+<li class="acc-header" id="autom"> 
+		        <a href="#autom">Enterprise SEO Case Study - Airtel </a>
+		        <div class="acc-content">
+		          <p><strong>		            Enterprise SEO Case Study - Airtel <br>
+		            <br>
+	              The Challenge</strong><br>
+	              <br>
+	              1) Poor visibility in Top 3 search results for Postpaid, Prepaid and DTH related keywords</p>
+      <p>Airtel had very good presence and authority in the telecom sector. It was appearing in top 10 search results for a huge number of industry related terms and keywords, but it was not visible in the top 3 results for most of these terms. Other key players, like Vodafone and Idea Cellular were dominating the Top 3 search results for Postpaid and Prepaid products and plans. Whereas, the new entrant Jio, dominated in prepaid related searches.</p>
+                  <p>For DTH, Airtel had decent presence and appeared for a number of keywords in top 10 search results. However, competitors like Dish TV, Tata Sky and Videocon and some smaller providers like DEN, captured top 3 search results for many of the keywords.</p>
+                  <p>2) Low rankings for Local Keywords for Broadband and Postpaid Lines of Business (LOB)</p>
+                  <p>For Broadband the presence was there in top results, but a lot of local and regional service providers like DEN, Broadway, Hathway, etc. appeared more for generic queries in different regions and completely dominated the top 3 or top 10 results in some cases, for local or regional queries.</p>
+                  <p>There were similar issues with Local keywords for Postpaid.</p>
+                  <p><strong>The Solution</strong><br>
+                    To get maximum keywords in top 3 search results</p>
+                  <p>We pulled out a list of over 2000 keywords across all 4 Products - Postpaid, Prepaid, Broadband and DTH. We divided the keywords into 3 buckets and worked on different strategies for each:</p>
+                  <p><strong>For Bucket 1: Keywords ranking in Top 10 Results</strong></p>
+                  <p>1. We identified all keywords in Top 10 whose CTR was less than the average CTR for all keywords in the bucket. And worked on optimizing the meta titles to improve the CTR.</p>
+                  <p>2. Optimized on-page SEO elements and improved content for all the target landing pages.</p>
+                  <p><strong>For Bucket 2&amp; 3: Keywords ranking between 11-20 Results and beyond Top 20 Results</strong></p>
+                  <p>3. In addition to the on-page changes mentioned above, we also did aggressive link building to improve authority and popularity of the landing pages on which these keywords were targeted. We obtained a healthy mix of high authority links and high-quality theme-based links.</p>
+                  <p>4. Worked with the Development team to improve page speed of all the target landing pages.</p>
+                  <p><strong>To improve performance of Local Keywords</strong></p>
+                  <p>First, we pulled out the complete list of all locations or cities Airtel had their presence in or wanted to target. The target locations were different for both the products – For Postpaid, the target was 440 cities across the country. For Broadband the target was the circles (states) in country and some major cities in these circles.<br>
+                    <br>
+                    We then researches all combinations of keywords for the target cities and circles and prepared a comprehensive keywords list.<br>
+                    <br>
+                    Next we prepared separate landing pages for each of the target locations for both products.<br>
+                    <br>
+                    We did complete local optimization of all these pages including creation of Google My Business (GMB) listings for each physical outlet for each city.<br>
+                    <br>
+                    We also did comprehensive on page optimization right from content to other on page elements.<br>
+                    <br>
+                    For the newly created local pages, we built back links via off page activities to increase their authority and popularity.<br>
+                    <br>
+                    To drive more link juice to these city pages, we interlinked them to each other and also from the main product pages for Postpaid and Broadband.<br>
+                    <br>
+                    <strong>                    The Results<br>
+                    Top 3 Rankings</strong></p>
+                  <p>We managed to drive an unprecedented 2100+Keywords into Top 3 position, across all 4 products, over the 12 month engagement. Only 255 keywords were in Top 3 when we started in January ’17.</p>
+      </div>
+	      </li>
+           	<li class="acc-header" id="tmed"> 
+		        <a href="#tmed">Social Media Marketing Campaign: KFC India</a>
+		        <div class="acc-content">
+		          <p><strong>	               Social Media Marketing Campaign: How KFC India Boosted its Social Media Presence<br>
+		            <br>
+		          </strong>KFC is among the famous global restaurant chain brands. It's the number one restaurant brand on social media in India. KFC is increasing their online presence on social media platforms for their brand awareness. Objective - The primary objective of this social media marketing campaign was to increase the sale of their product in India and to appeal and to target young audience by involving apps like Radio KFC RK Hunt, Designing their own bucket campaign, Currycature, and Wow Menu option. They wanted to develop their brand engagement. Execution - 3000 people around 30 Indian cities have participated in this competition. “Radio KFC RJ Hunt” was a social media campaign to promote KFC brand’s in-house radio channel. For the execution, the fans recorded their voices over the internet with the Facebook app and were provided with the analog radio experience.</p>
+	          <p><strong>Radio KFC RJ Hunt Campaign - Digital Ready</strong></p>
+	              <p>“Design your own bucket” campaign was their another execution where the participants came up with their colorful and creative KFC buckets. They received 5500 entries in total. They also introduced bucket entries with Sachin's picture on the KFC bucket on the day when he retired.</p>
+	              <p><strong>Design Your Own Bucket Campaign of KFC - DIgital Ready</strong></p>
+	              <p>“Currycature” was another creative marketing campaign of KFC which gave a unique experience to their fans where participants have to choose a character with an ethnic Indian touch and then to upload the pictures. Around 17 thousand currycatures were made by their fans.</p>
+	              <p><strong>KFC Currycature Campaign - Digital Ready</strong></p>
+	              <p>Their next move was the “Wow Menu Option on an INR 500 note.” This app allowed the users to scan their 500 currency notes which would suggest them their various food menus to be purchased within that particular budge. The app became No. 1 on iTunes app store on F&amp;D category.</p>
+	              <p><strong>Results<br>
+                  </strong>As per the results of the social media campaign, KFC was featured by Social Baker as among the top 5 socially devoted brands.<br>
+	                <br>
+	                The overall positive sentiment of their Facebook page grew from 6.2% to 93.8%.<br>
+	                <br>
+	                Their engagement rate increased the sector average thrice.<br>
+	                <br>
+	                KFC was placed among the five fastest growing social media brands in India.</p>
+              </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="transp"> 
+		        <a href="#transp">British Airways - Fuelled by Love Campaign</a>
+		        <div class="acc-content">
+		          <p><strong>	              British Airways: Fuelled by Love Campaign</strong></p>
+	          <p>Indians are full of emotions. The airline brand, British Airways has released a new digital marketing campaign titled as “Fuelled by Love.” The campaign showcased a real-life example of a British Airways cabin crew who have experienced once in a lifetime experience in India during her first flight to India. The main subject of the campaign and the story was that “while the service is driven by purpose and efficiency, but the true care is only fuelled by love.” SapientNitro created the film. <br>
+	            <br>
+	            The cabin crew meets an Indian passenger and develops a special bond with her. She later visited the passenger’s house in India and is amazed by the hospitality and care which she received. With this digital marketing campaign, the airline company announced a special three-day offer for its customers from India to London with exclusive fares starting from INR 53,542 and INR 1,45,517 in economy class and business class respectively. The offer was valid for a specific time-period between February 2 to 4, and for outbound travel period till 30th June.</p>
+	              <p><strong>Results<br>
+                  </strong>This campaign was among the best digital marketing campaigns that have shown the two cultures coming together brilliantly. The video went live on the official website of the British Airways on February 2, 2016, and was promoted to the social media channels including Facebook, Twitter, Google Plus, and YouTube. The campaign won an award in the US and had gone viral and touched many lives. It has crossed 3.9 million views on YouTube channel, and the emotions in the video can leave you in tears.</p>
+              </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="actu"> 
+		        <a href="#actu">KKR Digital Marketing Case Study<br>
+		        </a>
+		        <div class="acc-content">
+		          <p><strong>KKR Digital Marketing Case Study</strong></p>
+	            <p>Kolkata Knight Riders (KKR) is the franchise representing Kolkata in the Indian Premier League, a Twenty20 cricket tournament whose co-owner is Shahrukh Khan. Sourav Ganguly was the team’s Icon Player for the first three seasons. <br>
+	              <br>
+	              <strong>The main objective of the KKR digital marketing campaign was:</strong></p>
+	              How to increase brand awareness of KKR<br>
+                  How to stay tuned and connected with the fans.<br>
+                  How to keep fans and users updated with IPL news, images, and scores.<br>
+                  KKR is until the date the IPL team that has the most engagement with their fans and followers.<p><strong>Execution<br>
+                  </strong>KKR is the only IPL team to have an exclusive YouTube Videoblog “Inside KKR” so that, fans can get through their news and their favorite players easily.<br>
+	                <br>
+	                KKR team also had a website blog and an official mobile app that kept fans engaged and updated with the latest news about the team.<br>
+	                <br>
+	                The digital marketing team at KKR has also organized a live screen Facebook chat at Facebook HQ in Hyderabad.<br>
+	                <br>
+	                Players of KKR had queued sessions on Twitter with their fans and run special “Cheer for KKR campaign” on all social media platforms. This is first for any sports team in the world.<br>
+	                <br>
+	                <strong>	                Results of the campaign<br>
+	                </strong>Facebook page of KKR has 15 M likes, the highest of all the other IPL teams.<br>
+	                In Twitter, KKR is the most engaging IPL team.<br>
+	                KKR became the most followed IPL team on Instagram with more than 466K followers.<br>
+	                It has also gained traffic to its Pinterest page and Google Plus profile.<br>
+	                KKR fans were given a chance to receive a customized, personalized and acknowledgment video in return which has turned to 10 million cricket followers which impacted on and off to the KKR team</p>
+                </div>
+		    </li>
+			
+            <li class="acc-header" id="ksrch"> 
+		        <a href="#ksrch">Quora Content Marketing Case Study - Bajaj Finserv </a>
+		        <div class="acc-content">
+		          <p>	               <strong>Quora Content Marketing Case Study</strong><br>
+		            <br>
+		            <strong>		            About the Client<br>
+	                  </strong>Bajaj Finserv Limited is the holding company for the businesses dealing with financial services of the Bajaj Group. It independently runs the core businesses of Lending, Insurance and Wealth Advisory. Bajaj Finance Limited is the consumer finance lending arm of Bajaj Finserv Limited.</p>
+	            <p>It is the most diversified retail-focused NBFC in the country and the largest financier of consumer durables. Bajaj Finance Limited prides itself for holding the highest credit rating of FAAA/Stable for any NBFC in the country today.</p>
+	              <p><strong>The Challenge<br>
+                  </strong>Driven by its mission to consistently provide innovative finance solutions across lending, protection and savings domains; Bajaj Finserv wanted help to increase their online visibility of its major products - loan, investment and durable finance such as Home Loan, Personal Loan, Business Loan, Fixed Deposit and EMI finance.</p>
+	              <p>The campaign designed aimed to publish content related to loan products on Quora – a popular QnA platform that regularly features in Google search results. The idea was to “influence” customers for loan products who were in the research phase and asking related questions on Quora. It would help the Brand not only get in front of an audience that is “in-market” but build trust and credibility by offering them the right information for informed decision-making.</p>
+	              <p><strong>1. Changing mindset </strong>- Our biggest challenge was changing the mindset of the team to start looking at Quora as an influencer marketing platform [as opposed to a mere link building opportunity] and relook at the way we were approaching content creation. It took time to convince the team to create brand neutral content because that was the only way to sound genuine and win the customer’s trust.</p>
+	              <p><strong>2. Building trust and credibility </strong>- The next challenge was to rechristen the existing profiles to make them look like genuine, independent contributors in their respective topics of interest.</p>
+	              <p><strong>3. Scaling the campaign </strong>- The final challenge was to quickly scale the content marketing campaign so that it would have any measurable impact on business metrics. Otherwise the teams would lose faith in the new strategy and slip back to the old ways of creating content.</p>
+	              <p><strong>The Solution</strong><br>
+	                <br>
+	                <span class="style1"> Strategy &amp; Execution</span></p>
+	              <p>We devised and executed a well-researched strategy to identify and answer queries on Quora related to finance domain:</p>
+	              <p>The project was kick-started with the creation of a new Quora profile named Arwind Sharma in October of 2015 and a second one named Anamika Verma in October of 2016. Originally, these profiles were created purely for acquiring backlinks for the SEO campaign, but starting August 2017 we changed our approach.</p>
+	              <p><strong>The following steps were undertaken to create a stronger presence &amp; authority on Quora:</strong></p>
+	              <p><strong>Rebranding the profiles </strong>- we rebranded the profiles to make Arwind Sharma an “independent” expert in Personal Loans and Anamika Verma an “independent” expert in Home Loans &amp; Mortgages, not directly associated with the brand. We thought this approach would work better than both profiles talking about all finance topics. And it did!<br>
+	                <br>
+	                <strong> Building trust and credibility </strong>– used experience-based storytelling and in many cases, brand-neutral content, to win the trust of users. And referred to external resources for finance-related informative tutorials such as Wikipedia links, Wikihow, etc. to build credibility for the profiles.<br>
+	                <br>
+	                <strong> Multiple Content Formats </strong>– made full use of Quora platform to create and embed content in multiple formats to engage users in the most effective way. For example, we created an apt explanation of loan application process via a combination of videos, images, step-by-step process.<br>
+	                <br>
+	                <strong> Identifying “more” questions to answer to drive scale </strong>– we researched all possible topics where we could create content and “influence” users. In addition to obvious topics like home renovation, home purchase, personal finance etc., we got into popular conversations about vacation, weddings, education wherever expenses were being discussed. The increased frequency of content sharing helped us get more views, build more engagement and increase followers.<br>
+	                <br>
+	                <strong> Facilitating quick resolution </strong>– we tried to be the first to react to user's queries (both product-based and generic) and win their confidence before the competition had the opportunity to influence them in their favor. We used Quora’s profile notifications to help facilitate this.<br>
+	                <br>
+	                <strong> To-the-point Answers </strong>– created to-the-point answers that quickly solved user’s queries. Further, channelized efforts to improve user experience by reducing hops and direct them to the right query to make informed decisions. This strategy also helped get up-votes for answers and increase visibility.<br>
+	                <br>
+	                <strong>Creativity &amp; Innovation</strong></p>
+	              <p><strong>Experience-based Storytelling </strong>- The most creative part of the campaign was using techniques of experience-based storytelling to “influence” the audiences’ decision-making process.</p>
+	              <p>We created answers and subtly promoted the brand using the first-hand experience of our contributors, making them look genuine and trustworthy. We made it look like our two contributors had already been in that situation before and therefore in a position to answer the user’s query.</p>
+	              <p><strong>Immersive content experience </strong>- Our biggest innovation was we created content in multiple formats like infographic, video, image, and footnotes to reach the target audience. That too at a time when the competition was not doing it. As a result, our answers got maximum views and upvotes which further fueled views.</p>
+	              <p><strong>Infographics </strong>- designed interactive infographics serving as quick product guides. For instance, infographic on online form filling for loan application in 4 simple steps, etc. Integrating them into answers to generate increased viewership.<br>
+	                <br>
+	                <strong>Videos </strong>- created several videos around products and ‘how to' keywords. For example, how to apply for a personal loan, etc. Again, using them in answers to increase views and engagement.<br>
+	                Images - using optimized images to provide refined answers to user queries.<br>
+	                <br>
+	                <strong> Footnotes </strong>- inserting footnotes in informative tutorials to clarify information and provide details the user is unfamiliar with.<br>
+	                <br>
+	                This approach helped us garner the ‘trust’ and ‘engagement’ from Quora users. We were able to get Bajaj Finserv into their consideration set and move them along the sales cycle.</p>
+	              <p><strong>The Results<br>
+                  </strong>Both contributor profiles became “influencers” in their respective domains. The profiles, via the content created, attracted massive views via authentic and high-quality knowledge-sharing. Their answers impacted purchase decisions of users on the platform and prompted them to click through to the Brand’s website.</p>
+	              <p><strong>Arwind Sharma<br>
+                  </strong>Total profile views of 5,00,826 accumulated in 12 months from August 2017 until July 2018.</p>
+	              <p>Starting from 28,781 in Aug 2017 to 68,457 in July 2018 the profile witnessed a 138% growth in monthly organic views.</p>
+	              <p>2nd Rank in Personal Loans category</p>
+	              <p>4th Rank in Loans category</p>
+	              <p><strong>Anamika Verma<br>
+                  </strong>The total number of views 1,64,108 accumulated in 12 months from August 2017 until July 2018.</p>
+	              <p>Starting from 14,244 in Aug 2017 to 31,400 in July 2018 i.e. the profile witnessed a 120% growth in monthly organic views.</p>
+	              <p><strong>Influence and Referral Traffic<br>
+                  </strong>By publishing strong, opinionated and thoroughly researched content we helped get Bajaj Finserv in the consideration set when users with purchase intent were researching on Quora. The trust resulted in increased referral traffic. Hence, driving “in-market” audiences to product pages on the brand website.</p>
+	              <p><strong>The Recognition<br>
+                  </strong>Our new approach and content strategies bagged us multiple recognitions on Quora:</p>
+	              <p>1st position in ‘Home Mortgage' for ‘Most Viewed Writers' for Anamika Verma profile<br>
+	                2nd position in ‘Personal Loan’ for ‘Most Viewed Writers' for Arwind Sharma profile<br>
+	                4th position in ‘Loans’ for ‘Most Viewed Writers' for Arwind Sharma profile</p>
+                </div>
+		    </li>
+			
+            
+             <li class="acc-header" id="whatseo"> 
+		        <a href="#whatseo">Baggout - SEO Case Study</a>
+		        <div class="acc-content">
+		          <p>	               <strong>Baggout - SEO Case Study</strong><br>
+	              &quot;Baggout had consulted Techmagnate with specific objectives in mind. It’s requirements from this SEO project were - Ranking and Traffic.&quot;</p>
+	            <p><strong>The Client:</strong><br>
+	                Founded by technological evangelists Deepak Jain and Prashant Mahajan, Baggout is a Social Ecommerce site that aggregates product feeds from top e-commerce portals in India like Flipkart, Myntra, Jabong, Yepme, ShopClues, HomeShop 18 and Zovi.</p>
+	              <p>The website also features collections from niche brand outlets like Whitemango, Happily Unmarried, High5 stores, Zohraa and SimpleSarees. Striving to make online shopping a more enjoyable experience, the company offers coupons and Cashback on majority of the brands.</p>
+	              <p>Buyers get a Cashback over and above the coupons and discounts which is made possible by the commissions received by the company from retailers. This feature makes Baggout a popular online shopping destination.</p>
+	              <p><strong>The Target Market:<br>
+                  </strong>The company targets the entire Indian subcontinent.</p>
+	              <p><strong>The Goal:<br>
+                  </strong>Baggout had consulted Techmagnate with specific objectives in mind. It’s requirements from this SEO project were:</p>
+	              <p>Rankings<br>
+	                Traffic<br>
+	                <br>
+	                <strong>	                The Challenge:<br>
+	                </strong>Baggout had consulted Techmagnate with specific objectives in mind. It’s requirements from this SEO project were:</p>
+	              <p>Re-architecting the site structure so that it can be indexed by Google.<br>
+	                Ranking the website on highly competitive keywords related to coupons.<br>
+	                For example, Jabong coupons, Myntra coupons etc. Driving in huge traffic to the website<br>
+	                <br>
+	                <strong>	                The Solution:<br>
+	                </strong>We asked them to create two separate sets of web pages on their website, namely:</p>
+	              <p>Retailer Pages, where coupons for specific retailers would be available.<br>
+	                Product Pages, where similar products from various retailers would be available.<br>
+	                We defined the content structure for both sets of pages and then arranged all the product pages in proper subfolders with categories and sub categories. We interlinked them to help users navigate and search engines crawl effectively.</p>
+	              <p>With an optimized site structure in place, on-page SEO needed to be performed on both the sections to improve rankings and drive in more traffic.</p>
+	              <p><strong>The Solution:<br>
+                  </strong>Over a period of 4 months of continuous on-page and off-page SEO activities, beginning January 2014 to April 2014, we saw huge improvements in traffic</p>
+	              <p>The graph below shows the comparison of and improvement in the overall traffic (Direct + Referral + Organic) between the time durations of January 2014 – April 2014 and September 2013 – December 2013.</p>
+	              <p>&quot;We saw traffic and footfalls to the Baggout site increase by over 330% in a short span of 4 months.&quot;</p>
+	              <p><strong>The Results:<br>
+                  </strong>Over a period of 4 months of continuous on-page and off-page SEO activities, beginning January 2014 to April 2014, we saw huge improvements in traffic.</p>
+	              <p><strong>Results<br>
+	              </strong>We saw traffic and footfalls to the Baggout site increase by over 330% in a short span of 4 months.</p>
+	              <p>Though 4 months is a very short duration for a website to rank in highly competitive keywords, the rankings also improved considerably. The website now ranked in the top 20 search results for 24 out of the 30 target keywords related to coupons.</p>
+	              <p>In addition the website started ranking in Top 5 search results for thousands of long tail product keywords which resulted in massive growth in organic traffic. That was a significant achievement given that the website wasn’t even fully indexed when we received the project.</p>
+	              <p>&quot;We helped Baggout gain visibility and rankings faster therefore making the project a success.&quot;</p>
+	              <p><strong>The Lesson:<br>
+                  </strong>Baggout was a complex project with over 50,000 products from different retailers. Making separate pages for retailers and products helped us rank for thousands of less competitive long tail keywords. While the competition was focused on highly competitive category keywords.</p>
+	              <p>This helped us gain visibility and rankings faster therefore making the project a success</p>
+                </div>
+		    </li>
+            
+            
+             <li class="acc-header" id="areas"> 
+		        <a href="#areas">Video SEO &amp; YouTube Optimization Case Study - Bajaj Finserv</a>
+		        <div class="acc-content">
+		          <p>	               <strong>Video SEO &amp; YouTube Optimization Case Study<br>
+	              </strong><br>
+	              <strong>	              About the Client<br>
+	              </strong>Bajaj Finserv Limited is the holding company for the businesses dealing with financial services of the Bajaj Group. It independently runs the core businesses of Lending, Insurance and Wealth Advisory. Bajaj Finance Limited is the consumer finance lending arm of Bajaj Finserv Limited.</p>
+	            <p>It is the most diversified retail-focused NBFC in the country and the largest financier of consumer durables. Bajaj Finance Limited prides itself for holding the highest credit rating of FAAA/Stable for any NBFC in the country today.</p>
+	              <p><strong>The Challenge<br>
+                  </strong>Bajaj Finserv’s official You Tube channel had very little organic viewership and engagement. The YouTube channel had a number of videos, but those videos were not present in YouTube search results even for brand keywords. In fact, videos created by third-party vloggers, video reviewers and influencers were ranking for many generic and brand keywords in YouTube.</p>
+	              <p>Also, the number of active subscribers was very low.</p>
+	              <p><strong>The Solution<br>
+                  </strong>Our solution was to deliver results that would genuinely impact the business. It would not be sufficient to just get the videos and/or channel to rank for generic and brand keywords. We needed to make sure the increased views would enhance audience engagement and retention thereby increasing overall awareness of the brand.</p>
+	              <p>We devised a 360° approach to optimize the channel:</p>
+	              <p>First, a comprehensive keyword research was undertaken. 500 keywords were identified and categorized product wise.<br>
+	                Then, all videos on the channel were reviewed to understand the content and fitment with the keywords identified. The videos were then mapped to keywords which would be used to rank them for.<br>
+	                Next, the videos were picked product wise and optimized for titles, descriptions and other video elements that impact rankings.<br>
+	                This was followed by link building and social marketing. This helped get more likes and comments – important signals for ranking videos on You Tube.<br>
+	                We updated the videos intros, end screens and video cards to increase engagement and retention metrics. The increased engagement helped boost the channel subscribers.<br>
+	                We created video playlists on the Channel to prompt users to view other related videos on our channel. This would further enhance watch time of the Channel.<br>
+	                <br>
+	                <strong>	                The Results<br>
+	                </strong>Our 360° approach to Video SEO &amp; YouTube Optimization helped deliver a massive improvement in rankings for the entire set of 500 keywords. Over the 5 month period from April ’18 to August ’18, the overall performance of the YouTube Channel improved immensely:</p>
+	              <p><strong>Organic Views - increased by 147%<br>
+                      <br>
+                  Keyword Rankings:<br>
+                  </strong># of Keywords in Top 3 – 307 vs 156 earlier i.e. increase of 97%<br>
+	                # of Keywords in Top 5 – 387 vs 199 earlier i.e. increase of 94%<br>
+	                # of Keywords in Top 10 – 490 out of 500 keywords i.e. 98% of entire keyword set</p>
+	              <p><strong>Audience Retention:<br>
+                  </strong>Watch time increased by 135%<br>
+	                Average view duration improved by 249%<br>
+	                Subscribers increased by 204%<br>
+	                <br>
+	                <strong>Audience Engagement:<br>
+	                </strong># of likes – increased by 195%<br>
+	                # of shares – increased by 135%<br>
+                  # of comments - increased by 160%</p>
+               </div>
+		    </li>
+            
+           
+             <li class="acc-header" id="opf"> 
+		        <a href="#opf">Parle - Rol-a-Cola</a>
+		        <div class="acc-content">
+		          <p>	               <strong>How Parle leveraged a tweet to bring back the 90s rager – Rol-a-Cola<br>
+	              </strong><br>
+	              <strong>	              TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              #BringBackRolaCola</strong></p>
+	            <p><strong>Category Introduction</strong></p>
+	              <p>Rolls segment is estimated to be a 7000T segment, with Parle Products having a market share of almost 50% and currently operating with popular brands such as Mazelo Poppins.</p>
+	              <p><strong>Brand Introduction</strong></p>
+	              <p>Rola Cola has an interesting history. It was launched during the time when the cola beverage drinks were creating waves in India. Inspired by this trend, Parle launched Rola Cola in a roll format for the consumers. Rola Cola was an instant hit and loved by consumers across all age groups. Its low price point (INR 02) was another advantage. In fact, consumers loved it so much that they would mix it with soda and water and make their own cola drink at a low cost.</p>
+	              <p><strong>Summary</strong></p>
+	              <p>On Feb 14, 2019, a Twitter user Siddharth Sai G tweeted about his wish to bring back Parle’s Rola Cola candy and shortly after, it received an encouraging response from other Twitter users. The brand challenged him to get 10k retweets featuring #BringBackRolaCola to make his wish come true. Since then, all the Rola Cola fans across the globe were re-tweeting and creating a massive movement online. This movement has resulted in re-launch of Rola Cola candy.</p>
+               </div>
+		    </li>
+            
+             <li class="acc-header" id="ofpf"> 
+		        <a href="#ofpf">Mirzapur GIF campaign</a>
+		        <div class="acc-content">
+		          <p>                   <strong>How Mirzapur GIF campaign created buzz amidst the clutter of OTT originals<br>
+	              </strong><br>
+		            <strong>TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              Mirzapur GIF campaign</strong></p>
+	            <p><strong>Category Introduction</strong></p>
+	              <p>Amazon Prime Video is an Internet Video-On-Demand Service Provider and falls under the segment of Video Streaming (SVoD). Revenue in the Video-on-Demand segment in India amounts to US$166m in 2018. Revenue is expected to show an annual growth rate (CAGR 2018-2023) of 5.7%, resulting in a market volume of US$219m by 2023. The market’s largest segment is Video Streaming (SVoD) with a market volume of US$107m in 2018.</p>
+	              <p><strong>Brand Introduction</strong></p>
+	              <p>Produced by Excel Movies mein aapka swagat hai, comprising of a stellar cast like Pankaj Tripathi, Ali Fazal, Vikrant Massey, Divyendu Sharma Shweta Tripathi, Shriya Pilgaonkar, Harshita Gaur, Rasika Dugal, and others, Mirzapur is an Indian crime thriller web series.</p>
+	              <p>All episodes of the show were released on November 16, 2018 and the 1st Episode was exclusively available for free in order to attract Non-Prime Viewers.</p>
+	              <p><strong>Objective</strong></p>
+	              <p>To reach out to the right audience and get them to engage in using Mirzapur GIFs within their social media conversations. Thus creating brand awareness through their conversations within their social Group.<br>
+	                <br>
+	                To create an engaging activity on digital for the audience so that they can relate to the show and the characters in a fun and easy way.<br>
+	                <br>
+	                Reaching out to the right people<br>
+	                <br>
+	                Increasing engagement with our community<br>
+	                <br>
+	                Helping Consumers Express Visual Sentiments through GIFs<br>
+	                <br>
+	                Creating Engagement between Viewers and Talent<br>
+	                <br>
+	                <strong>	                Summary<br>
+	                </strong>Mirzapur GIF Campaign was initiated based on popular Mirzapur dialogues, sentiments, expressions which were created into Branded GIFs that provided viewers the possibility to use them during their social media conversations and comments.</p>
+	              <p>Mirzapur as a series has many dialogues, scenes, and events that relate to the lives of the many middle class, thugs, &amp; tier 2 city teenagers. It has a particular hoodlum tone along with really raw dialogues, statements, and sentiments that teenager usually make use of, in their daily conversations with friends.</p>
+	              <p><strong>Social Media Content Calendar 2019<br>
+                  </strong>These GIFs were then made available to our community through GIPHY &amp; Tenor’s API’s on Facebook, WhatsApp, Instagram &amp; Twitter.<br>
+	                <br>
+	                Target Audience: Show Audience, Fan Club of talent, Followers of Talent<br>
+	                Target Geo: Pan India</p>
+	              <p>For example: currently, 5 out of every 10 stories of the people posting about #Mirzapur on Instagram stories were using GIF stickers.</p>
+	              <p><strong>Problem Statement</strong></p>
+	              <p>The show has a very serious tone with some dry humor. Thus making it a little difficult to create GIFs that are funny or with the agenda to be clear &amp; direct but in fun tone</p>
+               </div>
+		    </li>
+            
+             <li class="acc-header" id="4ps"> 
+		        <a href="#4ps">Zee Studios leveraged digital for Manikarnika</a>
+		        <div class="acc-content">
+		          <p>	               <strong>How Zee Studios leveraged digital for Manikarnika in absence of newspaper movie reviews on Republic Day<br>
+	              </strong><br>
+	              <strong>	              TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              Manikarnika digital marketing</strong></p>
+	            <p><strong>Brand: Zee Studios</strong></p>
+	              <p>Agency: Digi Osmosis</p>
+	              <p><strong>Category Introduction</strong></p>
+	              <p>Zee Studios is a film production and distribution company in India owned by Zee Entertainment Enterprises.</p>
+	              <p>They make films in various Indian languages such as Hindi and Marathi, but have been also involved in international production.</p>
+	              <p><strong>Brand Introduction</strong></p>
+	              <p><strong>Manikarnika</strong>: The Queen of Jhansi is a 2019 Indian epic biographical period drama film based on the life of Rani Lakshmi Bai of Jhansi. It was directed by Radha Krishna Jagarlamudi, popularly known as Krish and actress Kangana Ranaut from a screenplay by K. V. Vijayendra Prasad and produced by Zee Studios, Kamal Jain, and Nishant Pitti. The film stars Kangana in the title role.</p>
+	              <p><strong>Marketing objective from Social Media</strong></p>
+	              <p>To create buzz and get a good opening at the box office!<br>
+	                <br>
+                    <strong>                  Summary<br>
+                  </strong>26th January is a national holiday, and no newspapers go into printing on this day, which in a way was a hurdle for the team as Sunday was a very crucial day for the film. Hence, the team came up with a strategy to overcome the absence of newspapers. </p>
+	              <p><strong>Problem Statement/Objective<br>
+	              </strong>Reviews would not be available to the audiences through newspapers on Sunday. So it was necessary to reach out to the right audience through social media platforms.</p>
+	              <p><strong>Brief<br>
+	              </strong>Make film reviews available to the audiences in the absence of newspapers.</p>
+	              <p><strong>Challenges:<br>
+	              </strong>Sunday was a crucial day for the film’s opening collection and it was essential to reach the right audiences at the right time.</p>
+	              <p><strong>Creative Idea:<br>
+                  </strong>The brand identified 18 important markets in India, the target audiences and the digital platforms used by them. Depending on each of these factors the communication was customised accordingly. Regional markets played a key role in the success of Manikarnika and this strategy helped achieve it to a great extent.</p>
+	              <p>Reviews were made available to the viewers on their favourite digital platforms like What’sApp, Facebook, and Instagram via seedings and influencers in their preferred languages so that the absence of newpapers doesn’t create an obstacle in achieving the desired results.</p>
+	              <p><strong>Execution<br>
+                  </strong>Prior to the release, Zee Studios started creating buzz on social media through countdown videos and other native push. Post release, they seeded interviews through Facebook publishers such as PayTM, Buzz 101, and Hum Indians.</p>
+	              <p><strong>Results<br>
+                  </strong>The film grossed 42cr over the weekend. In terms of social media statistics:</p>
+	              <p>The review on PayTM’s Facebook channel garnered a reach of 28,25,721, with 41,73,950 impressions. Whereas on Instagram, the review by PayTM received reach – 13,65,760 and impressions – 15,67,645.</p>
+	              <p>Total number of posts for the campaign were recorded at 88,803, which garnered a reach of 466,483,086 and 1,617,356,707 impressions. The accumulated views on the campaign were recorded at 63,500,000.</p>
+	              <p><strong>CMO Quotes<br>
+	              </strong>“Practically every Indian is on digital platforms today, which means they are spread across various platforms like Facebook, YouTube, What’s App, Instagram. Influencers also play a key role in this digital era. We believe in reaching the audiences where they are rather than expecting them to come to us. The platform, the language being used has to be customised to appeal to the users,” explained Manish Kumar, CEO &amp; Founder, Digi Osmosis.</p>
+	              <p>“We wanted to educate the audiences but at the same time didn’t want the film to be preachy. The idea was to ignite the patriotism within us without making it sound like history lesson. So the entire campaign had to be planned with a similar approach,” said Neeraj Joshi- Head of Marketing, Zee Studios</p>
+               </div>
+		    </li>
+			
+			 <li class="acc-header" id="4ps"> 
+		        <a href="#4ps">Cause Marketing Case Study: Tata Tea</a>
+		        <div class="acc-content">
+		          <p class="style1">	               Cause Marketing Case Study: How Tata Tea’s video strategy made pre-activism exceptional<br>
+		            <br>
+		            TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              Cause Marketing Case Study</p>
+	            <p><strong>Category Introduction</strong></p>
+	              <p>India is world’s one of the largest producer and consumers of tea.</p>
+	              <p>Domestic consumption is ~ 1070 million kg. The market is vertically split between branded (~550 million kg) and unbranded/loose (520 million kg) tea segment. By value – branded tea is ~ Rs 15000 Cr per annum.</p>
+	              <p>Domestic consumption is growing by ~5% by volume and ~7% by value. We feel the category would continue to grow – aided by secular trend of population growth as well as addition of new occasions.</p>
+	              <p><strong>Brand Introduction</strong></p>
+	              <p>Jaago Re was launched in 2007, transforming a humble cup of tea to a symbol of social awakening. While India is a nation that wakes up with a cup of tea in the morning, Jaago Re became the wakeup call for the society. Over the years, the campaign has challenged status quo and strived to drive the message of ‘be the change you wish to see in the society’.</p>
+	              <p>While Jaago Re helped stir things up by urging the people to introspect and be the change makers, with Jaago Re 2.0 “Alarm Bajne Se PehleJaago Re”, Tata Tea aimed at changing the nature of ‘Reactivism’ to ‘Pre-activism’ – timely activism that could work towards preventing these unfortunate incidents from occurring.</p>
+	              <p><strong>Marketing Objective for Social Media</strong></p>
+	              <p><strong>Social Media Content Calendar 2019<br>
+                  </strong>Build awareness and credibility for the brand campaign and generate conversations around the new brand approach of ‘pre-activism’ across relevant consumer touch points.<br>
+	                <br>
+	                <strong>	                Key focus areas were:</strong></p>
+	              <p>Establish a stronger connection between Tata Tea and Jaago Re in the minds of people<br>
+	                Get people to engage with Tata Tea<br>
+	                Position Tata Tea as a thought-leader when it comes to social awakening, through original, hard-hitting social content<br>
+	                Birth of Pre-Activism</p>
+	              <p>Over the past decade, cause-based marketing was adopted by many brands leading to high levels of clutter. The brand’s voice was lost in this noise and in turn was affecting its share of mind.</p>
+	              <p>We needed a disruption that could catapult Tata Tea’s cause-based messaging to a new level,” shares Puneet Das, Marketing Head – Tea, Tata Global Beverages.</p>
+	              <p>For this, Tata Tea delved into society’s behaviour around activism itself.</p>
+	              <p>“We reflected on our collective penchant for post facto activism; our self-righteous indignation and rage-filled presence at unfortunate occurrences after they have occurred. Can social activism be made more impactful? What behaviour should change to enable this?” In doing so, we realised and gave birth to a new idea: PRE-ACTIVISM. A preventive mind-set and behaviour that inspires people to prevent tragedies and take corrective actions before their occurrence,” Das shares.</p>
+	              <p>India was roaring with anger when it saw poor performance in the Olympic. Everyone was blaming the poor facilities and funding those sports got. Over 3 lakh farmers have ended their lives since 1995 and there are 90 rapes every day.</p>
+	              <p>Tata Tea introduced the idea with a television commercial revolving it around these three alarming issues; Rapes, Farmer suicides and inadequate sports facilities. The brand reflected on these issues and many more to demonstrate pre-activism as the new behaviour to prevent them from happening.</p>
+	              <p><strong>Problem Statement</strong></p>
+	              <p>To build thought leadership in the category<br>
+	                Create buzz around the brand ‘Tata Tea’<br>
+	                <br>
+	                <strong>	                Brief</strong></p>
+	              <p>The core remained the same:</p>
+	              <p>Get a bigger share of mind by rekindling love for Tata Tea and get people to re-engage with the brand<br>
+	                Reinstate its stature as a thought-leader<br>
+	                But the brief was to re-position reposition Jaago Re and leverage the existing equity while doing something which is path breaking and completely different in terms of the idea as well as story-telling.</p>
+	              <p><strong>Challenges</strong></p>
+	              <p>Key challenge was to introduce the new concept of pre-activism by making it relevant to our consumers<br>
+	                Drive conversations and eventually actions around it while delivering reach and frequency<br>
+	                <br>
+	                <strong>	                Execution</strong></p>
+	              <p>Tata segregated their audience into 3 key segments depending on their propensity to adopt pre-activism, and developed content to reach out to them.</p>
+	              <p>For the pre-activist who already understood the importance of acting to make a difference, the tea brand leveraged a host of influencers. For an audience who understood issues but whose action rested in digital and social action we looked at social publishers sharing this message.</p>
+	              <p>For a mass that needed to understand the concept of pre-activism in their daily lives contextualized pre-activism through content.</p>
+	              <p>The campaign was divided into three distinct phases, each with a different objective and execution approach:</p>
+	              <p>Phase 1: Awaken people to pre-activism<br>
+	                Phase 2: Inspire and facilitate Pre-activism<br>
+	                <br>
+	                <strong>Walk the talk on Pre-activism<br>
+	                <br>
+	                Phase 1</strong>: To seed the concept of ‘pre-activism’ and to ensure sustained levels of conversation and engagement, Tata Tea leveraged key consumer moments through micro campaigns that spelt out “how to pre-act”. From video featuring young girls asking their mothers relevant questions on gender bias on Women’s Day to a simple factoid video on how to save water when drinking tea on World Water Day, each micro-campaign created high impact for the brand across different platforms.</p>
+	              <p><strong>Phase 2</strong>: Phase 2 of the campaign was aimed to inspire people to be a part of the change and pre-act on two critical issues:</p>
+	              <p>Women Safety<br>
+	                Lack of Sports Culture<br>
+	                On each of the issues the brand encouraged people to pre-act by signing a petition which would be submitted to the HRD Ministry and pledge to bring about a change in their personal life:</p>
+	              <p><strong>Issue 1: Women Safety<br>
+                  </strong>Petition: To the HRD Ministry to make Gender Sensitization compulsory in school curriculum<br>
+	                Pledge: Parents to practice /teach gender sensitivity to kids at home<br>
+	                <br>
+	                <strong>	                Issue 2: Lack of Sports Culture<br>
+	                </strong>Petition: To the HRD Ministry to make sports as a compulsory subject in the school<br>
+	                Pledge: Pledge to participate in and support at least one local sport event. Parents also pledge to take their children to these events<br>
+                    <br>
+                    <strong>Phase 3: TGBL Walked the Talk<br>
+                      </strong>TGBL walked the talk on the two chosen issues and demonstrate pre-activism:</p>
+	              <p>Women Safety<br>
+	                Lack of Sports Culture<br>
+  Also Read: A conclusive History of Cause Marketing – The Jaago Re chapter<br>
+  Women Safety</p>
+	              <p>TGBL partnered with Edusports and created a property “Project Suraksha” to conduct self-defense training for girls. The program is aimed at building physical skills in the form of combat practices and mental makeup to handle stress<br>
+	                <br>
+	                Reach: 4 states, 10 districts each; 10 schools / dist; 400 schools; 1 lakh girls<br>
+	                <br>
+	                <strong>	                Lack of Sports Culture</strong></p>
+	              <p>TGBL partnered with High Life and created a property “Champions of Tomorrow” to identify talented athletes in the country through a nation wide athletic competition. 12 promising athletes are bring sent to Louborough University in UK for an 8 day rigorous training to develop their skills<br>
+	                <br>
+	                Reach: 6 cities, 500+ schools; 6 intra-city athletic meet; 1 national athletic meet; 12 students travel to UK</p>
+	              <p><strong>Results</strong></p>
+	              <p>8 Mn petitions signed on the two critical issues of women safety and sports encouragement, which were then submitted to the HRD Minsiter<br>
+	                TVC launch on Twitter received record breaking engagement of 49% ,which is higher than benchmarks of 3-4%<br>
+	                Significant improvement in the mind measures of the Tata Tea brands across centres<br>
+	                The campaign garnered a 100 million+ reach and recorded 300 million plus impressions on Facebook.<br>
+	                Total engaged users on Facebook were 7,732,933 and campaign engagement crossed 4,437,901.<br>
+	                Total impressions on Twitter were recorded at 8,101,235 and the total engagement was 8,05,747 at the Engagement Rate of 11%.</p>
+               </div>
+		    </li>
+			
+			 <li class="acc-header" id="4ps"> 
+		        <a href="#4ps">Role of digital marketing in Stree’s 100 Crore club entry</a>
+		        <div class="acc-content">
+		          <p>	               C<strong>ase Study: Role of digital marketing in Stree’s 100 Crore club entry<br>
+                  <br>
+	              TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              Stree main</strong></p>
+	            <p><strong>Brand Introduction</strong></p>
+	              <p>Stree, a comedy-horror film of the year 2018, directed by Amar Kaushik and produced by Dinesh Vijan, Raj Nidimoru, and Krishna D.K. The film stars Rajkummar Rao and Shraddha Kapoor. </p>
+	              <p><strong>Summary</strong></p>
+	              <p>Campaign was kick-started with circulating information about the ‘Legend of Stree’ via Wikipedia &amp; Digital PR along with an activity where Shraddha Kapoor archived her Instagram posts with a 3 posts grid which read ‘Mard Ko Dard Hoga’, following which memes were circulated all around and another activity #StreeSeSafe where fans ended up changing their Twitter headers to ‘O Stree Kal Aana’ in order to save themselves from Stree. A day prior to the launch, Rajkummar Rao archived his Instagram posts to a 3 posts grid which read ‘O Stree Kal Aana.’<br>
+	                <br>
+	                On the day of the trailer launch, the key poster was launched digitally with a call to action about trailer launch. The offline trailer launch was covered digitally. Keeping the horror factor in mind, the trailer launch happened at night around 8 pm. Additionally, users who participated in #StreeSeSafe activity also tweeted the trailer link through their profiles which generated great traction.<br>
+	                <br>
+	                Throughout the campaign, we released 4 songs along with their makings digitally and 5 dialogue promos which were shot exclusively and were not a part of the film which traveled well.<br>
+	                <br>
+	                To amplify the buzz &amp; to engage fans, a series of contests were run across platforms which gained good traction.<br>
+	                <br>
+	                Offline activities such as #SpotStree &amp; Stree Mirror Prank were amplified digitally.<br>
+	                During the release week, multiple activities, as well as a Facebook Live session with the cast, was conducted which gave the film a final push.<br>
+	                Objective</p>
+	              <p>One of the key objectives while running the campaign was to establish the curiosity factor around the film, its one of a kind genre along with establishing a recall value around the film &amp; its release date.<br>
+	                <br>
+	                Since the film is based on a true phenomenon, another key objective was to build the legend of Stree for a larger audience digitally.<br>
+	                <br>
+	                Another important objective was to sustain the hype around the film, keep the audiences hooked and drive ticket sales.<br>
+	                <br>
+	                <strong>	                Creative Idea</strong></p>
+	              <p>Entire campaign was executed across Facebook, Twitter &amp; Instagram.<br>
+	                Majority of the assets were cross-promoted by a number of top portals which helped in wide visibility &amp; amplification.<br>
+	                A number of digital associations such as RVCJ, Miss Malini, Arre, Terribly Tiny Tales, Pinkvilla etc. for the film helped in spreading the word around the film as well as create meaningful conversations.</p>
+	              <p><strong>Execution</strong></p>
+	              <p>As the film is based on a true phenomenon, one of the biggest challenges was to spread awareness about ‘The Legend of Stree’ among online audiences. There was a two-way approach for this:</p>
+	              <p><strong>Social Media Content Calendar 2019<br>
+                  </strong><br>
+                  <strong>1. Circulate the information via Wikipedia –<br>
+                  </strong>A Wikipedia page for ‘Stree’ was created where the plot along with a few details without giving out the entire story of the film was updated. This helped grab a good amount of eyeballs as none of the information was misleading and came from a reliable source.</p>
+	              <p><strong>2. Websites, Influencer Outreach –<br>
+	              </strong>Topmost websites, as well as influencers, had ‘Mard Ko Dard Hoga’ on their social media handles along with ‘Legend Of Stree’ articles floating around on the websites. This helped in spreading the word as well as garnered traction.</p>
+	              <p>The main campaign for the film ‘Stree’ kic-started where Shraddha Kapoor archived her Instagram posts, leaving the profile with a 3 posts grid of “MARD KO DARD HOGA”, which is the tagline of the film, with no profile picture. The purpose behind this was to grab all the eyeballs and to build curiosity among people as to who is ‘Stree’ and why the tagline Mard Ko Dard Hoga?<br>
+                    <br>
+                    A follow-up activity #StreeSeSafe was done where fans ended up changing their Twitter headers to ‘O Stree Kal Aana’ in order to save themselves from Stree. An extension to this was the users tweeting the trailer as and when it launches.<br>
+                    <br>
+                    A day prior to the launch, Rajkummar Rao archived his Instagram posts to a 3 posts grid which read ‘O Stree Kal Aana.’<br>
+                    <br>
+                    In an exclusive tie-up with JIO Studios, the trailer of the film was launched exclusively on the JIO Cinema App first.<br>
+                  On the day of Lunar Eclipse, a creative was put out with the messaging “Stree Ke Saaye Se TO Chand Bhi Nahi Bach Paaya!”</p>
+	              <p>The first song from the film, ‘Milegi Milegi’ was popularised via multiple memes with the ‘Milegi Milegi’ angle to every situation. As an extension to this, Shraddha Kapoor interacted with a few fans keeping the ‘Milegi Milegi’ angle as its highlight. The idea was to popularise the lyrics of the song.</p>
+	              <p>Amidst the usual contests floating on the internet, the song ‘Kamariya’ had a different twist post the launch. Fans &amp; followers witnessed ‘Nora Fatehi’ shaking her ‘Kamariya’ wherever she went with the messaging ‘Jaha bhi ho apni Kamariya Hilao’and asking users to send in their versions. The #KamariyaHilaDeChallenge was taken up by fans across the globe.</p>
+	              <p>Throughout the campaign, sustenance posts were pushed through innovative pegs. Festivals as well as special days such as Independence Day, Friendship Day, Rakshabandhan etc. Posts had the ‘Stree’ angle to it.<br>
+	                <br>
+	                The dialogue promos shot exclusively for the digital campaign were pushed out with a unique context for each one which helped create buzz around the characters as well as the film.<br>
+	                <br>
+	                Throughout the campaign, a series of relatable memes for ‘Mard Ko Dard Hoga’, ‘Milegi Milegi’ &amp; ‘Aao Kabhi Haveli Pe’ which traveled well and ended up creating conversations and curiosity for the campaign as well as asset launches.<br>
+                    <br>
+                    Close to the film release, ‘Don’t Turn Around’ activity was observed across platforms which gave out the message of how one should not turn back if they want to save themselves from Stree.<br>
+                    <br>
+                    <strong>                  Challenges<br>
+                    </strong>One of the topmost challenges were to create curiosity around the legend of Stree &amp; keeping the fans intrigued till the film release without revealing Stree’s identity. Whether Shraddha Kapoor is Stree or not was one of the talking points throughout the campaign and curiosity was to be maintained for the same.<br>
+	                <br>
+	                Since the film belongs to a niche genre of horror comedy, another challenge was to make sure that the campaign reaches out to a larger number of audience and isn’t limited to a particular set of viewers.<br>
+	                With an influx of movies releasing with and around the film, another challenge was to make sure that <br>
+	                <br>
+  	                <strong>                  Results</strong></p>
+	              <p>The film grossed over 30 Crores on its opening weekend and is about to enter the 100 Crore club.<br>
+	                The positive box-office numbers proved that the curiosity &amp; intrigue around the film and its content was successfully established.<br>
+	                <br>
+                  “Filmmakers today understand the importance of the digital medium &amp; it’s direct impact on box office collections. While devising the marketing plan of Stree we decided to have a digital-first approach. The film &amp; its storytelling lends itself to the audience that first hears of any news via social media. The film is a marketing success with digital marketing’s contribution in the forefront” said Dinesh Vijan, Producer at Maddock Films.</p>
+	              <p>“Stree was a unique opportunity given the premise &amp; the unexplored horror comedy genre which allowed us to experiment with the promotions as well. It’s worked fantastically and it’s been a great learning for all of us,” said Nikita Khandelwal , Head of Strategy at WWO</p>
+               </div>
+		    </li>
+			
+			 <li class="acc-header" id="4ps"> 
+		        <a href="#4ps">HERSHEY’S Meethe Bahane reached 12 mn - content marketing</a>
+		        <div class="acc-content">
+		          <p>	               <strong>Case Study: How HERSHEY’S Meethe Bahane reached 12 mn consumers through content marketing<br>
+	              </strong><br>
+		            TWITTER FACEBOOK GOOGLE + LINKEDIN<br>
+	              HERSHEY’S</p>
+	            <p><strong>Brand<br>
+	            </strong>Hershey’s Syrup</p>
+	              <p><strong>Summary</strong></p>
+	              <p>The HERSHEY’S Presents Meethe Bahane campaign, kick-started in July 2018 with the launch of a first of its kind food-based web series featuring Celebrity Chef Ranveer Brar. The series captures sweet ‘bahanas’ (excuses) that kids devise to wriggle out of eating routine dishes and how their parents win them over by giving a delicious HERSHEY’S twist to everyday dishes co-created with Chef Ranveer Brar.</p>
+	              <p><strong>Problem Statement/Objective</strong></p>
+	              <p>The brand task was to expand usage occasions to drive trials and consumption by showcasing the versatile usage of HERSHEY’S Syrup. The communication objective was to get parents to add a HERSHEY’S twist to their everyday dishes, making them even more exciting for their kids.</p>
+	              <p><strong>Brief</strong></p>
+	              <p>Create an exciting proposition around the “versatile usage” of HERSHEY’S Syrup, thereby helping parents achieve their goal of making everyday dishes even more exciting for their kids by adding a delicious HERSHEY’S twist.</p>
+	              <p><strong>Creative Idea</strong></p>
+	              <p>The insight behind the campaign is that children come up with excuses (bahanas), to avoid eating everyday food. This is where Chef Ranveer steps in and co-creates delicious dishes, along with parents and HERSHEY’S.</p>
+	              <p><strong>Execution</strong></p>
+	              <p>Parents, along with Chef Ranveer Brar, re-create lip-smacking food by adding a delicious HERSHEY’S twist.</p>
+	              <p>The web series is hosted on the HERSHEY’S India YouTube Channel, with 10 weekly webisodes containing HERSHEY’S recipes for breakfast, tiffin, snacking, beverage and dessert occasions.</p>
+	              <p>The campaign was amplified on Social Media with platform specific, innovative content like split screen posts, 3D GIFs, long posts, etc. which drove awareness and engagement around “HERSHEY’S Presents Meethe Bahane”.</p>
+	              <p> The entire campaign has been recognized as “best in class”, with tremendous earned PR across online portals.</p>
+	              <p>As a part of the campaign, Hershey India Pvt Ltd conducted the #MyHERSHEYSRecipe contest across multiple online platforms in December 2018. The contest recently culminated with a Meet and Greet event where the winners were felicitated by the highly popular Celebrity Chef Ranveer Brar.</p>
+	              <p>The event identified the very first “HERSHEY’S Madame Chef”. A cookoff had the winners creating innovative recipes, giving everyday dishes an exciting twist using the HERSHEY’S range of products. The top two recipes, judged by Chef Ranveer and the Hershey India team, is being celebrated and featured on the HERSHEY’S Syrup pack.<br>
+	                <br>
+                    <strong>                  Results</strong></p>
+	              <p>The digital campaign has till date garnered 90 million impressions, reaching more than 12 million consumers with over 2 million engagement.</p>
+	              <p>Views on YouTube were recorded at average view through rate of 39%.</p>
+	              <p>The brand saw a significant uplift on ad recall, consideration and purchase intent. Sales for HERSHEY’S Syrup grew substantially. However, the most important result was bringing smiles to kids’ faces.</p>
+	              <p><strong>CMO Quotes</strong></p>
+	              <p>Sarosh Shetty, Marketing Director, Hershey India, said, “We want parents to know of the versatility of the HERSHEY’s range of delightful products and how they could simply add a delicious twist to their everyday dishes. The insight behind the campaign is that children come up with sweet and naughty excuses, to avoid eating everyday food. This is where Chef Ranveer steps in and co-creates delicious dishes, along with parents and of course, HERSHEY’S products. We look forward to an exciting association with Ranveer, and to helping parents achieve their goal of making everyday food even more exciting for their loved ones.”</p>
+               </div>
+		    </li>
+			
+						
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, <br>
+  join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.jpg" alt="" width="100%"></a></li>
+            
+             <li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

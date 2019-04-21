@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="alpha"><a href="#alpha">Module VI - Content Writing</a></li>
+<li class="acc-header" id="abdecode"><a href="#abdecode">Writing a Blog 1</a>
+  <div class="acc-content">
+<p>
+You have a story that everybody wants to hear, but how do you get people to your blog? The perfect blog post is about more than just great content. In fact, the way you format your post is almost paramount to the actual content itself. Readers may not even realize that they like these formatting nuances, but a well organized and designed post can help keep them reading and sharing.<br>
+<br>
+</p>
+<p>Here are ten things you can do to turn your content into the perfect blog post:</p>
+<p><strong><br>
+  1. Pick the Perfect Title</strong></p>
+<p>Coming up with a direct but enticing title is the most important part of your blog post. You want readers to find your article easily with a simple search. Picking a title that will accurately match what the reader is searching for is obviously important in this age when nearly every Internet experience begins with Google.</p>
+<p>The tricky part is striking the perfect balance between a relevant title and an exciting one. The perfect blog post title will be fun, funny, ironic or controversial while still keeping the core point of the article clear and present.</p>
+<p><strong><br>
+  2. Make the Main Point Clear</strong></p>
+<p>The perfect blog post will let readers know what they are about to enjoy right away. Unlike a novel or movie, you don’t want the crux of the blog post to develop slowly. Internet readers have notoriously short attention spans, so make sure you open with an intro paragraph that lays out the post and lets the reader know he or she has come to the right place.</p>
+<p><strong><br>
+  3. Make a List</strong></p>
+<p>One easy formatting trick is to organize your post as a list. Make your different arguments into numbered or bulleted points, or include bolded subheadings. Top-ten lists and rankings are interesting to readers and give the post a clear reason to be read to the end. It also makes the post organized and clearly shows the reader what the key points will be.</p>
+<p><strong><br>
+  4. Linkbait</strong></p>
+<p>The perfect blog post will have content that other bloggers want to link to. Posts with “How to…” or “Top 10” in the title tend to get a lot of blogosphere attention. A great blog post also needs to have a large number of outbound links in the body. This is will help other bloggers notice your work and give you a return link, and will also give readers a feeling that you have done your research before writing your post.</p>
+<p><strong><br>
+  5. Make It Attractive</strong></p>
+<p>Making your post look nice is a quick and easy way to make readers happy. Before making a post public, take time to go back and format it to your liking. Make keywords bold, form organized or bulleted paragraphs, cut out unnecessary content to shorten up the post, enlarge titles and subject lines, and so on. A perfect post will be a pretty post.</p>
+<p><strong><br>
+  6. Include Multimedia</strong></p>
+<p>Even if your writing is the richest on the Internet, adding images or videos is crucial to breaking up the text and keeping things interesting. If you are writing a travel post, include attractive images of the destination. If you are writing an editorial piece, embed a fun video clip that helps illustrate your point. Multimedia livens up a post and is a critical part of the perfect blog post.</p>
+<p><strong><br>
+  7. Stick to the Point</strong></p>
+<p>For a blog post to be perfect, it needs to be concise and it needs to stay on topic. As stated before, blog readers have a short attention span. When they search for a specific subject, they want the post to deal with that subject and not meander between several topics. Unless your post is about a Hollywood star or political scandal, mentioning such an event will only draw readers who are really looking for a post on a different topic.</p>
+<p><strong><br>
+  8. Use Keywords</strong></p>
+<p>The perfect blog post will be constructed with keywords in mind. A simple search using Google AdWords on a subject will let you know which related keywords are most commonly searched. Keeping those words in your title and throughout the body will make it easy for your audience to find your post and will make it clear to them that they have come to the right place.</p>
+<p><strong><br>
+  9. Keep Length in Mind</strong></p>
+<p>Though it depends on the nature of your blog, keeping your post to an appropriate length is crucial. There is no optimal post length, but if it is too long, you risk readers getting impatient and leaving before they are done. In general, keeping a post under 1,000 words is a good rule of thumb. Keeping it between 500-800 words is ideal.</p>
+<p><strong><br>
+  10. Be Original</strong></p>
+<p>Make your post unique! Don’t simply say what everybody else is saying. Add your mark by mixing it up and making your post stand out in some way. The perfect blog post will make your audience stop and think. It will conjure some sort of emotion and make readers talk amongst themselves. A good indication that you have done your job is a post with a lot of engagement. If a post has readers commenting or arguing, you know you have given your audience something valuable to talk about.</p>
+</div>
+</li>
+
+<li class="acc-header" id="mod"> 
+<a href="#mod">Writing a Blog - 2</a>
+<div class="acc-content">
+  <p><strong> 5 things to keep in mind before you start</strong></p>
+<p>Let’s start this post by talking about a few background idea that you kind of need to keep in mind while you are writing your posts. This is a bit like the instructions as opposed to the actual creation.<br>
+  <br>
+</p>
+  <p><strong>1. Ask yourself “…and then what?” before you start writing</strong></p>
+  <p>One of the best lessons that I ever learned as a blogger is this:</p>
+  <p>All your blog posts should form one big beautiful picture as opposed to each being stand alone items. What this means is that you need to sit down and carefully figure out what it is that you want your blog, and your blog posts, to achieve every single time.</p>
+  <p>The question “… and then what?” seems to help me the most.</p>
+  <p>I’ll sit down, log in, and fiddle around with a title and an idea. Once I’m pretty sure on the topic I’ll ask myself very deliberately what I want people to do before I write any words.</p>
+  <p>Make sure your post all work together as a team to achieve one or two very deliberate goals – and remember that everything that you write should help people solve problems in their lives and generally be something that adds a bit of goodness to the world.</p>
+  <p>This is so important.<br>
+    <br>
+  </p>
+  <p><strong>2. More is more</strong></p>
+  <p>The next few items are really going to grate on a few people – the idea that more is more is kind of something we’ve all been trained to disbelieve.</p>
+  <p>But, in blogging at least, the longer posts with more perceived value seem to have some of the best results. This also counts for landing pages that are selling a product or service.</p>
+  <p>Of course, no one is going to read 5,000 words of rubbish. But in my experience, if you can write a hugely long post you are more likely to grab someone’s attention as they instantly associate the length or number of compiled items as being of high value.</p>
+  <p>As always, test it for yourself. But here on Blog Tyrant I rarely publish anything less than around 2,500 words.<br>
+    <br>
+  </p>
+  <p><strong>3. The way it looks matters as much as what it says</strong></p>
+  <p>When I’m drafting my posts (I always do that in WordPress) I’m constantly hitting “preview” in order to see how the post is looking from a visual point of view.</p>
+  <p>Many writers out there will hate this idea.</p>
+  <p>But the more I go on, and the more aware I become of my own blog-reading habits, the more I realize how important it is for the layout to be appealing, simple and easy to read.</p>
+  <p>That means making sure you have:</p>
+  <p><strong>A nice large font-size<br>
+    </strong>I talked about this a little bit last week but you want to make sure your font is easy to read and matched to your brand.<br>
+    <br>
+    <strong>Quality images<br>
+    </strong>Draw people in with high quality (but fast loading) photos and images that add value to the post and pull the eye down.<br>
+    <br>
+    <strong>    Small paragraphs<br>
+    </strong>Make sure you don’t waffle on for lines and lines of text. People are used to skimming so keep the paragraphs short.<br>
+    <br>
+    <strong>    Bold text and bullet points<br>
+    </strong>Whenever you can break up the text with burst of bold or bullet points you should do it. Just imagine this section as one big bulk paragraph vs how it is now.<br>
+    <br>
+    <strong>    A narrow-ish content width<br>
+    </strong>Don’t make people read your text over a hugh long line. You want your content area to be no more than around 700 pixels (mine is 650) because tired eyes will get lost.<br>
+    <br>
+    A lot of this is not based on any data I have from my blogs, but more based on how I go about reading blogs, and how I used to design websites for clients. Readability is very important, and you want to develop a level of consistency so that all of these things add up to a blog post that “looks” like one of yours.</p>
+  <p>The reason I say that this stuff matters as much as what the post actually says is because I firmly believe that a lot of people just won’t read even brilliant text on a super-ugly blog.<br>
+    <br>
+  </p>
+  <p><strong>4. Adding something for everyone helps uptake</strong></p>
+  <p>It’s very difficult to please everyone, but one thing you can try to do is cater to as many “groups” of people as possible.</p>
+  <p>For example, when writing my post about blogging in 2015 I noticed something interesting: the people who shared the post on Twitter weren’t the same people who shared it on Pinterest.</p>
+  <p>What this means is that people consume things in different ways. Some people like technical explanations, others like a big old infographic and a quick skim.</p>
+  <p>If you can create a blog post that covers all of these things you are on to a real winner because you are going to touch a lot of different groups of people who will hopefully want to pass on the element of your post that they found compelling.</p>
+  <p>This also has the dual benefit of being excellent for SEO – Google is constantly looking for websites that have different formats and features in order to provide a more varied front page of results.</p>
+  <p><strong><br>
+    5. Each headline/post should address a single evergreen problem</strong></p>
+  <p>Something that we’ve talked about a few times is the idea of “breaking down” your blog posts and just focusing in on one smaller topic.</p>
+  <p>For example, a post about How to Be Awesome at Karate might actually be better of as a dozen posts made up of smaller topics like How to Throw the Perfect Karate Punch or How to Make a Fist in Karate.</p>
+  <p>Dudes like Mehdi from Strong Lifts have absolutely killed it by focusing in on topics like how to bench press.</p>
+  <p>Over the years I’ve noticed that articles that focus in on one problem such as how to sell a blog or how to start a fashion blog seem to do the best because they solve very narrow problems and these problems never really go out of fashion.</p>
+</div>
+</li>
+<li class="acc-header" id="autom"> 
+		        <a href="#autom">Some more things to do when you write a blog</a>
+		        <div class="acc-content">
+		          <p>Okay, so, with all those things in mind, here is the way I go about writing my perfect blog post. I hope these steps might be useful to you as well.</p>
+	          <p><strong>Generate your idea<br>
+                  </strong>Idea should be distinctive in the market. Try to base the post on reader feedback, a known problem in the industry or competition analysis. Research the front page of Google and your main competitors at this stage to see how you can improve on what’s out there. If you can’t, don’t bother.<br>
+	                <br>
+	                <strong>                Develop headline<br>
+	                </strong>Address problem in the headline using fear (not to scare people, but to show how you’ll solve it!), scarcity or intrigue/questions. Keep under 65 characters long. Ensure SEO key phrase is in title. Constantly refer back to headline as you write. Use websites like ViperChill, Boost Blog Traffic and Viral Nova as a guide for headline generation.<br>
+	                <br>
+	                <strong>                Write introduction<br>
+	                </strong>First line of post should re-address your problem, headline and key phrase. Rest of introduction aimed at drawing eye down towards main points. Tell people what you’re going to do with the rest of the post, what they’ll learn, etc.<br>
+	                <br>
+	                <strong>                List out the main points<br>
+	                </strong>Rattle out your main points of the blog post so you can see the shape of the article and what you’re going to be covering. This helps to avoid double-ups and omissions.<br>
+	                <br>
+                    <strong>Open up tabs<br>
+	                </strong>At this point I open up dozens of tabs relating to research, competition and topics that I want to cover. I then link to them as I go and if I get stuck I re-read information and try to improve on it.<br>
+	                <br>
+	                <strong>                Write a base of 2,000 to 2,500 words<br>
+	                </strong>I have a little personal rule that if I’m not hitting at least 2,000 words I’m not covering the topic deeply enough. I write out my main points to at least 2,000 words addressing the main keyword.<br>
+	                <br>
+	                <strong>                Add bonus material<br>
+	                </strong>At this point I’ll add extra paragraphs, tips, quotes, videos, photos, click to tweets, references, etc. in order to take the main content to the next level. This might take the article up another 1,500 to 2,500 words. Try to link to influencers who have written extensively or well on the same topic. Make sure you link to your own posts extensively.<br>
+	                <br>
+	                <strong>                Don’t finish topic/pose question<br>
+	                </strong>Don’t quite complete the topic. Leave room for discussion. Pose a question at the end of the article to encourage discussion.<br>
+	                <br>
+	                <strong>                Select main photo<br>
+	                </strong>I spend quite a lot of time looking for a good photo. I want it to be curious, involving a human being and something that fits with my brand. I use a lossless smusher to keep the size down but the quality high, and always make sure they are the same size and format.<br>
+	                <br>
+	                <strong>                Publish at a peak time<br>
+	                </strong>Do a quick read over for spelling and formatting but don’t waste too much time. Hit publish at a peak time. For me that is between 8am and 10am on Monday, Wednesday or Friday on East Coast USA time.<br>
+	                Okay so that’s the main formula that I follow every time I sit down to write. Of course, sometimes it varies based on the topic or strategy that I’m following but for the most part that’s how it goes.</p>
+      </div>
+	      </li>
+           	<li class="acc-header" id="tmed"> 
+		        <a href="#tmed">How to ensure your perfect blog post gets results?</a>
+		        <div class="acc-content">
+		          <p>Once you’ve written your post there are a few follow up things that you’ll want to take care of.</p>
+	          <p><strong>1. Email the people included</strong></p>
+	              <p>If I know the people well I’ll shoot them an email and let them know that I’ve included their website/post in my own article. I usually don’t ask them to share it because I don’t like putting the pressure on, I just let them know and that’s it. If your article is good enough they’ll usually give it a tweet.</p>
+	              <p><strong><br>
+                  2. Mail your list</strong></p>
+	              <p>I always mail my list to let them know that a new post has gone live. I send these out at peak times when the most people are online and I follow a very simple template of plain text with one link to the post. These emails are a great way to test your short-form copywriting which is aimed at getting people to open emails and click links week in, week out.</p>
+	              <p><strong><br>
+                  3. Test regularly</strong></p>
+	              <p>The perfect blog post will only be revealed through testing. You might hit a winner and go viral and never be able to repeat that success because you aren’t actually sure what made it stick. Split testing titles, formats, length, timing, etc. are all very valuable things to do.</p>
+	              <p><strong><br>
+                  4. Throw some money at it</strong></p>
+	              <p>Sometimes it takes me a whole week to write a post, especially if it’s 9,000 words like my guide on how to start a blog. And if I’m spending that much time working on an article I want to give it the best chance of success. A quick Ra.100 on Facebook Ads can really help to give it a boost.</p>
+	              <p><strong><br>
+                  5. Tweak it regularly based on feedback</strong></p>
+	              <p>As a blogger you get feedback from both human and non-human sources. It’s very important to keep posts “alive” by tweaking them based on things you hear and see. For example, if someone tells you that you’ve missed something, add it in. If Google Webmaster Tools tells you that your title isn’t getting a good CTR then change it and monitor</p>
+              </div>
+		    </li>
+			
+
+        			
+			<li class="acc-header" id="transp"> 
+		        <a href="#transp">How to Write Mobile Content for a Mobile-Responsive Experience?</a>
+		        <div class="acc-content">
+		          <p>In a world where over 46 percent of consumers are now using mobile devices to view websites (and growing), it’s more important than ever to focus on how your website looks on mobile devices. An average mobile user doesn’t have the time or patience to read a wall of text. So, when you’re writing for mobile you need to think of how youcan water down the content—but without losing the flavor.</p>
+	          <p>Consumers using smartphones report being far more likely to use their devices for local shopping while out in the world. Nearly 68% reported using their smartphones for local shopping while in store. Nearly 82% of consumers reported using their smartphones at home for local shopping, while 49% use their devices at work. And more than 40% of smartphone users reported using their devices at least once a dayfor local shopping.</p>
+	              <p><br>
+                  When creating mobile-friendly content, you’ll have to think of the <strong>three key factors that define mobile users</strong>:</p>
+	              <p><strong><br>
+                  Pocket Fillers </strong>– These people use their mobile device to fill up some time while they’re waiting to complete something else. This mobile time is just filling up thespare time – it’s not really there for too much purpose.</p>
+	              <p><strong><br>
+                  Distracted Users </strong>– These individuals are looking at a website while doing something else. They’re easily distracted away from your mobile content; therefore, they need to find something entertaining in a very short period of time.</p>
+	              <p><strong><br>
+                  The Mini Screen </strong>– Mobile screens aren’t very big, especially when compared to traditional computer screens. They don’t have the space to fill up content and marketers need to consider the size of the screen when they start writing up content. Can the user read everything without scrolling? How many times do they need to scroll?</p>
+	              <p><strong><br>
+                  Creating Perfect Content <br>
+                  </strong>According to a survey, 46 percent of users are using their mobile phone as a primary research tool. That number is expected to grow even more. In order to create an efficient content for the mobile phones, the following things have to be kept in mind:</p>
+	              <p><strong><br>
+                  Quick and precise<br>
+                  </strong>Some of the best mobile content is the type that cuts to the point in a matter of seconds. You only discuss the necessities to get the information to the user. You don’t fluff, you don’t add thousands of words and you don’t use in-depth research to create mobile content. Remove all superfluous words and write tight factual sentences. You should break up the paragraphs. Use easy words for writing content for your mobile website.</p>
+	              <p><strong><br>
+                  Catchy Headlines<br>
+                  </strong>Boring headlines won’t get you far with web users and they certainly won’t domuch for mobile users. The typical mobile reader looks for something that stops themand catches their otherwise easily diverted interest. You need something catchy, compelling, interesting, and an instantly attention grabbing thing. You should get to the point through the headline and then back it up with the content itself. Your header should be clear and tell readers exactly what they’re going to get from reading further. Avoid jargons while writing titles for the content for a website. A punchy summary just below the title would also help you to attract and grab the attention of the potential customers of your website.</p>
+	              <p><strong><br>
+                  Varying Screen types:<br>
+                  </strong>Mobile devices don’t have a one-size-fits-all screen. There is no industry standard so when you’re writing for mobile users, you have to remember that there are dozens of screen types out there – including resolution and viewing capabilities. When it comes to writing your mobile work, you need to be direct, succinct and just get to it. No fluff and fillers.</p>
+	              <p><strong><br>
+                  Responsive Designs<br>
+                  </strong>A responsive design is one that has a great user experience regardless of how the user is accessing your site. You only need one source code and no matter what the user is looking at, it automatically optimizes for that device and screen. A site built on a responsive system pays attention to things like screen size and resolution. It automatically adjusts based on the needs of the user to give them the optimum experience. Text, media and even videos are changed so that everything operates flawlessly on your site.</p>
+              </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="hytxt"> 
+		        <a href="#hytxt">Mobile Content Marketing</a>
+		        <div class="acc-content"><p>In order for a content marketing strategy to be successful, it’s important that the approach represent a deeper understanding of your users’ behavior and what that means for both your content creation and user’s experience.</p>
+	            <p>With mobile marketing, the better you understand your audience’s information discovery and consumption habits, the more compelling your content will be. Specifically, understanding the makeup of their mobile universe will help you create content that feels native. Content marketers recognize that web site design forms an integral part of content marketing. With smartphones, that may require implementing responsive web design and creating a web portal that works well across all devices. </p>
+	              <p>Customers expect a congruent experience across devices and channels, so it pays for your brand to give them what they want. Survey proves that, 74% of consumers will leave a mobile site after just five seconds and 46% are unlikely to return if the site didn’t work the first time. It’s essential for the mobile content experience to meet and exceed customer expectations in the first few seconds. When you understand that a smartphone is a tool that aids a visitor on his quest for quick results, you can focus your marketing on providing content that’s functional and accessible. For a national retailer, that would mean mapping zip code data to find a local brick and mortar store. Adapting the desktop website into a mobile one means using fewer graphics, providing less text, and incorporating features native to smartphones, such as click-to-call buttons. Increasingly, users are expecting personalization and hyper-relevance.
+	              </p>
+              </div>
+		    </li>
+	
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, <br>
+  join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.jpg" alt="" width="100%"></a></li>    		
+				<li class="acc-header" id="actu"> 
+		        <a href="#actu">Examples of Effective Mobile Content</a>
+		        <div class="acc-content">
+		          <p><strong>Mountain Dew <br>
+                  </strong>Mountain Dew’s mobile website uses interactivity and customization to great effect. While their page may seem busy to some, it matches the high-energy, counter culture feel that matches the Mountain Dew brand. Each image on the home page opens up a larger area directly on the homepage that provides information and links for deeper reading. This allows users to see more of the content that may interest them, from sports teams to promotions, without ever needing to use the back button. Design fits the context of a mobile device using bold colors and minimal text. The content is tailored to fit their audience demographics and psychographics perfectly. Navigation allows users to customize the home page in real time, providing a hyper relevant personalized experience. Deselecting any option will remove the content that users do not find interesting. It provides an exceptional user experience that drives users toward a desired action with the creative use of motion and video.</p>
+              <p><strong><br>
+              Create Pilates<br>
+                  </strong>Create Pilates offers Pilates as its foundation, but has brought together experts in complementary fields too, such as yoga, nutrition, massage and anatomy, giving birth to Pilates+. It makes great use of bold dynamic visuals, clean simple fonts and minimalist text. Each category block opens to more information where users can view pricing, book a class or access a schedule. The navigation is accessible on both the left, as a drop down menu with clickable links, or on the right with interactive buttons you can tap.</p>
+	              <p><strong><br>
+                  Pizza Hut</strong></p>
+	              <p>You can’t get simpler than Pizza Hut’s mobile content, which incorporates a marketing message and call to action front and center. They make ordering a pizza from your mobile so enticing, that a visitor doesn’t have a chance to reconsider.</p>
+	              <p>Colors are consistent with their “piping hot” branding. Focusing on the bare essentials increases the chance of the user completing an action. For location based search, placing the “Find Store” at the top of the screen is essential for a good customer experience, leading to higher conversions. By including GPS features and localizing deals for individual restaurants, Pizza Hut is making it even easier for consumers to complete their orders.</p>
+	              </div>
+		    </li>
+			
+            <li class="acc-header" id="ksrch"> 
+		        <a href="#ksrch">How to Write the Perfect Tweet?</a>
+		        <div class="acc-content">
+		          <p>
+	               If you’re still trying to figure what works and what doesn’t work when composing a Tweet, it’s understandable – it’s not easy. However, there are a few tricks that work at least for now.</p>
+	            <p><strong>Be personable</strong>. While keeping your brand identity intact, remember that people who follow you are humans. Use 'we', 'us' more than 'I'. Speak to people, address them as a person. <br>
+	              <br>
+	              <strong>Converse</strong>. Ask questions. And remember not to ask a questions for which the answer is just a Yes or a NO.</p>
+	              <p>If you’re referencing someone else’s material, cite them with ‘via’ and include their handle. This is great for a possible retweet by the person you’re citing and engagement.</p>
+	              <p><strong><br>
+                  Offer information, statistics, tips, etc</strong>. What helps your audience helps your Tweet. </p>
+	              <p>Use quotes. &quot;DGMC has a specialized MBA in Media and Communication&quot;. @dgmediaschool + Shortened website link </p>
+	              <p>Put hashtags at the end of your tweet, but don;t go overboard with hashtags. Don't use more than 4. <strong>Don't look desperate. <br>
+                  <br>
+	                </strong>Use the headline of the article you’re sharing. Many people do this and it’s fine. However, you want your tweets to stand out amongst the crowd. If you’re going to share the headline, just make sure you attribute the correct people.</p>
+	              <p><br>
+                  While it’s next to impossible to guarantee a tweet will go ‘viral,’ if it does the following three things you’re off to a good start:</p>
+	              <p><strong><br>
+                  1. It engages.<br>
+                  </strong>Make sure your tweet engages the reader, makes them retweet, or reply to you. Use images, quotes. Sometimes, a little controversy may also help. Be careful though, don't ruffle the wrong feathers. </p>
+	              <p><strong><br>
+                  2. Reference current trends smartly</strong>, without sounding too obvious. Reference social media posts, trending hashtags, etc. but present a new view, a fresh take on the subject. </p>
+	              <p><strong><br>
+                  3. Include a visual<br>
+                  </strong>It works. A small photograph, video will can really make a difference. Remember, a visual speaks a thousand words.</p>
+	              <p><strong><br>
+                  Follow the 80-20 rule<br>
+                  </strong>Self-promotional tweets (e.g., “really excited to be presenting at #SXSW!”) can help reinforce your expertise, but you don’t want your Twitter to look like a PR campaign. To strike the right balance, use only 20% of your tweets for self promotion.</p>
+              </div>
+		    </li>
+				
+			<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

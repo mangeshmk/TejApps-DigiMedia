@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="alpha"><a href="#alpha">Module VII - <span class="acc-header">Cyber Crime and Challenges of the New Media</span></a></li>
+<li class="acc-header" id="abdecode"><a href="#abdecode">Information Technology Act, 2000</a>  <br>
+  IT Act, 2000 is partially based on UN General Assembly’s resolution A/RES/51/162, dated 30th January, 1997 on Model Law on Electronic Commerce adopted by United Nations Commission on International Trade Law. <br>
+  <br>
+  It aims to recognize and legalize E-Commerce transactions performed by the means of the internet. It also includes any form of storages and documents, as well. It aims to provide better efficiency in Government services and provides tools for the Government to fight Cybercrime. <br>
+  <br>
+  IT act, 2000 is applicable throughout India.<br>
+  <br>
+  <table width="95%"  border="1">
+    <tr>
+      <td>Sections </td>
+      <td>Offence</td>
+    </tr>
+    <tr>
+      <td>65 </td>
+      <td>Tampering with computer source documents.</td>
+    </tr>
+    <tr>
+      <td>66 </td>
+      <td>Hacking with computer system</td>
+    </tr>
+    <tr>
+      <td>66B</td>
+      <td>Receiving stolen computer or communication device</td>
+    </tr>
+    <tr>
+      <td>66C</td>
+      <td>Using password of another person.</td>
+    </tr>
+    <tr>
+      <td>66D</td>
+      <td>Cheating using computer resource</td>
+    </tr>
+    <tr>
+      <td>66E</td>
+      <td> Publishing private images of others</td>
+    </tr>
+    <tr>
+      <td>66F</td>
+      <td>Acts of cyberterrorism</td>
+    </tr>
+    <tr>
+      <td>67 </td>
+      <td>Publishing information which is obscene in electronic form.</td>
+    </tr>
+    <tr>
+      <td>67A </td>
+      <td>Publishing images containing sexual acts</td>
+    </tr>
+    <tr>
+      <td>67B </td>
+      <td>Publishing child porn or predating children online</td>
+    </tr>
+    <tr>
+      <td>67C </td>
+      <td>Failure to maintain records</td>
+    </tr>
+    <tr>
+      <td>68 </td>
+      <td>Failure/refusal to comply with orders</td>
+    </tr>
+    <tr>
+      <td>69 </td>
+      <td>Failure/refusal to decrypt data</td>
+    </tr>
+    <tr>
+      <td>70 </td>
+      <td>Securing access or attempting to secure access to a protected system</td>
+    </tr>
+    <tr>
+      <td>71 </td>
+      <td>Misrepresentation</td>
+    </tr>
+  </table>
+  <br>
+    <br>
+
+    <p>IT Act, 2000 consists of 94 sections, divided into 13 chapters and 4 schedules. THE Act also amended various sections of the Indian Penal Code, 1860, the Indian Evidence Act, 1872, the Banker's Book Evidence Act, 1891, and the Reserve Bank of India Act, 1934 to make them compliant with new technologies. Section 66 A has been struck down by Supreme Court of India on 24th March, 2015.</p>
+    </li>
+<li class="acc-header" id="mod"> 
+<a href="#mod">Copyright</a>
+<p>The world today has entered into an era of instant communication. A person sitting in the remotest corner of India can enjoy live performance taking place in the faraway places like America or Africa, thanks to electronic (parallel) media. Telephone and fax have made it possible to communicate oral or written messages across the globe within seconds. The computer-aided communication technologies such as E-Mail and Internet have added altogether a new dimension to today's communication process by making it more speedy, informative and economical. <br>
+  <br>
+  The ways through which different types of information can be communicated have also undergone a sea change. These days a film song can be put in or accessed by a single device along with a textual message and even a painting. While all these have made communication among people more effective and efficient both in terms of time and cost, they pose the greatest threat to the copyright world. Modern communication channels, being intensively relying on a variety of copyrighted products, are liable to be pirated in large scale, if adequate precautions are not exercised. Copyright is a legal right created by the law of a country that grants the creator of original work exclusive rights for its use and distribution. This is usually only for a limited time. <br>
+  <br>
+  The exclusive rights are not absolute but limited by limitations and exceptions to copyright law, including fair use. A major limitation on copyright is that copyright protects only the original expression of ideas, and not the underlying ideas themselves. </p>
+<p>The Copyright Act, 1957 came into effect from January 1958. This Act has been amended five times since then, i.e., in 1983, 1984, 1992, 1994, 1999 and 2012. The Copyright (Amendment) Act, 2012 is the most substantial. The main reasons for amendments to the Copyright Act, 1957 include to bring the Act in conformity with WCT and WPPT; to protect the Music and Film Industry and address its concerns; to address the concerns of the physically disabled and to protect the interests of the author of any work; Incidental changes; to remove operational facilities; and enforcement of rights. <br>
+  <br>
+  Section 9 of the Copyright Act requires for establishment of an office to be called the Copyright Office for the purpose of the Act. The Copyright Office is to be under the immediate control of a Registrar of Copyrights to be appointed by the Central Government, who would act under the superintendence and directions of the Central Government. The Copyright Office is currently located in New Delhi. <br>
+  <br>
+  Copyright is a form of intellectual property, applicable to certain forms of creative work. Some, but not all jurisdictions require &quot;fixing&quot; copyrighted works in a tangible form. It is often shared among multiple authors, each of whom holds a set of rights to use or license the work, and who are commonly referred to as rights holders. These rights frequently include reproduction, control over derivative works, distribution, public performance, and &quot;moral rights&quot; such as attribution. <br>
+  <br>
+  Copyrights are considered territorial rights, which mean that they do not extend beyond the territory of a specific jurisdiction. While many aspects of national copyright laws have been standardized through international copyright agreements, copyright laws vary by country. <br>
+  <br>
+  Typically, the duration of a copyright spans the author's life plus 50 to 100 years (that is, copyright typically expires 50 to 100 years after the author dies, depending on the jurisdiction). Some countries require certain copyright formalities to establishing copyright, but most recognize copyright in any completed work, without formal registration. Generally, copyright is enforced as a civil matter, though some jurisdictions do apply criminal sanctions. <br>
+  <br>
+  Copyright piracy is a phenomenon prevalent worldwide. Piracy means unauthorized reproduction, importing or distribution either of the whole or of a substantial part of works protected by copyright. The author of a copyrighted work, being the owner, enjoys certain exclusive rights with respect to his or her works. These include right to reproduce, to publish, to adopt, to translate and to perform in public. The owner can also sell, assign, license or bequeath the copyright to another party if he wishes so. If any person other than the copyright owner or his authorized party undertakes any of the above mentioned activities with respect to a copyrighted product, it amounts to infringement of the copyright. Copyright piracy is thus like any other theft which leads to loss to the owners of the property. <br>
+  <br>
+  Besides economic loss, piracy also adversely affects the creative potential of a society as it denies creative people such as authors and artists their legitimate dues. There are different ways through which piracy takes place. Computer software is pirated by simply copying it onto another machine not authorized for its use. Book piracy takes place when a book is reproduced by someone other than the real publisher and sold in the market. A performer's right is violated when a live performance of an artist is recorded or telecasted live without his/her permission. <br>
+  <br>
+  In a cinematographic work piracy generally takes place through unauthorized reproduction of the film in video forms and/or displaying the video through cable networks without taking proper authorization from the film producer (the right holder). In fact, there are numerous other ways through which piracy of copyrighted works take place. The nature and extent of piracy also vary across the segments of the copyright industry. <br>
+  <br>
+  Piracy of copyrighted products is a problem as old as the copyright itself. Only in recent years it has received prominence, especially in the academic and policy circles. In India, no official estimate is available to indicate the extent of piracy and associated economic loss. But perceptions are that the piracy is a big problem. The main reasons behind copyright piracy are poor enforcement and lack of awareness on copyright matters. The copyright laws of India are as good as those of many advanced countries in Europe and America, where concern for copyright is at a high level. <br>
+  <br>
+  Punishments prescribed for violators are stringent and comparable to those of many countries in the world. But laws alone can do little justice unless implemented properly. The enforcement mechanism is weak in the country.</p>
+</li>
+
+<li class="acc-header" id="mod"> 
+<a href="#mod">Ethics</a>
+<p>The determination of choosing what is right and what is wrong and following the right behavior using morals is called as ethics.<br>
+  <br>
+      Computer ethics is a set of moral principles that govern the usage of computers. <br>
+      <br>
+      Digital Ethics is the study of how to manage oneself ethically, professionally and in a clinically sound manner via online and digital mediums. <br>
+      <br>
+      Cyber ethics is the philosophic study of ethics pertaining to computers, encompassing user behaviour and what computers are programmed to do, and how this affects individuals and society. For years, various governments have enacted regulations while organizations have defined policies about cyber ethics. It can also be termed as “netiquette” i.e. “net etiquette”. As a part of responsible computer user in the society, one shall use the system in an ethical and lawful manner. <br>
+      <br>
+      <strong>Ethics for a computer user:<br>
+      </strong>Any ethical computer user should avoid software piracy and unauthorized access. <br>
+      <br>
+      <strong>      Software Piracy:<br>
+      </strong>Software piracy is nothing but copyright violation of software created originally by an individual or an institution. It includes stealing codes or programs and other information illegally and creating the imitated copy by unauthorized means and utilizing the data either for their own benefit or for profit making is violation of copyright act. Piracy is possible in many forms and few most common are: duplication of original license copy, distribution and usage of the same. <br>
+      <br>
+      <strong>      Unauthorized Access:<br>
+      </strong>Authorization means granting access rights to resources, which is related to information security, computer security and to access control in particular. This is typically possible when the particular software or service is purchased through legal and formal procedures. <br>
+      <br>
+      Gaining access without the permission of the user is unauthorised access. Attempting to get information [like emails, bank account, intellectual or any personal or confidential information] from unauthorised person is known as accessing the machine illegally. <br>
+      <br>
+      <strong>Information services<br>
+      </strong>The ethics for information services are: <br>
+      1. Ensuring accuracy and authenticity <br>
+      2. Properly designed database <br>
+      3. Information provided should be complete without ambiguity <br>
+      4. Providing proper security from unauthorized access. <br>
+      <br>
+      <strong>Code and guidelines of ethics<br>
+      </strong>Following are the key points which users should follow as guidelines: <br>
+      Honesty: as a part of decent behavior, user shall always demonstrate the truth while using the internet. <br>
+       Respect: User should respect the privacy of the users. <br>
+       Confidentiality: User should keep confidentiality while using internet and not share any information to anybody which will be breach and the user should not try to get confidential data from the others. <br>
+       Professionalism: User should maintain professional conduct and well-mannered approach. <br>
+       Responsibility: User should take ownership and responsibility of their own data on the internet and also ensure that it contains authenticity and the truth. <br>
+       Communication: User should ensure decent and polite communication with the others. <br>
+       Obeying the law: User should strictly ensure to obey the law and demonstrate decent internet usage.<br>
+       <br>
+       Ethics for computer professionals<br>
+      1. Computer professionals are obligated to perform assigned tasks competently, according to professional standards. <br>
+      2. These professional standards include technical excellence and concern for social effects of computers on operators, users and the public. <br>
+      3. Computer professionals should ensure that their technical knowledge and efforts to create desired output are getting utilized in the development of the society. <br>
+      4. Computer professionals are bound to operate on ethical grounds and with legal functions. <br>
+      5. They are key factors and responsibilities that a computer professional shall take into account.<br>
+      <br>
+      <strong>      Ethics for business</strong><br>
+      E-commerce is becoming very popular among businessmen as it is helping them to reach consumers faster than any other means. Every business is expected to follow their set of ethics and carry out deals in the most legal and efficient way. <br>
+      Business should have ethical policies and guidance on the proper use of business computers. They should have authenticity and quality of the product. Moreover, they should also have branding and quality services and should have proper data security procedures. <br>
+  </p>
+</li>
+<li class="acc-header" id="mod"> 
+<a href="#mod">Digital Security</a>
+<p>  Digital security is the protection of your digital identity – the network or Internet equivalent of your physical identity. Digital security includes the tools you use to secure your identity, assets and technology in the online and mobile world. <br>
+  <br>
+  These tools include anti-virus software, Web services, and biometrics and secure personal devices you carry with you every day. Secure personal devices such as a smart card-based USB token, the SIM card in your cell phone, the secure chip in your contactless payment card or e-passport are digital security devices because they give you the freedom to communicate, travel, shop, bank and work using your digital identity in a way that is convenient, enjoyable and secure. <br>
+  <br>
+  Every day, everywhere, digital technology is generating new possibilities; new ways to work and play, to transact and interact. We’re surrounded by digital identities and data which need to be exchanged over networks with organizations, people and devices. <br>
+  <br>
+  As more and more of these devices get connected, they can help us access a range of services including communications, payment and eGovernment. The benefits are obvious – but there are security implications too. Potentially, there are risks for individual identities as well as personal, corporate and government information.<br>
+  <br>
+  Computers and the internet- Internet security involve the protection of a computer's internet account and files from intrusion by an outside user. Internet users today are very familiar with companies like Symantec (Norton Anti-Virus) and McAfee that provide them with internet security products to guard against computer viruses, as well as to provide secure firewalls and protection against spyware. <br>
+  <br>
+  Organizations like the Center for Internet Security (CIS) provide enterprises with resources for measuring information security status and making rational security investment decisions. The fact that an organization like CIS exists today is proof of the importance of maintaining adequate internet security.</p>
+<p></p>
+</li>
+<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

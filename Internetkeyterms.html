@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+	.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="ik"><a href="#ik">Internet Keyterms</a></li>
+
+<li class="acc-header" id="abdecode"><a href="#abdecode">Application Server</a><div class="acc-content">
+<p>Server software that manages one or more other pieces of software in a way that makes the managed software available over a network, usually to a Web server. By having a piece of software manage other software packages it is possible to use resources like memory and database access more efficiently than if each of the managed packages responded directly to requests.All digital content is numerical in nature. New media is programmable, can be manipulated, and converted from one form to another. The numerical nature of digital media allows one to write algorithms, and program the content as needed. Which is why today we have transmedia content - creation of content that can be viewed / enjoyed on multiple platforms. It is also known a 'fluxity' where the content is in for of flux, and can be easily converted from one form to other.</p>
+</div>
+</li>
+
+<li class="acc-header" id="arpa"> 
+<a href="#arpa">ARPANet</a>
+<div class="acc-content">
+ARPANet (Advanced Research Projects Agency Network)  
+  <p>  The precursor to the Internet. Developed in the late 60's and early 70's by the US Department of Defense as an experiment in wide-area-networking to connect together computers that were each running different system so that people at one location could use computing resources from another location.Because the digital content is in form of flux, it is easily programmable and be converted or transcoded into several different formats. While doing so, programmers write their algorithms based on modules, which can be reused. To give a simple example, if I write a module on the 'eraser' tool in Photoshop, I write it in such a way that it can be used for all images. The 'layers' are another example of modular program, where each layer can be treated as an independent module, yet, together they can form an entirely different content.</p>
+</div>
+</li>
+<li class="acc-header" id="asci"> 
+		        <a href="#asci">ASCII  (American Standard Code for Information Interchange)</a>
+		        <div class="acc-content"><p>This is the defacto world-wide standard for the code numbers used by computers to represent all the upper and lower-case Latin letters, numbers, punctuation, etc. There are 128 standard ASCII codes each of which can be represented by a 7 digit binary number: 0000000 through 1111111.</p>
+	          </div>
+	      </li>
+           	<li class="acc-header" id="bb"> 
+		        <a href="#bb">Backbone</a>
+		        <div class="acc-content">
+		          <p>A high-speed line or series of connections that forms a major pathway within a network. The term is relative as a backbone in a small network will likely be much smaller than many non-backbone lines in a large network..</p>
+	          </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="bw"> 
+		        <a href="#bw">Bandwidth</a>
+		        <div class="acc-content">
+		          <p>	How much stuff you can send through a connection. Usually measured in bits-per-second (bps.) A full page of English text is about 16,000 bits. A fast modem can move about 57,000 bits in one second. Full-motion full-screen video would require roughly 10,000,000 bits-per-second, depending on compression.</p>
+	          </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="bl"> 
+		        <a href="#bl">Blog  (weB LOG)</a>
+		        <div class="acc-content"><p>	A blog is basically a journal that is available on the web. The activity of updating a blog is &quot;blogging&quot; and someone who keeps a blog is a &quot;blogger.&quot; Blogs are typically updated daily using software that allows people with little or no technical background to update and maintain the blog. </p>
+	            <p>Postings on a blog are almost always arranged in chronological order with the most recent additions featured most prominently. </p>
+	              <p>It is common for blogs to be available as RSS feeds. </p>
+	              <p>Blogosphere or Blogsphere<br>
+	                The current state of all information available on blogs and/or the sub-culture of those who create and use blogs. </p>
+                </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="brb"> 
+		        <a href="#brb">Broadband</a>
+		        <div class="acc-content">
+		          <p>Generally refers to connections to the Internet with much greater bandwidth than you can get with a modem. There is no specific definition of the speed of a &quot;broadband&quot; connection but in general any Internet connection using DSL or a via Cable-TV may be considered a broadband connection.</p>
+	            </div>
+		    </li>
+			
+			<li class="acc-header" id="bro"> 
+		        <a href="#bro">Browser</a>
+		        <div class="acc-content"><p>A Client program (software) that is used to look at various kinds of Internet resources.</p>
+	            </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="ck"> 
+		        <a href="#ck">Cookie</a>
+		        <div class="acc-content">
+		          <p>	The most common meaning of &quot;Cookie&quot; on the Internet refers to a piece of information sent by a Web Server to a Web Browser that the Browser software is expected to save and to send back to the Server whenever the browser makes additional requests from the Server. <br>
+		            Depending on the type of Cookie used, and the Browsers' settings, the Browser may accept or not accept the Cookie, and may save the Cookie for either a short time or a long time. <br>
+		            Cookies might contain information such as login or registration information, online &quot;shopping cart&quot; information, user preferences, etc. <br>
+		            When a Server receives a request from a Browser that includes a Cookie, the Server is able to use the information stored in the Cookie. For example, the Server might customize what is sent back to the user, or keep a log of particular users' requests. <br>
+		            Cookies are usually set to expire after a predetermined amount of time and are usually saved in memory until the Browser software is closed down, at which time they may be saved to disk if their &quot;expire time&quot; has not been reached. <br>
+	              Cookies do not read your hard drive and send your life story to the CIA, but they can be used to gather more information about a user than would be possible without them.</p>
+	            </div>
+		    </li>
+
+<li class="acc-header" id="cs"> 
+		        <a href="#cs">CSS  (Cascading Style Sheet)</a>
+		        <div class="acc-content"><p>	A standard for specifying the appearance of text and other elements. CSS was developed for use with HTML in Web pages but is also used in other situations, notably in applications built using XPFE. CSS is typically used to provide a single &quot;library&quot; of styles that are used over and over throughout a large number of related documents, as in a web site. A CSS file might specify that all numbered lists are to appear in italics. By changing that single specification the look of a large number of documents can be easily changed.</p>
+	            </div>
+	      </li>
+			
+			<li class="acc-headerlink" id="dmad"><a href="http://www.rset.edu.in/dgmc/post-graduate-diploma-digital-marketing" target="_blank">This part of the page is powered by DGMC<img src="assets/images/digital_marketing_ad1.jpg" width="100">Click here to know more</a></li>
+            		
+		  <li class="acc-header" id="dnss"> 
+		        <a href="#dnss">DNS (Domain Name System)</a>
+		        <div class="acc-content">
+		          <p>	The Domain Name System is the system that translates Internet domain names into IP numbers. A &quot;DNS Server&quot; is a server that performs this kind of translation. </p>
+	            <p><strong>Domain Name</strong><br>
+	                The unique name that identifies an Internet site. Domain Names always have 2 or more parts, separated by dots. The part on the left is the most specific, and the part on the right is the most general. A given machine may have more than one Domain Name but a given Domain Name points to only one machine. For example, the domain names: </p>
+	              <p>dgmcms.org.in<br>
+	                mail.dgmcms.org.in<br>
+	                workshop.dgmcms.org.in</p>
+	              <p>can all refer to the same machine, but each domain name can refer to no more than one machine. <br>
+	                Usually, all of the machines on a given Network will have the same thing as the right-hand portion of their Domain Names (matisse.net in the examples above). It is also possible for a Domain Name to exist but not be connected to an actual machine. This is often done so that a group or business can have an Internet e-mail address without having to establish a real Internet site. In these cases, some real Internet machine must handle the mail on behalf of the listed Domain Name.</p>
+            </div>
+	      </li>
+
+<li class="acc-header" id="ft"> 
+		        <a href="#ft">FTP - File Transfer Protocol</a>
+		        <div class="acc-content"><p>	A very common method of moving files between two Internet sites. <br>
+		          FTP is a way to login to another Internet site for the purposes of retrieving and/or sending files. There are many Internet sites that have established publicly accessible repositories of material that can be obtained using FTP, by logging in using the account name &quot;anonymous&quot;, thus these sites are called &quot;anonymous ftp servers&quot;. <br>
+		          FTP was invented and in wide use long before the advent of the World Wide Web and originally was always used from a text-only interface.</p>
+	            </div>
+	      </li>
+            
+
+			
+		  <li class="acc-header" id="gop"> 
+		        <a href="#gop">Gopher</a>
+		        <div class="acc-content">
+		          <p>Invented at the University of Minnesota in 1993 just before the Web, gopher was a widely successful method of making menus of material available over the Internet. <br>
+		            Gopher was designed to be much easier to use than FTP, while still using a text-only interface. <br>
+	              Gopher is a Client and Server style program, which requires that the user have a Gopher Client program. Although Gopher spread rapidly across the globe in only a couple of years, it has been largely supplanted by Hypertext, also known as WWW (World Wide Web). There are still thousands of Gopher Servers on the Internet and we can expect they will remain for a while. </p>
+	            </div>
+	      </li>
+
+<li class="acc-header" id="ho"> 
+		        <a href="#ho">Host</a>
+		        <div class="acc-content"><p>	Any computer on a network that is a repository for services available to other computers on the network. It is quite common to have one host machine provide several services, such as SMTP (email) and HTTP (web).</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="ht"> 
+		        <a href="#ht">HTML, HTTP, Hypertext</a>
+		        <div class="acc-content">
+		          <p>	<strong>HTML -- (HyperText Markup Language)</strong><br>
+	              The coding language used to create Hypertext documents for use on the World Wide Web. HTML looks a lot like old-fashioned typesetting code, where you surround a block of text with codes that indicate how it should appear. </p>
+	            <p>The &quot;hyper&quot; in Hypertext comes from the fact that in HTML you can specify that a block of text, or an image, is linked to another file on the Internet. HTML files are meant to be viewed using a &quot;Web Browser&quot;. </p>
+	              <p>HTML is loosely based on a more comprehensive system for markup called SGML, and is expected to eventually be replaced by XML-based XHTML standards. </p>
+	              <p><strong>HTTP -- (HyperText Transfer Protocol)</strong><br>
+                  The protocol for moving hypertextfiles across the Internet. Requires a HTTP client program on one end, and an HTTP server program (such as Apache) on the other end. HTTP is the most important protocol used in the World Wide Web (WWW). </p>
+	              <p><strong>Hypertext</strong><br>
+	                Generally, any text that contains links to other documents - words or phrases in the document that can be chosen by a reader and which cause another document to be retrieved and displayed.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="ip"> 
+		        <a href="#ip">IP Number </a>
+		        <div class="acc-content"><p>	IP Number -- (Internet Protocol Number)<br>
+		          Sometimes called a dotted quad. A unique number consisting of 4 parts separated by dots, e.g. <br>
+165.113.245.2<br>
+Every machine that is on the Internet has a unique IP number - if a machine does not have an IP number, it is not really on the Internet. Many machines (especially servers) also have one or more Domain Names that are easier for people to remember.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="isp"> 
+		        <a href="#isp">ISP -- (Internet Service Provider)</a>
+		        <div class="acc-content">
+		          <p>An institution that provides access to the Internet in some form, usually for money. .</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="js"> 
+		        <a href="#js">JavaScript</a>
+		        <div class="acc-content"><p>JavaScript is a programming language that is mostly used in web pages, usually to add features that make the web page more interactive. When JavaScript is included in an HTML file it relies upon the browser to interpret the JavaScript. When JavaScript is combined with Cascading Style Sheets(CSS), and later versions of HTML (4.0 and later) the result is often called DHTML.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="jpg"> 
+		        <a href="#jpg">JPEG</a>
+		        <div class="acc-content">
+		          <p>JPEG -- (Joint Photographic Experts Group)<br>
+	              JPEG is most commonly mentioned as a format for image files. JPEG format is preferred to the GIF format for photographic images as opposed to line art or simple logo art. </p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="mtg"> 
+		        <a href="#mtg">Meta Tag</a>
+		        <div class="acc-content"><p>A specific kind of HTML tag that contains information not normally displayed to the user. Meta tags contan information about the page itself, hence the name (&quot;meta&quot; means &quot;about this subject&quot;) <br>
+		          Typical uses of Meta tags are to include information for search engines to help them better categorize a page. <br>
+		          You can see the Meta tags in a page if you view the pages' source code.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="mir"> 
+		        <a href="#mir">Mirror</a>
+		        <div class="acc-content">
+		          <p>Generally speaking, &quot;to mirror&quot; is to maintain an exact copy of something. Probably the most common use of the term on the Internet refers to &quot;mirror sites&quot; which are web sites, or FTP sites that maintain copies of material originated at another location, usually in order to provide more widespread access to the resource. For example, one site might create a library of software, and 5 other sites might maintain mirrors of that library.</p>
+              </div>
+		    </li>
+
+			<li class="acc-header" id="pdff"> 
+		        <a href="#pdff">PDF</a>
+		        <div class="acc-content"><p>PDF -- (Portable Document Format)<br>
+		          A file format designed to enable printing and viewing of documents with all their formatting (typefaces, images, layout, etc.) appearing the same regardless of what operating system is used, so a PDF document should look the same on Windows, Macintosh, linux, OS/2, etc. The PDF format is based on the widely used Postcript document-description language. Both PDF and Postscript were developed by the Adobe Corporation.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="pli"> 
+		        <a href="#pli">Plug in</a>
+		        <div class="acc-content">
+		          <p>A (usually small) piece of software that adds features to a larger piece of software. Common examples are plug-ins for the Netscape® browser and web server. Adobe Photoshop® also uses plug-ins. </p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="po"> 
+		        <a href="#po">Port</a>
+		        <div class="acc-content"><p>Port<br>
+		          3 meanings. First and most generally, a place where information goes into or out of a computer, or both. E.g. the serial port on a personal computer is where a modem would be connected. <br>
+		          On the Internet port often refers to a number that is part of a URL, appearing after a colon (:) right after the domain name. Every service on an Internet server listens on a particular port number on that server. Most services have standard port numbers, e.g. Web servers normally listen on port 80. Services can also listen on non-standard ports, in which case the port number must be specified in a URL when accessing the server, so you might see a URL of the form: <br>
+gopher://peg.cwis.uci.edu:7000/<br>
+This shows a gopher server running on a non-standard port (the standard gopher port is 70). <br>
+Finally, port also refers to translating a piece of software to bring it from one type of computer system to another, e.g. to translate a Windows program so that is will run on a Macintosh. </p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="pcol"> 
+		        <a href="#pcol">Protocol</a>
+		        <div class="acc-content">
+		          <p>On the Internet &quot;protocol&quot; usually refers to a set of rules that define an exact format for communication between systems. For example the HTTP protocol defines the format for communication between web browsers and web servers, the IMAP protocol defines the format for communication between IMAP email servers and clients, and the SSL protocol defines a format for encrypted communications over the Internet. </p>
+              <p>Virtually all Internet protocls are defined in RFC documents.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="prosr"> 
+		        <a href="#prosr">Proxy Server </a>
+		        <div class="acc-content"><p>=A Proxy Server sits in between a Client and the &quot;real&quot; Server that a Client is trying to use. Client's are sometimes configured to use a Proxy Server, usually an HTTP server. The clients makes all of it's requests from the Proxy Server, which then makes requests from the &quot;real&quot; server and passes the result back to the Client. Sometimes the Proxy server will store the results and give a stored result instead of making a new one (to reduce use of a Network). Proxy servers are commonly established on Local Area Networks.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="rou"> 
+		        <a href="#rou">Router</a>
+		        <div class="acc-content">
+		          <p>A special-purpose computer (or software package) that handles the connection between 2 or more Packet-Switched networks. Routers spend all their time looking at the source and destination addresses of the packets passing through them and deciding which route to send them on. .</p>
+              </div>
+		    </li>
+
+
+<li class="acc-header" id="rs"> 
+		        <a href="#rs">RSS</a>
+		        <div class="acc-content"><p>RSS -- (Rich Site Summary or RDF Site Summary or Real Simple Syndication)<br>
+		          A commonly used protocol for syndication and sharing of content, originally developed to facilitate the syndication of news articles, now widely used to share the contents of blogs. Mashups are often made using RSS feeds. </p>
+	            <p>RSS is an XML-based summary of a web site, usually used for syndication and other kinds of content-sharing. </p>
+	              <p>There are RSS &quot;feeds&quot; which are sources of RSS information about web sites, and RSS &quot;readers&quot; which read RSS feeds and display their content to users. </p>
+	              <p>RSS is being overtaken by a newer, more complex protocol called Atom.</p>
+      </div>
+	      </li>
+			
+          <li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank">This part of the page is powered by MET Institute of Mass Media <img src="assets/images/760_210.gif" width="100%">Click here to know more</a></li>	
+	
+    		<li class="acc-header" id="seng"> 
+		        <a href="#seng">Search Engine</a>
+		        <div class="acc-content">
+		          <p>Search Engine<br>
+		            A (usually web-based) system for searching the information available on the Web. <br>
+	              Some search engines work by automatically searching the contents of other systems and creating a database of the results. Other search engines contains only material manually approved for inclusion in a database, and some combine the two approaches. 
+                  </p>
+              </div>
+		    </li>
+
+
+<li class="acc-header" id="sc"> 
+		        <a href="#sc">Security Certificate</a>
+		        <div class="acc-content">
+		          <p>A chunk of information (often stored as a text file) that is used by the SSL protocol to establish a secure connection.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="seoo"> 
+		        <a href="#seoo">SEO - Search Engine Optimization</a>
+		        <div class="acc-content">
+		          <p>SEO -- (Search Engine Optimization)<br>
+	              The practice of designing web pages so that they rank as high as possible in search results from search engines.</p>
+              <p>There is &quot;good&quot; SEO and &quot;bad&quot; SEO. Good SEO involves making the web page clearly describe its subject, making sure it contains truly useful information, including accurate information in Meta tags, and arranging for other web sites to make links to the page. Bad SEO involves attempting to deceive people into believing the page is more relevant than it truly is by doing things like adding inaccurate Meta tags to the page.</p>
+              </div>
+		    </li>
+
+
+<li class="acc-header" id="svr"> 
+		        <a href="#svr">Server</a>
+		        <div class="acc-content"><p>A computer, or a software package, that provides a specific kind of service to client software running on other computers. The term can refer to a particular piece of software, such as a WWW server, or to the machine on which the software is running, e.g. &quot;Our mail server is down today, that's why e-mail isn't getting out.&quot; <br>
+		          A single server machine can (and often does) have several different server software packages running on it, thus providing many different servers to clients on the network. <br>
+		          Sometimes server software is designed so that additional capabilities can be added to the main program by adding small programs known as servlets. <br>
+		          Spam (or Spamming)<br>
+		          An inappropriate attempt to use a mailing list, or USENET or other networked communications facility as if it was a broadcast medium (which it is not) by sending the same message to a large number of people who didn?t ask for it. The term probably comes from a famous Monty Python skit which featured the word spam repeated over and over. The term may also have come from someone?s low opinion of the food product with the same name, which is generally perceived as a generic content-free waste of resources. (Spam® is a registered trademark of Hormel Corporation, for its processed meat product.)</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="spw"> 
+		        <a href="#spw">Spyware</a>
+		        <div class="acc-content">
+		          <p>Spyware<br>
+	              A somewhat vague term generally referring to software that is secretly installed on a users computer and that monitors use of the computer in some way without the users' knowledge or consent. </p>
+              <p>Most spyware tries to get the user to view advertising and/or particular web pages. Some spyware also sends information about the user to another machine over the Internet. </p>
+                  <p>Spyware is usually installed without a users' knowledge as part of the installation of other software, especially software such as music sharing software obtained via download.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="tgg"> 
+		        <a href="#tgg">Tag</a>
+		        <div class="acc-content">
+		          <p>The term &quot;tag&quot; can be used as a noun or verb. As a noun, a tag is a basic element of the languages used to create web pages (HTML) and similar languages such as XML. Another, more recent meaning of tag is related to reader-crearted tags where blogs and other content (such as photos, music, etc.) may be &quot;tagged&quot; which means to assign a keyword, such as &quot;politics&quot; or &quot;gardening&quot;, this enables searches for &quot;all the blog postings in the past week that are tagged 'prenatal care'&quot;</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="actu"> 
+		        <a href="#actu">TCP-IP</a>
+		        <div class="acc-content">
+		          <p>	              TCP/IP -- (Transmission Control Protocol/Internet Protocol)<br>
+	              This is the suite of protocols that defines the Internet. Originally designed for the UNIX operating system, TCP/IP software is now included with every major kind of computer operating system. To be truly on the Internet, your computer must have TCP/IP software.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="tdom"> 
+		        <a href="#tdom">TLD - Top level Domain</a>
+		        <div class="acc-content">
+		          <p>TLD -- (Top Level Domain)<br>
+		            The last (right-hand) part of a complete Domain Name. For example in the domain name www.matisse.net &quot;.net&quot; is the Top Level Domain. <br>
+		            There are a large number of TLD's, for example .biz, .com, .edu, .gov, .info, .int, .mil, .net, .org, and a collection of two-letter TLD's corresponding to the standard two-letter country codes, for example, .us, .ca, .jp, etc.</p>
+      </div>
+	      </li>
+
+
+<li class="acc-header" id="troj"> 
+		        <a href="#troj">Trojan Horse</a>
+		        <div class="acc-content">
+		          <p>A computer program is either hidden inside another program or that masquerades as something it is not in order to trick potential users into running it. For example a program that appears to be a game or image file but in reality performs some other function. The term &quot;Trojan Horse&quot; comes from a possibly mythical ruse of war used by the Greeks sometime between 1500 and 1200 B.C. <br>
+	              A Trojan Horse computer program may spread itself by sending copies of itself from the host computer to other computers, but unlike a virus it will (usually) not infect other programs.</p>
+      </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="urll"> 
+		        <a href="#urll">URI</a>
+		        <div class="acc-content">
+		          <p>URI -- (Uniform Resource Identifier)<br>
+		            An address for s resource available on the Internet. <br>
+		            The first part of a URI is called the &quot;scheme&quot;. the most well known scheme is http, but there are many others. Each URI scheme has its own format for how a URI should appear.<br>
+		            Here are examples of URIs using the http scheme: <br>
+http://www.rset.edu.in/dgmc/pgdm-in-media-communication<br>
+</p>
+              </div>
+	      </li>
+
+
+<li class="acc-header" id="uril"> 
+		        <a href="#uril">URL</a>
+		        <div class="acc-content"><p>URL -- (Uniform Resource Locator)<br>
+		          The term URL is basically synonymous with URI. URI has replaced URL in technical specifications.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="viru"> 
+		        <a href="#viru">Virus</a>
+		        <div class="acc-content">
+		          <p>A chunk of computer programming code that makes copies of itself without any concious human intervention. Some viruses do more than simply replicate themselves, they might display messages, install other software or files, delete software of files, etc. <br>
+	              A virus requires the presence of some other program to replicate itself. Typically viruses spread by attaching themselves to programs and in some cases files, for example the file formats for Microsoft word processor and spreadsheet programs allow the inclusion of programs called &quot;macros&quot; which can in some cases be a breeding ground for viruses.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="vop"> 
+		        <a href="#vop">VOIP</a>
+		        <div class="acc-content">
+		          <p>VOIP -- (Voice Over IP)<br>
+	              A specification and various technologies used to allow making telephone calls over IP networks, especially the Internet.</p>
+	            <p>Just as modems allow computers to connect to the Internet over regular telephone lines, VOIP technology allows humans to talk over Internet connections.</p>
+	              <p>Costs for VOIP calls can be a lot lower than for traditional telephone calls. Because the IP networks are packet-switched this allows for vastly different ways of handling connections and more efficient use of network resources.</p>
+	              <p>&quot;</p>
+      </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="wbst"> 
+		        <a href="#wbst">Website</a>
+		        <div class="acc-content">
+		          <p>The entire collection of web pages and other information (such as images, sound, and video files, etc.) that are made available through what appears to users as a single web server. Typically all the of pages in a web site share the same basic URL, for example the following URLs are all for pages within the same web site: <br>
+http://www.rset.edu.in/<br>
+http://www.rset.edu.in/dgmc/pgdm-in-media-communication<br>
+http://www.rset.edu.in/dgmc/<br>
+The term has a somewhat informal nature since a large organization might have separate &quot;web sites&quot; for each division, but someone might talk informally about the organizations' &quot;web site&quot; when speaking of all of them.</p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="kida"> 
+		        <a href="#kida">Worm</a>
+		        <div class="acc-content">
+		          <p>Worm<br>
+	              A worm is a virus that does not infect other programs. It makes copies of itself, and infects additional computers (typically by making use of network connections) but does not attach itself to additional programs; however a worm might alter, install, or destroy files and programs.</p>
+	            </div>
+	      </li>
+			
+			
+			<li class="acc-header" id="wwww"> 
+		        <a href="#wwww">WWW</a>
+		        <div class="acc-content">
+		          <p>WWW -- (World Wide Web)<br>
+		            World Wide Web (or simply Web for short) is a term frequently used (incorrectly) when referring to &quot;The Internet&quot;, WWW has two major meanings: <br>
+		            First, loosely used: the whole constellation of resources that can be accessed using Gopher, FTP, HTTP,telnet, USENET, WAIS and some other tools. <br>
+		            Second, the universe of hypertext servers(HTTP servers), more commonly called &quot;web servers&quot;, which are the servers that serve web pages to web browsers. </p>
+              </div>
+		    </li>
+
+<li class="acc-header" id="xxx"> 
+		        <a href="#xxx">XML</a>
+		        <div class="acc-content">
+		          <p>XML -- (eXtensible Markup Language)<br>
+A widely used system for defining data formats. XML provides a very rich system to define complex documents and data structures such as invoices, molecular data, news feeds, glossaries, inventory descriptions, real estate properties, etc. </p>
+	            <p>As long as a programmer has the XML definition for a collection of data (often called a &quot;schema&quot;) then they can create a program to reliably process any data formatted according to those rules. </p>
+	              <p>XML is a subset of the older SGML specification - the definition of XML is SGML minus a couple of dozen items. </p>
+      </div>
+	      </li>
+	<li class="acc-headerlink" id="dmad"><a href="http://www.rset.edu.in/dgmc/pgdm-in-media-communication" target="_blank">This part of the page is powered by DGMC<img src="assets/images/PGDM-Ad.jpg" width="100">Click here to know more</a></li>
+
+
+			<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

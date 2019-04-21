@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+		.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+
+		.accordion .acc-headerlinkMET a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlinkMET a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+
+
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+        
+<li class="acc-header5" id="alpha"><a href="#alpha">Search Engine Optimization (SEO)</a></li>
+<li class="acc-header" id="abdecode"><a href="#abdecode">What is a Search Engine?</a>
+  <div class="acc-content">
+<p>A Search Engine is an online, internet based tool, or software / program that helps users locate information on the web. It is a set of coordinated programs that include a 'spider' - which is also known as a 'crawler' or a 'bot' - that keeps browsing the Internet and collecting data about pages that they visit to be archived. The crawlers use the 'hyperlinks' on pages to go deeper into websites to collect information. This archived data is called the 'index' or a 'catalogue'.When we search for any term, the search engine program searches in this catalogue and givesus the results in the 'Search Engine Results Page' or the SERP. One of the main functions of digital marketing is to get your website's raking at least on the first page of SERP where it is the most relevant. </p>
+  <p>Some well known and popular Search Engines are: Google, Yahoo, MSN, Bing.<br>
+        <br>
+      </p>
+  </div>
+</li>
+<li class="acc-header" id="mod"> 
+<a href="#mod">Types of Search Engines</a>
+<div class="acc-content">
+  <p> Crawler based Search Engines <br>
+    They create their listing in the index or the catalogue automatically by continuously browsing websites on the internet. It keeps building the index for retrieval of data. </p>
+<p>Human Powered Directories <br>
+  To get your website listed, you have to ‘submit' your website to some search engines. Human editors then visit the websites after reviewing the description that webmasters have submitted and include it in their catalogue and index. Examples: LookSmart, Open Directory, ApexKB, Mahala</p>
+  <p>Meta-search Engines <br>
+    After users submit keywords, they are transmitted to several search engines. Search results from all the search engines are then integrated, duplicated eliminated. Subjects searched are clustered together for convenience of the user. Examples: Dogpile, Mamma and Metacrawler. </p>
+  <p>Please refer the following link for more information:<br>
+    http://pwebs.net/2011/04/search-engines-list/ </p>
+  </div>
+</li>
+<li class="acc-header" id="autom"> 
+		        <a href="#autom">How search engines work?</a>
+		        <div class="acc-content">
+		          <p>Primarily, the three main stages of how a search engines work are as follows: <br>
+		            <br>
+	              Crawling - where content is discovered; <br>
+	              Indexing - where it is analysed and stored in huge databases <br>
+	              Retrieval -where a user query fetches a list of relevant pages <br>
+	              <br>
+	              The spiders (robot or a crawler), is a program that follows links on a websites, accessing / visiting several pages of each website, gathers information and content, and add the information in the search engine indexes. Spiders follow links from one page to another and from one site to another.  If other websites have links taking back a visitor to your website (backlinks), it is better for your ranking. Apart form crawling through the web as programmed, spiders also visit websites to collect information based on requests by users. The third function is retrieval of data. </p>
+	          </div>
+</li>
+           	<li class="acc-header" id="tmed"> 
+		        <a href="#tmed">How are pages/websites ranked by the Search Engines?</a>
+		        <div class="acc-content">
+		          <p>Each search engine has developed a formula for ranking web sites. Every search engine uses a different formula, which is why the results will be different between Google, Yahoo, Bing, Ask.com and other search engines. These formulas, known as algorithms, are constantly changing as the search engines strive to achieve improved results..</p>
+	          </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="transp"> 
+		        <a href="#transp">How does search engines rank a web-page?</a>
+		        <div class="acc-content">
+		          <p>Search engine looks for signals to rank a page &amp; itís necessary to tweak the content of your pages &amp; give all the signals to the search engines and understand Keyword research to drive the traffic to your website. The amount of information on the world wide web is immense and you are at any time competing with thousands of websites for the attention and ranking of your website. The process of ranking the websites is complicated, algorithm driven and is getting more and more difficult for the SEO professionals..</p>
+	          </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="hytxt"> 
+		        <a href="#hytxt">How search engines retrieve search results?</a>
+		        <div class="acc-content"><p>Search engines do this by analyzing words and other content on web pages, placing special emphasis on words that appear on specific locations on the web page: the title, headlines, image attributes, overall content emphasis, outbound and inbound links, etc.<br>
+		          <br>
+		          Every search engine has a different algorithm and method to rank the websites that their spiders visit. One of the parameters could be your geo-location and if you search for results anywhere in India, you could end up getting similar results.<br>
+		          <br>
+		          Social Signals <br>
+		          Search engines have begun to give a lot of weightage to your presence on Social Media. The Social Media signal could be your posts on Facebook or LinkedIn, or there could be someone who has added your website/blog as their favourite on their FB page, or blog, or added your website's link in their Tweet. These signals have found a lot of credibility with search engines today. <br>
+		          <br>
+		          Relevancy and search results <br>
+		          When a searcher types some 'keywords' in the search engine for what s/he is looking for, the search engine's algorithm matches the words in its vast database based on the relevance of the keywords. It may be a word, or a combination of words or phrases that are relevant. Based on these algorithms, the search engine then gives the results of the search. However, it is the algorithm that works and one may not get the exact page that one is looking for. But studies also show that most people who search for something via a search engine donít go past the first page of search results.  <br>
+		          <br>
+		          More clicks mean more page views, more page exposure, more revenue, and a greater recognition of authority in whatever field the site might be placed in. Obviously, getting a front page search result is an optimal target for anyone who is looking to get their product, application, or website in front of the people who are interested in it.<br>
+		        </p>
+	            </div>
+		    </li>
+			
+			
+			<li class="acc-header" id="actu"> 
+		        <a href="#actu">Overall, the following factors decide page ranking:</a>
+		        <div class="acc-content">
+		          <p>Google doesn't let people know what those factors are, however, through a combination of research, testing and experience, a good Google SEO consultant knows what the most important factors are. For example, most SEOs would agree that the following are all important ranking factors. <br>
+		            <br>
+	              Keyword usage : The design of your keywords in the website, not only in your metatags, but also in the website content. <br>
+	              <br>
+	              Site structure: Is your website well structured, does it have seamless navigation, does it lead to any missing pages? These are the factors that could also affect your website ranking.  <br>
+	              <br>
+	              Site speed: You need to have optimized graphics, images and videos if you have any on your website. If you have heavy graphics, it could lead to very poor download time negatively affecting your ranking. <br>
+	              <br>
+	              Time spent on site: Is your website/webpage attractive enough? Research shows that a user / visitor may decide within half a second whether to remain on the website or click away. Second to attractiveness is the content. If the user finds that the content is not what s/he expected, the user will simply go to the next site. When users spend more time on your website, your ranking could definitely go up. <br>
+	              <br>
+	              Number of inbound links <br>
+	              How many 'other' website/pages/blogs have links that direct their users to your website? These are called backlinks and is one of the important factors affecting your website ranking. Quality of inbound links Is the quality of the backlink good? Meaning, is the website that is linking back to your website relevant to the subject of your website?  <br>
+	              <br>
+	              What is Keyword research? Keyword research is the process of identifying Keywords, which get the good amount of search volume/month. The idea behind performing a research is to, find the keywords that can give maximum traffic and comes with less competition..</p>
+	            </div>
+		    </li>
+			  
+            <li class="acc-header" id="ksrch"> 
+		        <a href="#ksrch">What is Keyword research?</a>
+		        <div class="acc-content">
+		          <p>
+	               Keyword research is the process of identifying Keywords, which get the good amount of search volume/month. The idea behind performing a research is to, find the keywords that can give maximum traffic and comes with less competition..</p>
+	            </div>
+		    </li>
+			
+            
+             <li class="acc-header" id="whatseo"> 
+		        <a href="#whatseo">What is Search Engine Optimization?</a>
+		        <div class="acc-content">
+		          <p>
+	               SEO is the process by which a SEO specialist, a web master, web designer takes certain steps to improve the 'page rank' of the website so it appears on the first page or the first 10 ranks of the search engine results. Search engines keep constantly evolving. So the SEO specialist has to continiously stay updated in the changes that the search engines make in their algorithms. However, most of the times, it is more of guesswork, as the search engines do not reveal what exactly they change in their algorithms. What is the importance of search for websites? The best way for people to find any content or a website is using search engines. People do this by typing a few words or phrases in the search bar and getting the results on the Search Engines Result Page or SERP.  The difficult part for the SEO specialist is getting into the top ranking of the search results. A study shows that 1st rank on the SERP gets around 31% of clicks which goes down to 3% by the 10th position. On the second page, the results get hardly 1-2% clicks.</p>
+	            </div>
+		    </li>
+            
+            
+             <li class="acc-header" id="areas"> 
+		        <a href="#areas">Areas of operation for SEO Professionals?</a>
+		        <div class="acc-content">
+		          <p>
+	               The perfectly optimized website will have the right blend of keyword usage with content that flows naturally. The website will also have a lot of natural backlinks. These are links to your  website from other websites. The search engine uses this information to determine  which sites get ranked the highest.  <br>
+	               <br>
+	               In the past, following were processess that were popular with the SEO professionals: <br>
+	               <br>
+	               1. Do a lot of Keyword research to explore phrases that are hig in demand and low in competition. <br>
+	               <br>
+	               2. Make pages with highly optimized keyword phrases. <br>
+	               <br>
+	               3. Get / ask people to create a lot of backlinks, use anchors on pages, etc.  <br>
+	               <br>
+	               These steps and processes did work in the past. However, Google constantly changes its algorithm through what it calls Panda and Penguin updates, hence, these methods, though not completely redundant, hold very less value. <br>
+	               <br>
+	               Three very important terms to understand in SEO especially in terms of Google rankings are: <br>
+	               <br>
+	               White Hat SEO - approved strategies for getting your page to rank well. Google offers guidelines to webmasters which spell out approved SEO strategies. <br>
+	               <br>
+	               Black Hat SEO - these are the ìloopholesî that Google are actively seeking out and penalizing for. They include a whole range of strategies from on-page keyword stuffing to backlink blasts using software to generate tens of thousands of backlinks to a webpage. <br>
+	               <br>
+	               Grey Hat SEO - Strategies that lie between the two extremes. These are strategies that Google do not approve of, but are less likely to get your site penalized than black hat. Grey hat tactics are certainly riskier than white hat SEO, but not as risky as black hat..</p>
+	            </div>
+		    </li>
+            
+            
+             <li class="acc-header" id="opf"> 
+		        <a href="#opf">On Page Factors</a>
+		        <div class="acc-content">
+		          <p>
+	               1. Quality of Content Search engines, especially google looks for high quality of content, content that will be relevant to a search query, or phrases that are searched more. Longer pages with quality content, pictures, videos help retain the visitors interest and makes them stay on the page for longer periods of time.  <br>
+	               <br>
+	               2. Page Loading Time More download time due to heavy grapics, is a big negative. Visitors will NOT wait on your page, especially those who have come in through a random search. This is where the term 'bounce' and 'exit' come into play. People will simply click away and not come back, leading to higher bounce rates.  <br>
+	               <br>
+	               3. Internal Links from Other Pages on the Site All links in a website, leading to pages within the website are aclled internal links, as explained before. These help the visitor to navigate better within the website, and find the information they are looking for quickly. <br>
+	               <br>
+	               4. Bounce Rates &quot;Bounce&quot; happens when a visitor clicks a link on the SERPs and then returns to Google. The quicker the click-away, the worse it is for your website, as it informs Google that the visitor was not satisfied. If more such instances occur, your 'Google' reputation suffers. It tells Google that the visitor did not find relevant information. Higher Bounce rates are inversely with relevance.  <br>
+	               <br>
+	               5. Time a Visitor Stays on Your Page / Site. Time that visitors stay on web pages is monitored by Google mainly through the Google Analytics platform. Google Analytics is a free web analytics service for siteowners, which tracks and reports your website traffic, giving Google to accurately track the traffic on your website. Google analytics tracks how the visitor has arrived at your website, the time spent, the number of pages visited, the operating system and also the device the visitors use to visit your page. .</p>
+	            </div>
+		    </li>
+            
+             <li class="acc-header" id="ofpf"> 
+		        <a href="#ofpf">Off Page Factors</a>
+		        <div class="acc-content">
+		          <p>
+                   1. Click-through Rates (CTR) Webmasters/SEO specialists should pay a lot of attention to this factor. It is necessary that the content of the page matches the ranking it has obtained. Suppose, by using a loophole in Google's algorithm, a developer is able to get to the 1st rank, and yet, does not get the desired number of clicks, Google starts moving the page down the order. Conversely, if a lower ranked page has got content that is more desirable than the one at an upper rank, google moves it upwards. <br>
+                   <br>
+                   2. Social Signals Google has started recognizing your presence on Social Media. If your website link is shared, or you have good presence and content on social media with a good number of visitors and followers, your social media page could be ranked higher than even your website. However, social signals are recognized only to a limited extent.  One note: Many developers ignore Google+. Remember, afterall, it belongs to Google and will tend to be recognized by Google better and sooner than other social media. <br>
+                   <br>
+                   3. Backlinks Just because a lot of other websites and pages have a back link to your page/website does not necessarily mean that your page will be ranked higher. Google algorithm looks at the quality of the pages that have a back link to your page. So if a CNN, NDTV, or a ZEE page has a link to your site, it will be with more authorithy whereas even if hundreds of low quality websites provide a link to your page, it may be actually considered as spamming, or manipulation and you might not be ranked at all. .</p>
+	            </div>
+		    </li>
+            
+             <li class="acc-header" id="4ps"> 
+		        <a href="#4ps">The Four Pillars of Post-Penguin SEO</a>
+		        <div class="acc-content">
+		          <p>
+	               Seasoned SEO professional in his book SEO 2016 and Beyond says, &quot;I have been doing SEO for over 10 years now and have always concentrated on long term strategies. Thatís not to say I havenít dabbled in black hat SEO because I have, a little. Over the years, I have done a lot of experiments on all kinds of ranking factors. However, and without exception, all of the sites I promoted with black hat SEO have been penalized; every single one of them. In this book, I donít want to talk about the murkier SEO strategies that will eventually cause you problems, so Iíll concentrate on the safer techniques of white hat SEO&quot;.  <br>
+	               <br>
+	               He divides SEO into four main pillars. These are: <br>
+	               <br>
+	               1. Quality content <br>
+	               2. Site organization <br>
+	               3. Authority <br>
+	               4. Whatís in it for the visitor? <br>
+	               <br>
+	               These are the four areas where you need to concentrate your efforts, so letís now have a look at each of them in turn. The algorithm is designed and set-up by humans, however, the rankings given to websites are wholly determined by the outcome of the algorithm. <br>
+	               <br>
+	               There is no manual intervention by humans to adjust the rankings specific websites are given by the algorithm.   The website ranked in 1st place is the website that the algorithm has given the best score to when taking into account the 200+ factors. <br>
+	               <br>
+	               Google is constantly reviewing, adjusting and updating its search results, so a website that is ranked 1st today could potentially not even be on the 1st page next week. <br>
+	               <br>
+	               There is no magic button that an SEO can press that guarantees a no.1 ranking, however, by paying attention to the factors that the algorithm places value on, and actively working to improve them, they can guarantee to improve your websiteís rankings in Google..</p>
+	            </div>
+		    </li>
+            
+             <li class="acc-header" id="kipl"> 
+		        <a href="#kipl">About Keyword Planner</a>
+		        <div class="acc-content">
+		          <p>
+                   Keyword Planner is a free AdWords tool for new or experienced advertisers thatís like a workshop for building new Search Network campaigns or expanding existing ones. You can search for keyword and ad group ideas, see how a list of keywords might perform, and even create a new keyword list by multiplying several lists of keywords together. 
+                   Keyword Planner can also help you choose competitive bids and budgets to use with your campaigns. <br>
+                   <br>
+                   Benefits <br>
+                   You can use Keyword Planner to accomplish the following tasks: <br>
+                   <br>
+                   Research keywords.  <br>
+                   Need help finding keywords to add to a new campaign or find additional keywords to add to an existing campaign. You can search for keyword and ad groups ideas based on terms that are relevant to your product or service, your landing page, or different product categories. <br>
+                   <br>
+                   Get historical statistics and traffic forecasts.  Use statistics like search volume to help you decide which keywords to use for a new or existing campaign. <br>
+                   <br>
+                   Get forecasts, like predicted clicks and estimated conversions, to get an idea of how a list of keywords might perform for a given bid and budget. These forecasts can also help guide your decision on which bids and budgets to set. It's important to keep in mind that while Keyword Planner can provide some great keyword ideas and traffic forecasts, campaign performance depends on a variety of factors. For example, your bid, budget, product, and customer behavior in your industry can all influence the success of your campaigns.</p>
+               </div>
+		    </li>
+            
+            
+            <li class="acc-header" id="seofr"> 
+		        <a href="#seofr">What is an SEO-friendly URL Structure?</a>
+		        <div class="acc-content">
+		          <p>
+                   From an SEO point of view, a site is URL structure should be: <br>
+                   <br>
+                   Straightforward: URLs with duplicate content should have canonical (preferred) URLs specified for them; there should be no confusing redirects on the site, etc. <br>
+                   <br>
+                   Meaningful: URL names should have keywords in them, not gibbering numbers and punctuation marks. With an emphasis on the right URLs: SEO-wise, not all URLs on a site are of equal importance as a rule. Some even should be concealed from the search engines. At the same time, it is important to check that the pages that ought to be accessible to the search engines are actually open for crawling and indexing. <br>
+                   <br>
+                   So, here is what one can do to achieve an SEO-friendly site URL structure: <br>
+                   <br>
+                   1. Consolidate www &amp; non-www Domain Versions As a rule, there are two major versions of your domain indexed in the search engines, the www and the non-www version of it. These can be consolidated in more than one way, but Iíd mention the most widely accepted practice. Most SEOs use the 301 redirect to point one version of their site to the other. <br>
+                   <br>
+                   2. Avoid Dynamic &amp; Relative URLs Depending on your content management system, the URLs it generates may be ìprettyî like this one: www.example.com/topic-name or 'ugly' like this one: www.example.com/?p=578544 Google recommends using hyphens (-) instead of underscores (_) in URL names, since a phrase in which the words are connected using underscores is treated by Google as one single word, e.g. one_single_word is onesingleword to Google. <br>
+                   <br>
+                   3. Create an XML Sitemap An XML Sitemap is not to be confused with the HTML sitemap. The former is for the search engines, while the latter is mostly designed for human users. What is an XML Sitemap? In plain words, itís a list of your siteís URLs that you submit to the search engines.  This helps search engines find your siteís pages more easily; <br>
+                   <br>
+                   4. Close Off Irrelevant Pages with robots.txt There may be pages on your site that should be concealed from the search engines. These could be your ìTerms and Conditionsî page, pages with sensitive information, etc. It is better not to let these get indexed, since they usually donít contain your target keywords and only dilute the semantic whole of your site. The robotx.txt file contains instructions for the search engines as to what pages of your site should be ignored during the crawl. Such pages get a noindex attribute and do not show up in the search results. <br>
+                   <br>
+                   5. Specify Canonical URLs Using a Special Tag Another way to highlight canonical URLs on your site is by using the so-called canonical tag. In geek speak, itís not the tag itself that is canonical, but the tagís parameter, but weíll just call it the canonical tag by metonymy. <br>
+                   <br>
+                   Final Thoughts on URL Structure  <br>
+                   Having SEO-friendly URL structure on a site means having a URL structure that helps your site rank higher in the search results. From the point of view of web development a particular siteís architecture may seem crystal-clear and error-free, but for an SEO manager this could mean missing on certain ranking opportunities..</p>
+	            </div>
+		    </li>
+            
+            
+            <li class="acc-header" id="fold"> 
+		        <a href="#fold">Folder Naming</a>
+		        <div class="acc-content">
+		          <p>
+                   Folders should be named to broadly reflect the top level categories (for example: mortgages). Sub pages should be named with keywords specific to each page (for example: 'interest-only' 'buy-to-let' or 'best-deals'). <br>
+                   <br>
+                   Keep the length of URL length short by saving all relevant files within one top level folder. Google has already been through the ëmortgagesí folder and knows all the subsequent pages are mortgage-related. You donít need to keep repeating the main keyword. <br>
+                   <br>
+                   Separate keywords using a hyphen rather than an underscore; Google doesn't recognise underscores as separators...</p>
+	            </div>
+		    </li>
+            
+            
+            <li class="acc-header" id="mtg"> 
+		        <a href="#mtg">Meta tags</a>
+		        <div class="acc-content">
+		          <p>
+                   How Google Meta Tags Impact SEO <br>
+                   <br>
+                   What Are Meta Tags? <br>
+                   Meta tags are coded into the HTML of the web page and not visible directly when you visit a web page. To view the meta tags of a web page, right click on a page and click on 'View Source'. Meta tags describe the content of the website using 'Keywords' and 'Description'. They tell the search engines what the webstite is about.  <br>
+                   <br>
+                   Do Meta Tags Help SEO? <br>
+                   Meta tags do help in page ranking but only to some extent. The ranking algorithms of Google for example has started ignoring the meta tags because they can be manipulated to earn the higher rank in a search engine results page.  <br>
+                   <br>
+                   Meta tags could look like these: <br>                   &lt;meta name=&quot;description&quot; content=&quot;PGDM programs at Deviprasad Goenka Management College offers various specializations designed to cater to the ever changing needs of Global Media &amp; Advertising industry.&quot;&gt; <br>                   &lt;meta name=&quot;keywords&quot; content=&quot;mba in media, media management, pgdm in media, dgmc&quot;&gt; <br>
+                   <br>
+                   There are four major types of meta tags. Some are still useful for SEO, while some have become redundant.  <br>
+                   <br>
+                   Meta Keywords Attribute - A number of jeywords that best suite your website topic. <br>
+                   <br>
+                   Title Tag - This is the title that is seen on the top of the browser window. This is a useful tag as Google does index the title; however, Google also picks up keywords from you textual content.  <br>
+                   <br>
+                   Meta Description Attribute - A brief description of the page. <br>
+                   <br>
+                   Meta Robots Attribute - An indication to search engine crawlers (robots or &quot;bots&quot;) as to what they should do with the page. <br>
+                   <br>
+                   Meta Keywords Attribute Meta robots attribute: This tag informs the search engine whether it should be indexed or not..</p>
+	            </div>
+		    </li>
+            
+              <li class="acc-header" id="redir"> 
+		        <a href="#redir">Redirection</a>
+		        <div class="acc-content">
+		          <p>                   Redirection is the process of forwarding one URL to a different URL. There are three main kinds of redirects: 301, 302, and meta refresh.</p>
+	            <p><strong>Types of Redirects</strong></p>
+	              <p>301, &quot;Moved Permanently&quot;—recommended for SEO<br>
+	                302, &quot;Found&quot; or &quot;Moved Temporarily&quot;<br>
+	                Meta Refresh</p>
+	              <p><strong>What is a Redirect?</strong></p>
+	              <p>A redirect is a way to send both users and search engines to a different URL from the one they originally requested. Below are descriptions of some of the commonly used types of redirects.</p>
+	              <p><strong>301 - Moved Permanently</strong><br>
+	                A status code of 301 tells a client that the resource they asked for has permanently moved to a new location. The response should also include this location. It tells the client to use the new URL the next time it wants to fetch the same resource.</p>
+	              <p><strong>302 - Found</strong><br>
+	                A status code of 302 tells a client that the resource they asked for has temporarily moved to a new location. The response should also include this location. It tells the client that it should carry on using the same URL to access this resource.</p>
+	              <p><strong>Meta Refresh</strong></p>
+	              <p>Meta refreshes are a type of redirect executed on the page level rather than the server level. They are usually slower, and not a recommended SEO technique. They are most commonly associated with a five-second countdown with the text &quot;If you are not redirected in five seconds, click here.&quot;</p>
+                </div>
+		    </li>
+            
+            <li class="acc-header" id="penl"> 
+		        <a href="GooglePenalty.html">Why does Google Penalize a Site?</a><div class="acc-content">
+		          <p>&nbsp;</p>
+	            </div>
+	      </li>
+			
+			<li class="acc-header" id="panda"> 
+		        <a href="#panda">Google Panda and Google Penguin</a>
+	          <div class="acc-content">
+		          <p>                   <strong>Difference between Google Panda and Google Penguin</strong><br>
+	              For those who deal with SEO and blogging, Google panda and Google penguin should not be something new to them. Ever since these updates were introduced, there has been strong buzz on how to develop the perfect search engine optimization plan, so that websites have their dues in rankings. Moving forward, here is a close take Panda and penguin, the two most discussed Google updates, and the difference between the two.</p>
+	            <p><strong>What is Google Panda</strong></p>
+	              <p>Google launched Panda in February 2011, mainly as a change in its search results ranking algorithm. The main purpose of the update was just to keep those low quality and low content sites away from the top ranking results and give the actual quality sites their due.</p>
+	              <p>As an obvious result, many websites with huge amount of advertising, or those with low quality content, saw a huge decline in the rankings. Ever since Panda was launched, there have been many updates to it ranging to over 22 in total.</p>
+	              <p><strong>What is Google Penguin</strong></p>
+	              <p>Another algorithm update from Google that gave SEO experts another blow was Penguin that was launched in April 2012. The idea underlying the update was simple enough- penalize and decrease the rankings of sites that breach Google’s Webmaster Guidelines set the by the search engine.</p>
+                <p>This included lowering the search engine rankings of all those sites that practice black-hat SEO techniques like duplicate content, keyword stuffing and cloaking to name a few.</p>
+              </div>
+		    </li>
+          <li class="acc-headerlinkMET" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">This page powered by MET Institute of Mass Media - Hands-on approach to media training </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.jpg" alt="" width="100%"></a></li>
+
+			
+			<li class="acc-header5" id="alpha"> 
+	        <a href="index.html">Home Page</a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>

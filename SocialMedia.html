@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:0px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: 5%;
+		width:40%;
+		float:left;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+
+	}
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		font-weight:bold;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-headerSUB a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#DDDBDB;
+	text-indent:18px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+		font-weight:bold;
+	}
+		
+		
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+.accordion .acc-header4 a {
+	width:99.5%;
+	text-align:left;
+	display: block;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-stretch:expanded
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#666;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header4 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header6 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+		.accordion .acc-headerlinkfb a {
+		width:95.5%;
+		text-align:left;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:small;
+	border-bottom: 1px solid #aaa;
+	background:#FFFBB;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	
+	body {
+	background-color: #FFF;
+	background-image: url();
+}
+	.accordion21 {		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:0px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+}
+    </style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><span class="accordion21"><a href="index.html"><img src="assets/images/tejappslogo.jpg" alt="sancharFirst Logo" width="100%"></a></span></div>
+  
+  <div class="accordion">
+    	<ul>
+        	 <li class="acc-header5" id="alpha"> 
+	        <a href="DigiMediaIntro.html">Social Media</a>
+</li>
+    	</ul></div><div class="accordion">
+    	  
+	  
+<li class="acc-header4" id="disc"> <a href="#disc">Understanding Social Media </a>
+  <div class="acc-content" >
+    <p>Social Media has become an important part of our lives, especially now with almost everyone having a mobile phone. Mobile phones are reaching even the nooks and corners of the city, and will bring about a communication revolution like no other medium did in the past. Why? Because mobile phones, like a pocket radio is a personal device, does not require constant electricity, and with new content being generated in regional languages, does not require English literacy. </p>
+    <p>Mobile is the communication device of now and the future. Commercial organisations have been quick to realise the importance and we can see the results in the way Digital Media's growth which is about 39% per year. For media students, it is important to accept it, adopt it and use it for the benefit of society, and harness its power for businesses.</p>
+    </div>
+</li>
+	  
+<li class="acc-header4" id="prin"> <a href="#prin">Types of Social Media</a>
+  <div class="acc-content" >
+  Social media is born out of the need to communicate. The traditional media, despite their spread and prolofication, failed in performing the function of a channel that facilitated communication by the people, and remained only as a communication channel 'to' the people. Social Media addressed this need. Social Media allows interaction within communities, individuals, sharing of  content, and in a manner, have changed the way we conduct ourselves not only online, but offline as well.
+    <p><strong>1. Social networks<br>
+      </strong>
+      From being networks that just help you connect with friends, communities,or families, build relationships, these 'relationship networks' have now evolved into huge online entities that help commerce, conduct businesses, generate leads, and create brand awareness. They help people and organizations connect online to share information and ideas. <br>
+      <br>
+      With mobile internet, Social Media have become hubs of transformation, changing and disrupting every aspect of our lives, from sharing travel photographs, to showing off new clothes, to reading news, or even finding a new job.<br>
+      <br>
+      Examples: Facebook, Twitter, LinkedIn    </p>
+    <p><strong>2. Media sharing networks<br>
+      </strong>
+      People use these networks to find and share photos, video, live video, and other media online. They help in audience engagement, lead generation, social marketing, for businesses, and for individuals, they help in sharing their experiences with their own networks. Today, media sharing networks have also eveolved into relationship networks, and the lines between them are blurred. </p>
+    <p>The main difference is that media sharing networks are primarily meant for sharing photos and videos, whereas social networks also share texts. <br>
+      <br>
+      Examples: Instagram, Snapchat, YouTube    </p>
+    <p><strong>3. Discussion forums<br>
+      </strong>
+      Discussion forums are one of the oldest types of social media. Discussion Forums are a great place to access collective knowledge and wisdom of several people and can help tremendously when doing research. There are several such discussion forums apart from those mentioned above, for almost every topic you can think of. </p>
+    <p>These networks can be excellent resources for market research. Done right, you can also advertise on them, though you’ll need to be careful to keep your ads and posts separate.<br>
+      <br>
+      Examples: reddit, Quora, Digg    </p>
+    <p><strong>4. Bookmarking and content curation networks<br>
+      </strong>These networks are a hotbed of creativity and inspiration for people seeking information and ideas. People use these networks to discover, save, share, and discuss new and trending content and media. Bookmarking networks like Pinterest help people discover, save, and share visual content. Today Instagram has become very popularly where people share and exchange photographs and videos. Thenew feature of stories has become extremely popular, even on Facebook. </p>
+    <p>These networks can be highly effective for driving brand awareness, customer engagement, and website traffic.<br>
+      <br>
+      Examples: Pinterest, Flipboard, Instagram    </p>
+    <p><strong>5. Consumer review networks<br>
+      </strong>People use these networks to find, review, and share information about brands, products, and services, as well as restaurants, travel destinations, and more. Consumer review networks give people a place to review brands, businesses, products, services, travel spots, and just about anything else. Reviews add a lot of value to many websites and online services—think about the buying experience on Amazon, or the experience of searching for a local business on Google Maps. Consumer review networks take it one step further by building networks around the review as a core part of the value they provide.<br>
+      <br>
+      Examples: Zomato, TripAdvisor, Swiggy    </p>
+    <p><strong>6. Blogging and publishing networks<br>
+      </strong>People use these networks to publish, discover, and comment on content online. Blogs are an extremely useful way to engage with audiences, to build your brand and generate leads. They are very important in your content marketing strategy. </p>
+    <p>Blogging and publishing networks give people and brands tools to publish content online in formats that encourage discovery, sharing, and commenting. These networks range from more traditional blogging platforms like WordPress and Blogger to microblogging services like Tumblr and interactive social publishing platforms like Medium.<br>
+      <br>
+      Examples: WordPress, Blogger    </p>
+    <p><strong>7. Social shopping networks<br>
+      </strong>There are two types of Social Commerce sites: aggregation and e-retail.</p>
+    <p>1) Retail: Limeroad.com and Xarato.com are the only 2 social shopping e-tailing sites in India, where you can purchase products directly. Both are marketplaces.</p>
+    <p>2) Aggregation: Sites such as Roposo, Violetstreet, Baggout, Sweetcouch, etc. offer discovery of products aggregated from several other online retailing sites.</p>
+    <p>People use these networks to spot trends, follow brands, share great finds, and make purchases. Brands can build awareness, increase engagement, and sell products via new channels. Social shopping networks make ecommerce engaging by adding a social element. Pinterest features Buyable Pins, and Instagram provides call-to-action tools in the form of “shop now” and “install now” buttons. Social shopping networks take it one step further by building their site around a focused integration between the social experience and the shopping experience.<br>
+      <br>
+      Also checkout asaan.com, Etailone.com, desireon.com,dilbole.com, </p>
+    <p><strong>8. Interest-based networks</strong><br>
+      An interest-based network is exactly what it sounds like: a social network built around interests, using common threads to bring members of an audience together. Whether for travel, food, fashion or cats, interest-based networks are taking over the social media scene, and brands that get it stand to reap the benefits. Interest-based networks take a more targeted approach than the big social networks do by focusing solely on a single subject, such as books, music, or home design.<br>
+      <br>
+      Examples: Kulzy, Docplexus, Brigge, Smartican, DIKY and Affimity </p>
+    <p><strong>9. ‘Sharing economy’ networks<br>
+      </strong><br>
+      “Sharing economy” networks, also called “collaborative economy networks,” connect people online for the purpose of advertising, finding, sharing, buying, selling, and trading products and services.<br>
+      To advertise, find, share, buy, sell, and trade products and services between peers. If you happen to offer the kind of products or services traded here, these networks can be another channel for bringing in business. (For example, if you operate a bed-and-breakfast, Airbnb could help you find customers.)<br>
+      <br>
+      Examples: Airbnb, Uber, Taskrabbit      <br>
+    </p>
+    <p></p>
+    </div>
+</li>
+	  
+<li class="acc-header4" id="tradigi"> <a href="#tradigi">Social Media and Google Search Rankings</a>
+  <div class="acc-content" >
+  Social media does affect Google search rankings. 
+    <p>Pages that have highest views or followers on the social media sites are ranked highest on the Google search. </p>
+    <p>Often, while searching for information related to current affairs, Google displays the tweets by the famous Twitter handles or the most retweeted tweets on the result page. </p>
+    <p>Google and social media platforms like Facebook and Instagram have had a long and complex relationship. While social signals have long been used in Google algorithms, it’s not so much actual social media accounts that affect the algorithm as it is the results of those accounts. </p>
+    <p>There are millions of social media profiles in the world and if just having one was enough to rank well in Google, everyone would be on the front page of Google’s SERPs. Which would be great except for the fact that anywhere between 5%-11.2% of all Facebook profiles are fakes. This is one of the major reasons that simply having a social media profile isn’t enough to rank well in Google’s SERPs. On that same token, however, there are millions of authentic social media profiles around the globe, which means that Google can’t afford to overlook them completely. Because of that, Google evaluates social signals rather than social profiles when ranking pages.</p>
+    <p>Here are a few of the things the search engine looks at:<br>
+      How many shares content created by a given brand/individual earns<br>
+      How useful, informative, and valuable the content is<br>
+      How relevant the content is to a specific base of readers</p>
+    <p>The reason that Google looks at these things rather than the simple existence of a social profile is because Google’s entire mission in search is to provide users with relevant, high-quality search results.</p>
+    <p>While the existence of a social media profile for a brand or individual isn’t necessarily indicative or quality or authority, the presence of plenty of highly-shared, liked, and talked-about content is. It helps the brand or content writer in making a mark and increase recall value.<br>
+  </p>
+    </div>
+</li>
+	  
+<li class="acc-header4" id="ISM"> <a href="#ISM">Integrating Social Media in websites and blogs </a>
+ <div class="acc-content">
+  In order to increase views for your brand or content on social media pages and the respective websites, it is necessary to integrate them so that customers can access both, the social media platform and the websites or the blogs. This helps to increase followers on the social media sites and it helps get more clicks on the website.
+    <p>5 ways to integrate social media on your website or blog<br>
+      <br>
+      <strong>Social share and follow buttons</strong><br>
+      Make your content shareable with social share buttons. Not only do they help you increase awareness of your content, but when you provide your visitors the opportunity to share your content easily, you’re also improving user experience. When choosing social share buttons, make sure you only choose the social networks that matter to you. By keeping it simple and easy, you’ll be able to increase the probability of your content being shared. Best practices recommend that social share buttons are placed at the top, bottom, or along the side of your page. Make sure to also include social follow buttons to increase your social media following.<br>
+      <br>
+      <strong>Social login</strong><br>
+      Most users prefer to log in to a site with social login, as opposed to providing an email address and creating a new account. Improve your website visitors’ experience with social login, and increase your website registration conversions and retention. When you provide visitors the opportunity to sign up or log in via their social media profiles you’re shortening the registration process, which tends to lead to an increase in the conversion rate for user registrations. With the social data you collect through social login platforms, like LoginRadius, you’re able to collect more than 200 data points to help you make more personalized campaigns.<br>
+      <br>
+      <strong>Social Video</strong><br>
+      Social videos are videos that are created and shared on social networks. The added bonus of social videos for marketers is that they provide an easy social media integration for your website. With so many social media platforms including video in the mix, it would be a missed opportunity to not include your social videos on your website too. For example, Hootsuite uses Vine videos to showcase quick how-to videos. Not only are these videos great on Vine, but they also make how-to blog posts more engaging.<br>
+      <br>
+      <strong>Instagram photos</strong><br>
+      If you want to showcase your Instagram photos on your website and are also trying to increase your Instagram following, embedding your Instagram photos in blog posts allows you to capture new followers from your website visitors. This will help make your page look more attractive while garnering more followers.<br>
+      <br>
+      <strong>Social Proof</strong><br>
+      Simply put, when you integrate social proof to your website you’re providing your visitors the opportunity to trust you more. With 79% of consumers trusting social proof as much as personal recommendations, it’s important you integrate the proper social widgets on your website to increase sales and website conversions. One way to do this is to use one of Facebook’s social widgets, such as the “Like Box”. This feature shows your visitors that you’re a credible source, their friends also like your Facebook page, and that you’re a legitimate product or brand. On top of that, you’ll also be able to increase your Facebook likes with this social media integration.<br>
+      <br>
+      Social media is thus a tool of utmost importance for companies using digital marketing. It’s the current go to mode of promoting products and services as well increasing readership for blogs or articles. As we advance in technology and are fast becoming a world that uses internet for most of our work, entertainment etc. social media is crucial tool in reaching out to the masses as well as niche crowds.<br>
+</p>
+    </div>
+    </li>
+	
+	<li class="acc-header4" id="fb1"><a href="#fb1">Using Facebook, Twitter and Linked In and Blogs</a>&quot;Facebook was not originally created to be a company. It was built to accomplish a social mission — to make the world more open and connected&quot; — Mark Zuckerberg<br>
+ <div class="acc-content">  <br><ul>
+ <strong> Facebook</strong>
+  <br>
+  <a href="https://blog.hootsuite.com/steps-to-create-a-facebook-business-page/" target="_blank">Steps-to-create-a-facebook-business-page/</a><br>
+  <a href="https://blog.hootsuite.com/facebook-business-manager-guide/" target="_blank">Facebook-business-manager-guide/</a><br>
+  <a href="https://www.wordstream.com/blog/ws/2018/07/02/facebook-marketing-for-small-business" target="_blank">Facebook-marketing-for-small-business</a><br>
+  <a href="https://www.forbes.com/sites/jaysondemers/2015/08/20/the-definitive-guide-to-marketing-your-business-on-facebook/#8b8bd872f514" target="_blank">Definitive-guide-to-marketing-your-business-on-FB</a>  <br>
+  <a href="https://zenmedia.com/top-10-ways-to-use-facebook-to-promote-your-business-for-free/" target="_blank">Top-10-ways-to-use-facebook</a><br>
+  <strong>Twitter</strong><br>
+  <br>
+  <a href="https://www.postplanner.com/blog/how-to-use-twitter-to-grow-your-business/">how-to-use-twitter-to-grow-your-business/ </a><br>
+  <a href="https://www.socialmediaexaminer.com/twitter-for-business/">twitter-for-business/ </a> <br>
+  <a href="https://www.razorsocial.com/tweetdeck-for-twitter-management/">tweetdeck-for-twitter-management/ </a><br>
+  <strong>Linked In</strong><br>
+  <br>
+  <a href="https://www.socialmediaexaminer.com/everything-you-need-to-know-about-linkedin/">everything-you-need-to-know-about-linkedin/ </a><br>
+  <a href="https://www.mindtools.com/pages/article/linkedin.htm">Using linkedin</a><br>
+  <a href="https://www.thebalancesmb.com/introduction-to-linkedin-1794572">introduction-to-linkedin</a><br>
+  <a href="https://blog.hootsuite.com/linkedin-for-business/">linkedin-for-business/ </a><ul><br>  
+    </ul>
+  </li>
+	
+	
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.gif" width="100%" alt=""/></a></li>
+<li class="acc-header5" id="alpha"><a href="index.html">Home Page</a></li>
+  </ul>
+  </div>
+
+
+  </body>
+</html>

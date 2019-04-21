@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script language="javascript">
+  $(document).ready(function() {
+    theWidth = $(".imagePanel img").css('width');
+    $(".imagePanel").css('width',theWidth);
+});
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#homepage')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
+
+	<style>
+	* {
+		width:100%;
+	    margin:auto;
+		padding-left:0px;
+		padding-right:0px;
+		margin: 0;
+		border: none;
+		list-style-type: none;
+		font-size: medium;
+	}
+	
+	.accordion {
+		width:100%;
+		padding-left:0px;
+		padding-right:0px;
+		margin:auto;
+	    border:1px solid #ccc;
+		height:auto;
+		text-align:justify;
+		/*text-wrap:unrestricted;*/
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		/* background-color:#FFF;	*/
+	
+	}
+	
+	.accordion2 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;		
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#000;
+		color:#FFF;
+		text-shadow:#666;
+		/*text-wrap:suppress;*/
+	}
+	
+	.accordion3 {
+		padding-left:0px;
+		padding-right:0px;
+		padding-bottom:5px;
+	    margin:auto;
+		height:auto;
+		text-align:center;
+		font-family:Verdana, Geneva, sans-serif;
+		font-weight:bold;
+		font-size:medium;
+		background-color:#FFF;
+		color:#FFF;
+		text-shadow:#666;
+	}
+	
+	
+	.imagePanel {
+    	margin: auto;
+		width:65%;
+	}
+	.imagePanel img { 
+	} 
+	.imagePanel p {
+	}    
+	.imagepanel a {
+		word-break:break-all;
+		
+	}
+	
+	.imagePanel2 {
+    	margin: auto;
+		width:100%;
+	}
+	.imagePanel2 img { 
+	} 
+	.imagePanel2 p {
+	}    
+	.imagepanel2 a {
+		
+		word-break:break-all;
+		
+	}
+	
+	.accordion .acc-content {
+		margin:auto;
+	    height: 0;
+	    overflow: hidden;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		padding-left:5px;
+		padding-right:5px;
+		width:95%;
+		word-wrap:break-word;
+	}
+	
+	.accordion .acc-content2 {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+	}
+	
+	
+		.accordion .acc-content-inet {
+		margin:auto;
+		width:95%;
+		text-align:left;
+		display: block;
+		padding-top:1px;
+		padding-bottom:1px;
+		padding-left:0px;
+		padding-right:0px;
+		text-decoration: none;
+		color:#000;
+		font-weight: normal;
+		font-size: medium;
+		background-color:#F7F7F7;
+	}
+	
+	.linkers a
+	{
+		text-align:left;
+		color:#000;
+		font-weight:normal;
+		font-size: medium;
+		text-decoration:underline;
+	}
+
+	
+	
+	.accordion li:target .acc-content {
+		margin:auto;
+	    height: auto;
+	    padding:0px;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:medium;
+		background-color:#FFF;
+		padding-left:5px;
+		padding-right:5px;
+		text-wrap:unrestricted;
+	}
+
+	
+	
+.accordion .acc-header a {
+			width:99.5%;
+		text-align:left;
+	display: block;
+	padding-top:4px;
+	padding-bottom:4px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#666;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:normal;
+	font-size:medium;
+	border-bottom: 2px solid #aaa;
+	background:#FAFAFA;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#BAD6E3;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}
+	
+	.accordion .acc-header2 a {
+		width:100%;
+		text-align:left;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#000;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#fbb040;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header2 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-header3 a {
+		width:100%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: bold;
+	font-size: medium;
+	border-bottom: 1px solid #aaa;
+	background:#600;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header3 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:1px;
+		font-size:medium;
+		text-indent:0px;
+	}	
+	
+	.accordion .acc-header4 a {
+		width:100%;
+		text-align:left
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration:underline;
+	color:#000;
+	
+	font-weight:normal;
+	font-size: medium;
+	
+	/*text-indent:10px;*/
+	
+	}
+.accordion .acc-header5 a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#FFF;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight: bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#000;
+	text-indent:10px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-header5 a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#777029;
+	    padding-left:2px;
+		font-size:medium;
+		text-indent:10px;
+	}	
+	
+	.accordion .acc-headerlink a {
+		width:99.5%;
+		text-align:center;
+	display: block;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	padding-right:0px;
+	text-decoration: none;
+	color:#8BA3B7;
+	/*text-shadow: 1px 1px 1px #000;*/
+	font-weight:bold;
+	font-size:medium;
+	border-bottom: 1px solid #aaa;
+	background:#FFF;
+	text-indent:2px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+	}
+	.accordion .acc-headerlink a:hover {
+	    text-decoration:none;
+	    border-bottom:1px solid #ddd;
+	    background:#B8D2E9;
+	    padding-left:0px;
+		font-size:medium;
+		text-indent:2px;
+	}
+	
+	body {
+	background-color: #FFF;
+}
+	</style>
+
+  </head>
+  <body id="homepage">
+  <div class="accordion2" id="sancharfirstlogo"><a href="index.html"><img src="assets/images/tejappslogo.jpg" width="100%" alt="TejApps Logo"></a></div>
+  
+  <div class="accordion">
+    	<ul>
+                    
+<li class="acc-header5" id="alpha">
+<div class="acc-content-inet"><strong>The Evolution of Internet</strong>
+<p>The Internet, as we know today has evolved over the last few decades. Beginning with a military exercise to connect the US bases, within 3 decades, it was commercialized. We know how it is indisepensible today. Following is the timeline to show how the Internet developed.</p>
+<br>
+            1957 - USSR launches Sputnik into space. In response, the USA creates the Advanced Research Projects Agency (ARPA) with the mission of becoming the leading force in science and new technologies.
+            <br>
+            <br>
+            1962 - J.C.R. Licklider of MIT proposes the concept of a ìGalactic Network.î For the first time ideas about a global network of computers are introduced. J.C.R. Licklider is later chosen to head ARPA's research efforts.
+            <br>
+            <br>
+            1962 - Paul Baran, a member of the RAND Corporation, determines a way for the Air Force to control bombers and missiles in case of a nuclear event. His results call for a decentralized network comprised of packet switches.
+            <br>
+            <br>
+            1968 - ARPA contracts out work to BBN. BBN is called upon to build the first switch.
+            <br>
+            <br>
+            1969 - RPANET created - BBN creates the first switched network by linking four different nodes in California and Utah; one at the University of Utah, one at the University of California at Santa Barbara, one at Stanford and one at the University of California at Los Angeles.
+            <br>
+            <br>
+            1972 - Ray Tomlinson working for BBN creates the first program devoted to email.
+            <br>
+            <br>
+            1972 - ARPA officially changes its name to DARPA Defense Advanced Research Projects Agency.
+            <br>
+            <br>
+            1972 - Network Control Protocol is introduced to allow computers running on the same network to communicate with each other.
+            <br>
+            <br>
+            1973 - Vinton Cerf working from Stanford and Bob Kahn from DARPA begin work developing TCP/IP to allow computers on different networks to communicate with each other.
+            <br>
+            <br>
+            1974 - Kahn and Cerf refer to the system as the Internet for the first time.
+            <br>
+            <br>
+            1976 - Ethernet is developed by Dr. Robert M. Metcalfe.
+            <br>
+            <br>
+            1976 - SATNET, a satellite program is developed to link the United States and Europe. Satellites are owned by a consortium of nations, thereby expanding the reach of the Internet beyond the USA.
+            <br>
+            <br>
+            1976 - Elizabeth II, Queen of the United Kingdom, sends out an email on 26 March from the Royal Signals and Radar Establishment (RSRE) in Malvern.
+            <br>
+            <br>
+            1976 - AT& T Bell Labs develops UUCP and UNIX.
+            <br>
+            <br>
+            1979 - USENET, the first news group network is developed by Tom Truscott, Jim Ellis and Steve Bellovin.
+            <br>
+            <br>
+            1979 - IBM introduces BITNET to work on emails and listserv systems.
+            <br>
+            <br>
+            1981 - The National Science Foundation releases CSNET 56 to allow computers to network without being connected to the government networks.
+            <br>
+            <br>
+            1983 - Internet Activities Board released.
+            <br>
+            <br>
+            1983 - TCP/IP becomes the standard for internet protocol.
+            <br>
+            <br>
+            1983 - Domain Name System introduced to allow domain names to automatically be assigned an IP number.
+            <br>
+            <br>
+            1984 - MCI creates T1 lines to allow for faster transportation of information over the internet.
+            <br>
+            <br>
+            1984- The number of Hosts breaks 1,000
+            <br>
+            <br>
+            1985- 100 years to the day of the last spike being driven on the Canadian Pacific Railway, the last Canadian university was connected to NetNorth in a one year effort to have coast-to-coast connectivity
+            <br>
+            <br>
+            1987 - The new network CREN forms.
+            <br>
+            <br>
+            1987- The number of hosts breaks 10,000
+            <br>
+            <br>
+            1988 - Traffic rises and plans are to find a new replacement for the T1 lines.
+            <br>
+            <br>
+            1989- The Number of hosts breaks 100 000
+            <br>
+            <br>
+            1989- Arpanet ceases to exist
+            <br>
+            <br>
+            1990 - Advanced Network & Services (ANS) forms to research new ways to make internet speeds even faster. The group develops the T3 line and installs in on a number of networks.
+            <br>
+            <br>
+            1990 - A hypertext system is created and implemented by Tim Berners-Lee while working for CERN.
+            <br>
+            <br>
+            1990- The first search engine is created by McGill University, called the Archie Search Engine
+            <br>
+            <br>
+            1991- U.S green-light for commercial enterprise to take place on the Internet
+            <br>
+            <br>
+            1991 - The National Science Foundation (NSF) creates the National Research and Education Network (NREN).
+            <br>
+            <br>
+            1991 - CERN releases the World Wide Web publicly on August 6th, 1991
+            <br>
+            <br>
+            1992 - The Internet Society (ISOC) is chartered
+            <br>
+            <br>
+            1992- Number of hosts breaks 1,000,000
+            <br>
+            <br>
+            1993 - InterNIC released to provide general services, a database and internet directory.
+            <br>
+            <br>
+            1993- The first web browser, Mosaic (created by NCSA), is released. Mosaic later becomes the Netscape browser which was the most popular browser in the mid 1990's.
+            <br>
+            <br>
+            1994 - New networks added frequently.
+            <br>
+            <br>
+            1994 - First internet ordering system created by Pizza Hut.
+            <br>
+            <br>
+            1994 - First internet bank opened: First Virtual.
+            <br>
+            <br>
+            1995 - NSF contracts out their access to four internet providers.
+            <br>
+            <br>
+            1995 - NSF sells domains for a $50 annual fee.
+            <br>
+            <br>
+            1995 - Netscape goes public with 3rd largest ever NASDAQ IPO share value
+            <br>
+            <br>
+            1995- Registration of domains is no longer free.
+            <br>
+            <br>
+            1996- The WWW browser wars are waged mainly between Microsoft and Netscape. New versions are released quarterly with the aid of internet users eager to test new (beta) versions.
+            <br>
+            <br>
+            1996 - Internet2 project is initiated by 34 universities
+            <br>
+            <br>
+            1996 - Internet Service Providers begin appearing such as Sprint and MCI.
+            <br>
+            <br>
+            1996 - Nokia releases first cell phone with internet access.
+            <br>
+            <br>
+            1997- (Arin) is established to handle administration and registration of IP numbers, now handled by Network Solutions (IinterNic)
+            <br>
+            <br>
+            1998- Netscape releases source code for Navigator.
+            <br>
+            <br>
+            1998 - Internet Corporation for Assigned Names and Numbers (ICANN) created to be able to oversee a number of Internet-related tasks
+            <br>
+            <br>
+            1999 - A wireless technology called 802.11b, more commonly referred to as Wi-Fi, is standardized.
+            <br>
+            <br>
+            2000- The dot com bubble bursts, numerically, on March 10, 2000, when the technology heavy NASDAQ composite index peaked at 5,048.62
+            <br>
+            <br>
+            2001 - Blackberry releases first internet cell phone in the United States.
+            <br>
+            <br>
+            2001 - The spread of P2P file sharing across the Internet
+            <br>
+            <br>
+            2002 -Internet2 now has 200 university, 60 corporate and 40 affiliate members
+            <br>
+            <br>
+            2003- The French Ministry of Culture bans the use of the word "e-mail" by government ministries, and adopts the use of the more French sounding "courriel"
+            <br>
+            <br>
+            2004 - The Term Web 2.0 rises in popularity when O'Reilly and MediaLive host the first Web 2.0 conference.
+            <br>
+            <br>
+            2004- Mydoom, the fastest ever spreading email computer worm is released. Estimated 1 in 12 emails are infected.
+            <br>
+            <br>
+            2005- Estonia offers Internet Voting nationally for local elections
+            <br>
+            <br>
+            2005-Youtube launches
+            <br>
+            <br>
+            2006- There are an estimated 92 million websites online
+            <br>
+            <br>
+            2006 - Zimbabwe's internet access is almost completely cut off after international satellite communications provider Intelsat cuts service for non-payment
+            <br>
+            <br>
+            2006- Internet2 announced a partnership with Level 3 Communications to launch a brand new nationwide network, boosting its capacity from 10Gbps to 100Gbps
+            <br>
+            <br>
+            2007- Internet2 officially retires Abilene and now refers to its new, higher capacity network as the Internet2 Network
+            <br>
+            <br>
+            2008- Google index reaches 1 Trillion URLs
+            <br>
+            <br>
+            2008 - NASA successfully tests the first deep space communications network modeled on the Internet. Using software called Disruption-Tolerant Networking, or DTN, dozens of space images are transmitted to and from a NASA science spacecraft located about more than 32 million kilometers from Earth
+            <br>
+            <br>
+            2009 - ICANN gains autonomy from the U.S government
+            <br>
+            <br>
+            2010- Facebook announces in February that it has 400 million active users.
+            <br>
+            <br>
+            2010 - The U.S House of Representatives passes the Cybersecurity Enhancement Act (H.R. 4061)
+            <br>
+            <br>
+            2012 - A major online protest shook up U.S. Congressional support for two anti-Web piracy bills - the Stop Online Piracy Act in the House and the Protect IP Act in the Senate. Many in the tech industry are concerned that the bills will give media companies too much power to shut down websites.
+</p>
+</div>
+</li>
+
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium">For hands-on, practical approach to media training, join MET Institute of Mass Media </a></li>
+<li class="acc-headerlink" id="dmad"><a href="https://www.met.edu/OnlineCampaign/IMM/IMM4.php" target="_blank" style="font-size: medium"><img src="assets/images/760_210.gif" width="100%" alt=""/></a></li>
+			
+			<li class="acc-header5" id="alpha"> 
+	        <a href="DigiMediaIntro.html">Back to Intro to Digital Media</a> OR 
+            <a href="index.html"><strong>Go to Home Page</strong></a>
+</li>
+</ul>
+  </div>
+    
+  </body>
+</html>
